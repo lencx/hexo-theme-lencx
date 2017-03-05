@@ -1,0 +1,30 @@
+extends ./_partial/_layout
+
+block content
+    p All 
+        != page.posts.length
+        |  Posts In Total
+
+    //- - console.log(site.posts.length)
+    //- - console.log(page.tag)
+    if page.posts.length > 0
+        - var lastY;
+        - page.posts.each(function(archive) {
+            - var thisYear = archive.date.year()
+            - var thisMonth = date(archive.date, 'MM')
+            - var thisDay = date(archive.date, 'DD')
+            if lastY != thisYear
+                h2(style='background: #888')!= thisYear
+
+            if lastY != null
+            - lastY = thisYear
+                p
+                    a(href=url_for(archive.path))!= archive.title
+                    span(style='color:red;')!= thisMonth
+                    | -
+                    span(style='color:green;')!= thisDay
+        - })
+    
+    if site.posts.length > config.archive_generator.per_page
+        include ./_partial/_pagination.pug
+        +home()

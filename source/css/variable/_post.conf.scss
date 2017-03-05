@@ -1,0 +1,23 @@
+// post font
+$post-font-color: #333;
+$post-font-family: 'Roboto';
+$post-font-size: 14px;
+
+// post border
+$post-border-width: 2px;
+$post-border-color: rgba(0, 0, 0, .1);
+$post-border-radius: 16px;
+
+// post content
+$post-padding: 16px;
+
+@mixin post-layout {
+    box-sizing: border-box;
+    color: $post-font-color;
+    font-family: $post-font-family;
+    font-size: $post-font-size;
+    border: solid $post-border-width $post-border-color;
+    border-radius: $post-border-radius;
+    padding: $post-padding;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, .3)
+}

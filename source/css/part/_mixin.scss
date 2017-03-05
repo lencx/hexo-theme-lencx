@@ -1,0 +1,18 @@
+@mixin clear-fix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+        zoom: 1;
+    }
+}
+
+@mixin square ($width: 20px) {
+    width: $width;
+    height: $width;
+}
+
+@mixin text-center($line-height: 1em) {
+    line-height: $line-height;
+    text-align: center;
+}

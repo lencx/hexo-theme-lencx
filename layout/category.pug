@@ -1,0 +1,11 @@
+extends ./_partial/_layout
+
+block content
+    - console.log(page)
+    h1!= page.category
+    - page.posts.each(function(category) {
+        ul.category
+            li.category-item
+                a(href=url_for(category.path))
+                    != category.title
+    - })

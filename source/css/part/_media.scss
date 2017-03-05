@@ -1,0 +1,60 @@
+//== media
+// Media queries breakponits
+//xs ponit
+$screen-sm: 576px;
+$screen-sm-min: $screen-sm - 1;
+//sm ponit
+$screen-tablet: 768px;
+$screen-tablet-min: $screen-tablet - 1;
+//md ponit
+$screen-desktop: 992px;
+$screen-desktop-min: $screen-desktop - 1;
+//lg ponit
+$screen-lg-desktop: 1200px;
+$screen-lg-desktop-min: $screen-lg-desktop - 1;
+
+//xs
+$xs: $screen-sm;
+$xs-min: $screen-sm-min;
+//sm
+$sm: $screen-tablet;
+$sm-min: $screen-tablet-min;
+//md
+$md: $screen-desktop;
+$md-min: $screen-desktop-min;
+//lg
+$lg: $screen-lg-desktop;
+$lg-min: $screen-lg-desktop-min;
+
+
+// @param:      max | min       || [min: name]
+// @param2: xs | sm | md | lg   || [max: name]
+@mixin repond($param, $param2) {
+    @if($param2 == 'max') {
+        @if($param == 'xs') {
+            @media screen and (max-width: $xs-min) { @content; }
+        } @else if($param == 'sm') {
+            @media screen and (max-width: $sm-min) { @content; }
+        } @else if($param == 'md') {
+            @media screen and (max-width: $md-min) { @content; }
+        } @else if($param == 'lg') {
+            @media screen and (max-width: $lg-min) { @content; }
+        }
+    }
+    @else if($param2 == 'min') {
+        @if($param == 'xs') {
+            @media screen and (min-width: $xs) { @content; }
+        } @else if($param == 'sm') {
+            @media screen and (min-width: $sm) { @content; }
+        } @else if($param == 'md') {
+            @media screen and (min-width: $md) { @content; }
+        } @else if($param == 'lg') {
+            @media screen and (min-width: $lg) { @content; }
+        }
+    }
+    @else {
+        @media screen and (min-width: $param) and (max-width: $param2){
+            @content;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+//- 分页
+mixin home()
+    .pagination
+        ul
+            if page.prev
+                li.link
+                    a(href=url_for(page.prev_link))
+                        i.icon.icon-arror-left <<
+            li.current
+                a #{page.current}
+            if page.next
+                li.link
+                    a(href=url_for(page.next_link))
+                        i.icon.icon-arror-right >>
+
+//- 文章： 上一篇 | 下一篇
+mixin post()
+    - var prev = page.prev ? page.prev.path : false
+    - var next = page.next ? page.next.path : false
+    .pagination
+        if prev
+            a.prev(href=url_for(prev))!= page.prev.title
+        if next
+            a.prev(href=url_for(next))!= page.next.title

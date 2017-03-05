@@ -1,0 +1,9 @@
+.category
+    if site.categories.length != 0
+        ul.category-sidebar
+        - site.categories.each(function(category) {
+            li
+                a(href=url_for(category.path))
+                    span.name!= category.name
+                        span.num (#{category.length})
+        - })

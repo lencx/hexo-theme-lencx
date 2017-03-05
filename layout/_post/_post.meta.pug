@@ -1,0 +1,7 @@
+mixin postMeta(date, tags)
+    .post-meta  
+        span.date #{full_date(date, 'YYYY-MM-DD')}
+        if tags
+            - tags.each(function(tag) {
+                a(href=url_for(tag.path))= tag.name
+            - })

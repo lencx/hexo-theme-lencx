@@ -1,0 +1,37 @@
+# html lang
+language: en
+
+# main menu navigation
+menu:
+  Home: /
+  Archives: archives
+  category: categories
+  tags: tags
+  About: about
+
+tagCloud:
+  enable: true
+  bgEnable: true
+  # bg: '#000'
+  # ‘/blog’ 是项目的根路径 默认是‘／’
+  bg: url('/blog/img/bg-1.png')
+
+excerpt_link: Read More
+# Miscelaneous
+favicon: /favicon.ico
+
+# copyright
+startYear: 2016
+
+# archive_type: 'monthly'
+
+# stylesheets loaded in the <head>
+stylesheets:
+- '/css/main.css'
+
+# scripts loaded in the end of the body
+# scripts:
+
+scripts_foot:
+- /libs/jquery-3.1.1.min.js
+- /js/main.js

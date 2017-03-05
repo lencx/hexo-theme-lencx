@@ -1,0 +1,56 @@
+$line-font-size: 14px;
+$line-font-color: #fff;
+$code-font-family: "Operator Mono SSm A", "Operator Mono SSm B", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+// $code-default-color: #005599;
+$code-default-color: #8d742a;
+
+$codeColors: (
+    comment: #969896,
+    // $js-keyword-color: #8E0A32;
+    keyword: #f92672,
+    // $js-keyword-color: #E36397;
+    // $js-title-color: #0057AF;
+    title: #66d9ef,
+    params: #ae81ff,
+    attr: #f0511c,
+    regexp: #ff064a,
+    variable: #70b798,
+    built_in: #0057AF,
+
+    // css
+    selector-tag: #cc6666,
+    attribute: #2447c6,
+    number: #CF5A8A,
+    // $css-string-color: #B74706;
+    string: #0089a7,
+    selector-attr: #ff9f00,
+    selector-class: #af44f0,
+    selector-id: #ff00ff,
+
+    meta: rgb(192, 192, 192),
+    name: #ff1c5a
+);
+$codeBold: (
+    keyword,
+    title,
+    selector-tag,
+    selector-class,
+    selector-id,
+    attribute,
+    name
+);
+$codeItalic: (
+    params
+);
+$codeFamily: (
+    keyword: $font-pacifico-family
+);
+
+$codeTags: (
+    js: 'JavaScript',
+    scss: 'SCSS',
+    css: 'CSS',
+    html: 'HTML',
+    bash: 'bash',
+    plain: ''
+);

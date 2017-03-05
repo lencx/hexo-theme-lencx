@@ -1,0 +1,28 @@
+extends ../_partial/_layout
+
+//- postMeta
+include ./_post.meta.pug
+
+
+block content
+    //- blockquote [author[, source]] [link] [source_link_title]
+    article.content
+        h2.post-title= page.title
+
+        +postMeta(page.date, page.tags)
+
+        .post-conent!= page.content
+
+        //- TODO
+        //- share
+        .share
+
+    block toc
+
+    include ../_partial/_pagination.pug
+    +post()
+
+    //- TODO
+    //- commont
+    .commont
+        textarea(placeholder='吐槽!!')

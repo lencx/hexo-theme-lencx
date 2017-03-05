@@ -1,0 +1,18 @@
+//- postMeta
+include ./_post.meta.pug
+
+if page.posts.length > 0
+    - page.posts.each(function (post) {
+    article.post-preview
+        a(href=url_for(post.path))
+            h2.post-title!= post.title
+
+        +postMeta(post.date, post.tags)
+        
+        if post.excerpt
+            .post-excerpt!= post.excerpt
+            //- 判断.md是否有<!--more-->
+            a.post-read-more(href=url_for(post.path))!= theme.excerpt_link
+        else
+            .post-excerpt!= post.content
+    - })

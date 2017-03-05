@@ -1,0 +1,14 @@
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(http-equiv="X-UA-Compatible", content="IE=Edge, chrome=1")
+    //- meta(name='keywords', content=head_keywords())
+    //- meta(name='description', content=head_description())
+    if theme.stylesheets != null
+        each linkcss in theme.stylesheets
+            link(href=url_for(linkcss), rel="stylesheet")
+
+    if theme.scripts != null
+        each script in theme.scripts
+            script(src=url_for(script))
+    title LENCX

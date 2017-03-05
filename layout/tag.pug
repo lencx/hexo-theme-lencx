@@ -1,0 +1,21 @@
+extends ./_partial/_layout
+
+include ./_post/_post.meta.pug
+
+block content
+    //- - console.log(is_tag()) // true
+    .tagCloud
+        h2 Tags Cloud
+        != tagcloud(site.tags, {min_font: 14,max_font: 32,unit: px, order: -1})
+
+    ul.tag
+        if page.posts.length > 0
+            - page.posts.each(function(tag) {
+                li.tag-item(title= tag.title)   
+                    a(href=url_for(tag.path))
+                        span!= tag.title
+                    +postMeta(tag.date, tag.tags)
+            - })
+    if site.posts.length > config.tag_generator.per_page
+        include ./_partial/_pagination.pug
+        +home()

@@ -1,0 +1,13 @@
+footer
+    .copyright
+    - var hexoUrl = 'https://hexo.io'
+    - var lencxUrl = 'https://github.com/lencx/hexo-theme-lencx'
+    - var currentDate = new Date()
+    - var year = currentDate.getFullYear()
+    - year = year == theme.startYear ? year : theme.startYear + '-' + year
+    p © #{year} &nbsp;
+        a(href= config.url)!= config.author 
+        |, Powered by 
+        a(href= hexoUrl, target='_blank') Hexo 
+        | &nbsp;and &nbsp;
+        a(href= lencxUrl, target='_blank') hexo-theme-hazy.

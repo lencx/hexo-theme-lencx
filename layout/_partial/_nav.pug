@@ -1,0 +1,5 @@
+ul
+    - var menu = config.menu || theme.menu
+    each url, label in menu
+        li
+            a(href= url_for(url))= label

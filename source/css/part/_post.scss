@@ -1,0 +1,19 @@
+@import '../variable/_post.conf';
+
+@mixin title-style {
+    @for $i from 1 through 6 {
+        h#{$i} {
+            color: hsl(50*$i, 80%, 60%);
+            // text-shadow: 0 0 #{6-$i*2}px currentColor;
+        }
+    }
+}
+
+article {
+    @include post-layout;
+    @include title-style;
+
+    .post-title, .post-meta {
+        text-align: center;
+    }
+}

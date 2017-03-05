@@ -1,0 +1,15 @@
+extends ./_partial/_layout
+
+block content
+    //- 文章列表页（首页）
+    .article-container
+        include ./_post/_post.item.pug
+
+        include ./_partial/_pagination.pug
+        +home()
+    aside.sidebar
+        include ./_widget/_post.tag.pug
+        include ./_widget/_post.category.pug
+
+    //- span#back-to-top
+    

@@ -1,0 +1,26 @@
+extends ./_partial/_layout
+
+block content
+    if page.title === 'categories'
+        if site.categories.length != 0
+            - site.categories.each(function(category) {
+                h1(style='background: #eee')!= category.name
+                    span(style='color:red') (#{category.length})
+                if category.length >= 1
+                    //- - console.log(category.posts)
+                    ul.category
+                    - category.posts.each(function(post) {
+                        //- - console.log(post.title)
+                        li.category-item
+                            a(href=url_for(post.path))
+                                != post.title
+                    - })
+            - })
+    
+    if page.title === 'tags'
+        .tagCloud
+            != tagcloud(site.tags, {min_font: 14,max_font: 32,unit: px, order: -1})
+
+    else
+        != page.content
+        

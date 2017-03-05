@@ -1,0 +1,6 @@
+//- 文章详情页
+extends ./_post/_post.detail.pug
+
+block toc
+    if toc(page.content).length !== 0
+        aside.article-toc!= toc(page.content)
