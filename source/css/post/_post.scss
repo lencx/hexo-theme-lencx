@@ -1,0 +1,26 @@
+@import '../variable/_post.conf';
+
+%title-style {
+    @for $i from 1 through 6 {
+        h#{$i} {
+            color: hsl(50*$i, 80%, 60%);
+            // text-shadow: 0 0 #{6-$i*2}px currentColor;
+        }
+    }
+}
+
+.article-container {
+    position: relative;
+    width: 75%;
+    article {
+        margin: 10px 0;
+        background: rgba(200, 180, 50, .3);
+        @extend %post-layout;
+        @extend %title-style;
+
+        .post-title, .post-meta {
+            text-align: center;
+        }
+    }
+    transition: all 300ms ease 0s;
+}

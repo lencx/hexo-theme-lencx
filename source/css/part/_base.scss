@@ -2,6 +2,17 @@
 
 html, body {
     overflow-x: hidden;
+    // height: 100vh;
+}
+
+body {
+    background: #f5f5d5;
+    * {
+        box-sizing: border-box;
+    }
+    // animation-name: toBlack;
+	// animation-duration: 3s;
+	// animation-fill-mode: forwards;
 }
 
 ol, ul {
@@ -9,25 +20,40 @@ ol, ul {
 }
 a {
     text-decoration: none;
-}
-
-header {
-    height: 60px;
-    li {
-        margin: 0 20px;
-        float: left;
+    color: rgba(0, 0, 0, .7);
+    position: relative;
+    @include repond('sm', 'min') {
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            background: #f00faa;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 200ms ease-in-out 0s;
+        }
+        @include repond('sm', 'min') {
+            &:hover:before {
+                visibility: visible;
+                transform: scaleX(1);
+            }
+        }
     }
 }
 
 .container {
+    // lost-utility: clearfix;
     position: relative;
-    margin: 0 auto;
+    margin: 60px auto 0 !important;
     width: 90%;
     max-width: 1200px;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     padding: 16px;
     height: auto;
-    @include clear-fix;
+    @extend %clear-fix;
 
     @media screen and (max-width: 1100px) {
         .article-container {
@@ -37,17 +63,14 @@ header {
             display: none;
         }
     }
-}
+    @include repond('xs', 'max') {
+        width: 100%;
+        padding: 2px;
+    }
 
-.article-container {
-    position: relative;
-    width: 80%;
-    article {
-        margin: 10px 0;
-    }
-    .post-title:hover {
-        background: red;
-    }
+    // animation-name: toRed;
+    // animation-duration: 5s;
+    // animation-fill-mode: forwards;
 }
 
 .article-container,
@@ -59,37 +82,32 @@ header {
     position: absolute;
     width: 20%;
     min-width: 250px;
-    right: -50px;
+    right: 0;
     top: 0;
-}
-
-.pagination {
-    text-align: center;
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        display: inline-block;
-        @include square(30px);
-        @include text-center(30px);
-        border: solid 2px green;
-        border-radius: 50%;
-        margin: 5px;
-        a {
-            color: green;
-        }
-        &.current {
-            background: green;
-            a {
-                color: #fff;
-            }
-        }
-    }
 }
 
 .tag-cloud {
     font-family: $font-roboto-family;
+}
+
+#back-to-top {
+    position: fixed;
+    @include square(40px);
+    @include text-center(40px);
+    right: 20px;
+    bottom: 40px;
+    font-size: 2.5em;
+    font-weight: bold;
+    // cursor: pointer;
+    @include repond('sm', 'min') {  
+        &:hover {
+            color: #efefef;
+            text-shadow: 0 0 1px rgb(255, 0, 110),
+                0 -3px 1px rgb(255, 0, 110),
+                0 5px 5px rgba(255, 0, 110, .8);
+                transition: all 200ms;
+        }
+    }
 }
 
 footer {

@@ -8,7 +8,7 @@ block content
         h2 Tags Cloud
         != tagcloud(site.tags, {min_font: 14,max_font: 32,unit: px, order: -1})
 
-    ul.tag
+    ul.tags
         if page.posts.length > 0
             - page.posts.each(function(tag) {
                 li.tag-item(title= tag.title)   

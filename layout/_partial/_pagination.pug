@@ -5,13 +5,19 @@ mixin home()
             if page.prev
                 li.link
                     a(href=url_for(page.prev_link))
-                        i.icon.icon-arror-left <<
+                        //- i.fa.fa-chevron-left
+                        i.fa.fa-angle-double-left
             li.current
                 a #{page.current}
             if page.next
                 li.link
                     a(href=url_for(page.next_link))
-                        i.icon.icon-arror-right >>
+                        //- i.fa.fa-chevron-right
+                        i.fa.fa-angle-double-right
+            span.total
+                | 共
+                != page.total
+                | 页
 
 //- 文章： 上一篇 | 下一篇
 mixin post()
@@ -19,6 +25,10 @@ mixin post()
     - var next = page.next ? page.next.path : false
     .pagination
         if prev
-            a.prev(href=url_for(prev))!= page.prev.title
+            a.prev-post(href=url_for(prev), title!= page.prev.title)
+                i.fa.fa-chevron-circle-left
+                != page.prev.title
         if next
-            a.prev(href=url_for(next))!= page.next.title
+            a.next-post(href=url_for(next), title!= page.next.title)
+                != page.next.title
+                i.fa.fa-chevron-circle-right

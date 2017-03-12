@@ -1,5 +1,27 @@
-ul
+ul.menus
     - var menu = config.menu || theme.menu
     each url, label in menu
         li
-            a(href= url_for(url))= label
+            if /home/i.test(label)
+                i.fa.fa-home
+                a(href= url_for(url))
+                    != label
+            else if /categor/i.test(label)
+                i.fa.fa-th-large
+                a(href= url_for(url))
+                    != label
+            else if /^tag/i.test(label)
+                i.fa.fa-tags
+                a(href= url_for(url))
+                    != label
+            else if /^archive/i.test(label)
+                i.fa.fa-archive
+                a(href= url_for(url))
+                    != label
+            else if /^about/i.test(label)
+                i.fa.fa-address-book
+                a(href= url_for(url))
+                    != label
+            else
+                a(href= url_for(url))
+                    != label

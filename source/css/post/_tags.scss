@@ -1,0 +1,75 @@
+.post-meta {
+    margin: 10px 0;
+}
+
+.post-meta .date:before {
+    margin-right: 5px;
+    color: rgba(0, 0, 0, .5);
+}
+
+.post-meta .tag {
+    border-radius: 5px;
+    display: inline-block;
+    font-family: $font-handlee-family;
+    color: #fff;
+    position: relative;
+    margin-left: 20px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 5px 0 8px;
+    box-shadow: 3px 2px 3px rgba(0, 0, 0, .5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
+    transition: all 300ms ease 0s;
+    &:before,
+    &:after {
+        position: absolute;
+        // display: inline-block;
+        // content: '';
+        @include content(inline-block);
+    }
+    &:before {
+        visibility: visible;
+        border-radius: 5px;
+        @include square(16px);
+        // background: green;
+        transform: rotate(45deg);
+        // vertical-align: -3px;
+        z-index: -1;
+        left: -6px;
+        top: 4px;
+    }
+    &:after {
+        // box-sizing: border-box;
+        @include square(6px);
+        background: #fff;
+        left: -2px;
+        top: 9px;
+        border-radius: 50%;
+        // border: solid 1px #eee;
+        box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .5);
+    }
+}
+
+@include repond('sm', 'min') {
+    .post-meta a.tag:hover {
+        text-decoration: none;
+        color: rgba(245, 245, 0, .8);
+        text-shadow: inset 0 0 5px rgba(255, 255, 255, .8);
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, .2);
+        &:after {
+            background: #f00;
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, .8);
+        }
+    }
+}
+
+@for $i from 1 through 5 {
+    $hsl: hsl($i*60, 80%, 65%);
+    .post-meta .tag:nth-child(5n + #{$i}){
+        transform: rotate(#{random(10)}deg);
+        background: $hsl;
+        &:before {
+            background: $hsl;
+        }
+    }
+}

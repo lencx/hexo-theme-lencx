@@ -32,3 +32,9 @@ code::-moz-selection {
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: rgba(255,0,0,0.4); 
 }
+
+@media screen and (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+}

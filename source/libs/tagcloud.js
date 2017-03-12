@@ -9,6 +9,7 @@ function addLoadEvent(func) {
         }
     }
 }
+
 addLoadEvent(function() {
     console.log('tagCloud plugin rock and roll!');
     try {
@@ -29,7 +30,7 @@ addLoadEvent(function() {
         TagCanvas.fadeIn = 1200;
         TagCanvas.clickToFront = 600;
         TagCanvas.Start('resCanvas');
-        TagCanvas.tc['resCanvas'].Wheel(false)
+        TagCanvas.tc['resCanvas'].Wheel(false);
     } catch (e) {
         console.log(e);
         document.getElementById('tagCloudCanvas').style.display = 'none';

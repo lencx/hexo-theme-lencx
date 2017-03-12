@@ -1,11 +1,19 @@
 extends ./_partial/_layout
 
+//- mixin categoryItem
+//-     - page.posts.each(function(category) {
+//-             li.category-item
+//-                 a(href=url_for(category.path))
+//-                     != category.title
+//-     - })
+
 block content
-    - console.log(page)
+    //- - console.log(page)
     h1!= page.category
-    - page.posts.each(function(category) {
-        ul.category
+    ul.category
+        //- +categoryItem
+        - page.posts.each(function(category) {
             li.category-item
                 a(href=url_for(category.path))
                     != category.title
-    - })
+        - })

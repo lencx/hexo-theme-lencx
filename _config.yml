@@ -5,9 +5,18 @@ language: en
 menu:
   Home: /
   Archives: archives
-  category: categories
-  tags: tags
+  Category: categories
+  Tags: tags
   About: about
+
+logo: /blog/img/at-ico.svg
+
+# 文章小部件
+postMeta:
+  author: true
+  date: true
+  category: true
+  tags: true
 
 tagCloud:
   enable: true
@@ -28,6 +37,8 @@ startYear: 2016
 # stylesheets loaded in the <head>
 stylesheets:
 - '/css/main.css'
+- '/font-awesome-4.7.0/css/font-awesome.min.css'
+# - 'dist/main.76c96d7053d8.css'
 
 # scripts loaded in the end of the body
 # scripts:

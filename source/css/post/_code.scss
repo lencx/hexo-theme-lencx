@@ -1,0 +1,173 @@
+// %theme-black {
+//     figure {
+//         background: rgba(0, 48, 73, .8);
+//         .gutter {
+
+//         }
+//     }
+// }
+// %theme-white {
+
+// }
+
+$code-black: (
+    title: rgba(255, 255, 0, .8),
+    bg: rgba(0, 0, 0, .8),
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5),
+    line-bg: rgba(0, 0, 0, .3),
+    line-color: #fff,
+    line-box-shadow: inset 0 0 5px rgba(0, 0, 0, .5),
+    line-text-shadow: inset 0 0 2px rgba(255, 255, 255, .8)
+);
+
+$code-white: (
+    title: rgba(255, 255, 255, .8),
+    bg: rgba(255, 255, 240, .8),
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5),
+    line-bg: rgba(200, 100, 0, .5),
+    line-color: #efe,
+    line-box-shadow: inset 0 0 5px rgba(0, 0, 0, .5),
+    line-text-shadow: inset 0 0 2px rgba(0, 25, 25, .5)
+);
+
+@mixin code-theme ($theme) {
+    @each $themeKey, $themeVal in $theme {
+        @if $themeKey == 'title' {
+            &:before {
+                color: $themeVal !important;
+            }
+        }
+        @if $themeKey == 'bg' {
+            background: $themeVal;
+        }
+        @if $themeKey == 'box-shadow' {
+            box-shadow: $themeVal;
+        }
+        .gutter {
+            @if $themeKey == 'line-bg' {
+                background: $themeVal;
+            }
+            @if $themeKey == 'line-box-shadow' {
+                box-shadow: $themeVal;
+            }
+            .line {
+                @if $themeKey == 'line-color' {
+                    color: $themeVal;
+                }
+                @if $themeKey == 'line-text-shadow' {
+                    text-shadow: $themeVal;
+                }
+            }
+        }
+    }
+}
+
+@include repond('md', 'max') {
+    figure {
+        margin: 0 !important;
+    }
+    .container {
+        margin: 0 auto;
+    }
+}
+
+figure.black {
+    @include code-theme($code-black);
+}
+
+figure {
+    @include code-theme($code-white);
+    // @include code-theme($code-black);
+}
+
+figure {
+    position: relative;
+    // background: hsla(48, 98%, 47%, .3);
+    border-radius: 10px;
+    // box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    overflow-x: auto;
+    white-space: pre;
+    padding-top: 28px;
+    // margin: 10px 0;
+    .gutter {
+        padding: 3px 5px;
+        // background: rgba(0, 0, 0, .3);
+        border-radius: 5px;
+        user-select: none;
+        // box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
+        .line {
+            padding-right: 2px;
+            width: 16px;
+            height: 24px;
+            // @include text-center(24px);
+            text-align: right;
+            line-height: 24px;
+            font-size: $line-font-size;
+            // color: $line-font-color;
+            font-weight: bold;
+            // text-shadow: 0 0 2px rgba(255, 255, 255, .8);
+        }
+        pre {
+            margin: 0;
+        }
+    }
+    .code {
+        pre {
+            padding: 0 5px;
+            font-family: $code-font-family !important;
+            font-size: 1rem;
+            .line {
+                height: 24px;
+                line-height: 24px;
+                color: $code-default-color;
+                // text-shadow: 0 0 1px rgba(240, 240, 240, .5);
+            }
+        }
+    }
+}
+figure:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    height: 28px;
+    padding: 0 30px 0 10px;
+    font-family: $font-shrikhand-family;
+    font-size: 0.75rem;
+    color: rgba(0, 48, 73, .8);
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 15px;
+    text-indent: 15px;
+    line-height: 28px;
+    background: rgba(255, 25, 25, .5);
+    text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+}
+
+@each $codeColorName, $codeColorVal in $codeColors {
+    figure {
+        .#{$codeColorName} {
+            color: $codeColorVal;
+            @each $bold in $codeBold {
+                @if $bold == $codeColorName {
+                    font-weight: bold;
+                }
+            }
+            @each $italic in $codeItalic {
+                @if $italic == $codeColorName {
+                    font-style: italic;
+                }
+            }
+            @each $familyName, $familyVal in $codeFamily {
+                @if $familyName == $codeColorName {
+                    font-family: $familyVal;
+                }
+            }
+        }
+    }
+}
+
+@each $tagName, $tagVal in $codeTags {
+    figure.#{$tagName}:before {
+        content: '#{$tagVal}';
+    }
+}

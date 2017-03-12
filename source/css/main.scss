@@ -1,12 +1,24 @@
-@import './part/_reset';
+// variable
 @import './variable/_conf';
 @import './variable/_family';
 @import './variable/_code.conf';
+
+// part 
+@import './part/_reset';
+@import './part/_browser';
 @import './part/_mixin';
 @import './part/_base';
-@import './part/_post';
-@import './part/_code';
-@import './part/_browser';
+@import './part/_nav';
+@import './part/_animat';
+
+
+// post
+@import './post/_post';
+@import './post/_pagination';
+@import './post/_code';
+@import './post/_tags';
+@import './post/_archive';
+@import './post/_category';
 
 // 引用bs-grid编译好的栅格，如有需要可自己重新进行编译
 // https://github.com/lencx/bs-grid.git

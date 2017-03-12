@@ -4,8 +4,8 @@ include ./_post.meta.pug
 if page.posts.length > 0
     - page.posts.each(function (post) {
     article.post-preview
-        a(href=url_for(post.path))
-            h2.post-title!= post.title
+        h2.post-title
+            a(href=url_for(post.path))!= post.title
 
         +postMeta(post.date, post.tags)
         

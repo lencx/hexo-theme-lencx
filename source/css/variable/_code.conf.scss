@@ -1,5 +1,5 @@
 $line-font-size: 14px;
-$line-font-color: #fff;
+$line-font-color: rgba(0, 0, 0, .8);
 $code-font-family: "Operator Mono SSm A", "Operator Mono SSm B", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
 // $code-default-color: #005599;
 $code-default-color: #8d742a;
@@ -19,7 +19,8 @@ $codeColors: (
 
     // css
     selector-tag: #cc6666,
-    attribute: #2447c6,
+    // attribute: #2447c6,
+    attribute: #51fd5a,
     number: #CF5A8A,
     // $css-string-color: #B74706;
     string: #0089a7,

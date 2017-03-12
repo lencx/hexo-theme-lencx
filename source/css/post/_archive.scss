@@ -1,0 +1,177 @@
+.archive-time-line {
+    .time-line {
+        padding-top: 100px;
+        [class^='line-'] {
+            position: relative;
+            left: 50%;
+            height: 50px;
+            border-left: solid 3px rgba(0, 0, 0, .3);
+            line-height: 50px;
+            cursor: pointer;
+            @include repond('sm', 'min') {
+                &:hover {
+                    border-color: rgba(227, 75, 116, .8);
+                    .day {
+                        border-color: rgb(227, 75, 116);
+                        // background: rgb(30, 168, 150);
+                        background: rgb(112, 198, 208);
+                        color: rgb(252, 247, 199);
+                        text-shadow: 0 0 2px rgb(49, 8, 31);
+                    }
+                    a {
+                        color: #22d;
+                        background: #faf;
+                        box-shadow: 0 0 2px rgba(0, 75, 116, .8);
+                        &:after {
+                            border-right-color: #faf;
+                        }
+                    }
+                }
+            }
+            a {
+                margin-left: 40px;
+                padding: 5px 10px;
+                background: rgba(232, 197, 71, .5);
+                border-left: none;
+                border-radius: 8px;
+                box-shadow: 3px 3px 15px rgba(227, 75, 116, .8);
+                &:before {
+                    display: none;
+                }
+                &:after {
+                    position: absolute;
+                    left: -8px;
+                    top: 50%;
+                    @include triangle(8px, rgba(232, 197, 71, .5), left);
+                    margin-top: -8px;
+                }
+            }
+            .day {
+                position: absolute;
+                top: 12px;
+                left: -1px;
+                @include square(24px);
+                @include text-center(22px);
+                background: #fff;
+                border: solid 2px rgba(0, 0, 0, .5);
+                border-radius: 50%;
+                box-sizing: border-box;
+                font-size: .75rem;
+            }
+        }
+        [class^='date-'] {
+            position: relative;
+            left: 50%;
+            @include square(50px);
+            @include text-center(50px);
+            border-left: solid 3px rgba(0, 0, 0, .3);
+            .year {
+                position: absolute;
+                left: -27px;
+                top: 0;
+                margin: 0;
+                @include square(50px);
+                @include text-center(47px);
+                border: solid 3px rgb(155, 54, 68);
+                border-radius: 50%;
+                background: rgb(231, 29, 54);
+                color: rgb(255, 253, 152);
+                box-shadow: inset 0 0 10px rgba(255, 255, 255, .4);
+                font-size: 1.1rem;
+                animation: rotate 10s linear infinite;
+                cursor: pointer;
+            }
+            .month {
+                position: absolute;
+                left: -2px;
+                top: 10px;
+                @include square(30px);
+                @include text-center(27px);
+                background: rgb(30, 168, 150);
+                margin: 0 0 0 -15px;
+                border: solid 3px rgb(100, 220, 170);
+                border-radius: 50%;
+                box-shadow: 0 0 5px rgba(246, 247, 235, .5);
+                color: #fff;
+                font-size: 1rem;
+            }
+            .num {
+                display: inline-block;
+                color: #fff;
+                background: rgba(255, 0, 0, .5);
+                @include square(20px);
+                @include text-center(20px);
+                font-size: .75rem;
+                border-radius: 50%;
+                margin-left: -98px;
+                vertical-align: 10px;
+            }
+        }
+    }
+    .line-end {
+        width: 300px;
+        padding: 10px 0;
+        position: absolute;
+        left: 50%;
+        margin: 50px 0 0 -150px;
+        text-align: center;
+        border: solid 2px rgba(200, 10, 0, .2);
+        box-shadow: inset 0 0 20px rgba(155, 75, 116, .8);
+        border-radius: 15px;
+        font-family: $font-roboto-family;
+        color: #ffa;
+        font-weight: bold;
+        text-shadow: 0 0 1px rgba(0, 0, 0, .5), 1px 0 1px rgba(0, 0, 0, .8);
+    }
+    .line-start {
+        position: absolute;
+        left: 50%;
+        margin-left: -7px;
+        background: rgba(0, 0, 0, .3);
+        transform: rotate(45deg);
+        @include square(16px);
+        @include border-left-radius(50%);
+        border-top-right-radius: 50%;
+        animation: heart 3s ease infinite;
+        &:before,
+        &:after {
+            position: absolute;
+            @include content(inline-block);
+            @include square(16px);
+            background: rgba(100, 10, 200, .5);
+        }
+        &:before{
+            left: -8px;
+            top: 0;
+            @include border-left-radius(50%);
+            border-top-right-radius: 50%;
+        }
+        &:after {
+            top: -8px;
+            @include border-top-radius(50%);
+            border-bottom-left-radius: 50%;
+        }
+    }
+
+    @include repond('xs', 'max') {
+        .time-line {
+            [class^='line-'] {
+                 @include single-text(320px);
+            }
+        }
+    }
+    @include repond('sm', 'max') {
+        .time-line {
+            [class^='line-'] {
+                left: 50px;
+            }
+            [class^='date-'] {
+                 left: 50px;
+            }
+        }
+        .line-start {
+            left: 50px;
+            margin-left: -5px;
+        }
+    }
+}

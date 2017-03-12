@@ -9,12 +9,12 @@ block content
                 if category.length >= 1
                     //- - console.log(category.posts)
                     ul.category
-                    - category.posts.each(function(post) {
-                        //- - console.log(post.title)
-                        li.category-item
-                            a(href=url_for(post.path))
-                                != post.title
-                    - })
+                        - category.posts.each(function(post) {
+                            //- - console.log(post.title)
+                            li.category-item
+                                a(href=url_for(post.path))
+                                    != post.title
+                        - })
             - })
     
     if page.title === 'tags'

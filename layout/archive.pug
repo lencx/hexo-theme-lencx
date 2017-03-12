@@ -1,30 +1,48 @@
 extends ./_partial/_layout
 
+//- mixin archiveItem(link, title, month, day)
+//-     .line
+//-         .date(style='color:red;')
+//-             span!= month
+//-             | /
+//-             span!= day
+//-         a(href=url_for(link))!= title
+
 block content
-    p All 
-        != page.posts.length
-        |  Posts In Total
+    section.archive-time-line
+        span.line-end All 
+            != page.posts.length
+            |  Posts In Total
 
-    //- - console.log(site.posts.length)
-    //- - console.log(page.tag)
-    if page.posts.length > 0
-        - var lastY;
-        - page.posts.each(function(archive) {
-            - var thisYear = archive.date.year()
-            - var thisMonth = date(archive.date, 'MM')
-            - var thisDay = date(archive.date, 'DD')
-            if lastY != thisYear
-                h2(style='background: #888')!= thisYear
+        //- - console.log(site.posts.length)
+        //- - console.log(page.tag)
+        section.time-line
+            if page.posts.length > 0
+                - var lastY, lastM;
+                - page.posts.each(function(archive) {
+                    - var thisYear = archive.date.year()
+                    - var thisMonth = date(archive.date, 'MM')
+                    - var thisDay = date(archive.date, 'DD')
+                    if lastY != thisYear
+                        div(class='date-'+thisYear)
+                            h2.year!= thisYear
 
-            if lastY != null
-            - lastY = thisYear
-                p
-                    a(href=url_for(archive.path))!= archive.title
-                    span(style='color:red;')!= thisMonth
-                    | -
-                    span(style='color:green;')!= thisDay
-        - })
-    
-    if site.posts.length > config.archive_generator.per_page
-        include ./_partial/_pagination.pug
-        +home()
+                    if lastY != null
+                    - lastY = thisYear
+                    - var thisLink = archive.path
+                    - var thisTitle = archive.title
+                    //- +archiveItem(thisLink, thisTitle, thisMonth, thisDay)
+                    if lastM != thisMonth
+                        div(class='date-'+thisYear+thisMonth)
+                            h3.month!= thisMonth
+                            span.num
+                    - lastM = thisMonth
+                    div(class='line-'+thisYear+thisMonth+thisDay)
+                        span.day!= thisDay
+                        a(href=url_for(archive.path), title!= archive.title)!= archive.title
+                - })
+        span.line-start
+        
+        if site.posts.length > config.archive_generator.per_page
+            include ./_partial/_pagination.pug
+            +home()

@@ -1,4 +1,4 @@
-@mixin clear-fix {
+%clear-fix {
     &:after {
         content: '';
         display: table;
@@ -7,12 +7,93 @@
     }
 }
 
-@mixin square ($width: 20px) {
-    width: $width;
-    height: $width;
+// triangle
+// :before | :after
+@mixin lr($width) {
+    border-bottom: solid $width transparent;
+    border-top: solid $width transparent;
+}
+@mixin tb($width) {
+    border-left: solid $width transparent;
+    border-right: solid $width transparent;
+}
+@mixin triangle($width, $color, $dir) {
+    content: '';
+    display: inline-block;
+    @if $dir == 'left' {
+        border-right: solid $width $color;
+        @include lr($width);
+    }
+    @if $dir == 'right' {
+        border-left: solid $width $color;
+        @include lr($width);
+    }
+    @if $dir == 'top' {
+        border-bottom: solid $width $color;
+        @include tb($width);
+    }
+    @if $dir == 'bottom' {
+        border-top: solid $width $color;
+        @include tb($width);
+    }
+}
+
+// content or text
+// @param: $block
+// @type: {block | inline-block | inline}
+@mixin content($block: block) {
+    display: $block;
+    content: '';
+}
+
+// single row text ellipsis
+// @param: $width
+@mixin single-text($width) {
+    -o-text-overflow: ellipsis;
+	text-overflow: ellipsis;	  
+	overflow: hidden;
+	white-space: nowrap;
+    max-width: $width;
+}
+
+// multi row text ellipsis
+// @param: $row
+@mixin multi-text($row) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $row;
+    overflow: hidden;
 }
 
 @mixin text-center($line-height: 1em) {
     line-height: $line-height;
     text-align: center;
+}
+
+
+@mixin square($width: 20px) {
+    width: $width;
+    height: $width;
+}
+
+// border-radius
+// @param: $radius
+@mixin border-top-radius($radius) {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
 }
