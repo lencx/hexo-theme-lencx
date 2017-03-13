@@ -2,10 +2,10 @@
     margin: 10px 0;
 }
 
-.post-meta .date:before {
-    margin-right: 5px;
-    color: rgba(0, 0, 0, .5);
-}
+// .post-meta .date:before {
+//     margin-right: 5px;
+//     color: rgba(0, 0, 0, .5);
+// }
 
 .post-meta .tag {
     border-radius: 5px;
@@ -15,7 +15,7 @@
     position: relative;
     margin-left: 20px;
     height: 24px;
-    line-height: 24px;
+    line-height: 25px;
     padding: 0 5px 0 8px;
     box-shadow: 3px 2px 3px rgba(0, 0, 0, .5);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
@@ -25,7 +25,7 @@
         position: absolute;
         // display: inline-block;
         // content: '';
-        @include content(inline-block);
+        @include content;
     }
     &:before {
         visibility: visible;
@@ -71,5 +71,14 @@
         &:before {
             background: $hsl;
         }
+    }
+}
+
+.tagCloud {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+    a {
+        padding: 5px;
     }
 }

@@ -3,4 +3,8 @@ extends ./_post/_post.detail.pug
 
 block toc
     if toc(page.content).length !== 0
-        aside.article-toc!= toc(page.content)
+        aside.post-toc
+            h2#toc-title
+                != theme.post.toc_title
+                i.fa.fa-chevron-circle-down
+            != toc(page.content)

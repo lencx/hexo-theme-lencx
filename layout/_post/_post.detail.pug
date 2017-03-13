@@ -6,7 +6,7 @@ include ./_post.meta.pug
 
 block content
     //- blockquote [author[, source]] [link] [source_link_title]
-    article.content
+    article.post-content
         h2.post-title= page.title
 
         +postMeta(page.date, page.tags)
@@ -20,9 +20,11 @@ block content
     block toc
 
     include ../_partial/_pagination.pug
-    +post()
+    .post-pagination
+        +post()
 
-    //- TODO
-    //- commont
-    .commont
-        textarea(placeholder='吐槽!!')
+    footer.post-foot
+        //- TODO
+        //- commont
+        .commont
+            textarea(placeholder='吐槽!!')

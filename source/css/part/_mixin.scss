@@ -41,7 +41,7 @@
 // content or text
 // @param: $block
 // @type: {block | inline-block | inline}
-@mixin content($block: block) {
+@mixin content($block: inline-block) {
     display: $block;
     content: '';
 }

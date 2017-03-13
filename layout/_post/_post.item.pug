@@ -8,7 +8,6 @@ if page.posts.length > 0
             a(href=url_for(post.path))!= post.title
 
         +postMeta(post.date, post.tags)
-        
         if post.excerpt
             .post-excerpt!= post.excerpt
             //- 判断.md是否有<!--more-->

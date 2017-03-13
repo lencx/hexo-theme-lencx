@@ -15,8 +15,12 @@ logo: /blog/img/at-ico.svg
 postMeta:
   author: true
   date: true
-  category: true
   tags: true
+  # TODO
+  # category: true
+
+post:
+  toc_title: CONTENT
 
 tagCloud:
   enable: true

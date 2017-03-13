@@ -117,7 +117,7 @@ header {
             box-sizing: border-box;
             // display: inline-block;
             // content: '';
-            @include content(inline-block);
+            @include content;
             width: 18px;
             height: 8px;
             border: solid 2px #aaa;
@@ -196,7 +196,8 @@ header {
             width: 100%;
             // left: 0;
             top: 104px;
-            background: rgba(245, 200, 200, .8);
+            // background: rgba(245, 200, 200, .5);
+            background: rgba(0, 0, 0, .7);
             display: none;
             margin: 0;
             &.active {
@@ -232,7 +233,7 @@ header {
             position: absolute;
             top: 62px;
             padding: 5px 20px;
-            background: rgba(245, 200, 200, .8);
+            background: rgba(0, 0, 0, .7);
             &.active {
                 display: block;
             }

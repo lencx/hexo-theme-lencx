@@ -7,6 +7,7 @@ html, body {
 
 body {
     background: #f5f5d5;
+    font-family: $font-base-family;
     * {
         box-sizing: border-box;
     }
@@ -47,15 +48,15 @@ a {
 .container {
     // lost-utility: clearfix;
     position: relative;
-    margin: 60px auto 0 !important;
     width: 90%;
     max-width: 1200px;
-    // box-sizing: border-box;
-    padding: 16px;
     height: auto;
+    min-height: 60vh;
+    padding: 16px;
+    margin: 60px auto 50px !important;
     @extend %clear-fix;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1200px) {
         .article-container {
             width: 100%;
         }
@@ -111,5 +112,6 @@ a {
 }
 
 footer {
+    margin-bottom: 30px;
     text-align: center;
 }

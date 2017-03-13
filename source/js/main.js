@@ -1,13 +1,13 @@
 // import '../css/main.scss'
-// import '../css/hello.scss'
 'use strict'
 // header
 !function() {
-    let $header = $('header')
-    let $menuEl = $header.find('.menu-ico')
-    let $search = $header.find('.search')
-    let $menu = $header.find('.menus')
-    let $winTop_1 = 0
+    let $header, $menuEl, $search, $menu, $winTop_1
+    $header = $('header')
+    $menuEl = $header.find('.menu-ico')
+    $search = $header.find('.search')
+    $menu = $header.find('.menus')
+    $winTop_1 = 0
     function preventDefault(e) {
         e.preventDefault();
     }
@@ -30,16 +30,18 @@
     })
 }()
 
+// time-line
 !function() {
-    let $timeLine = $('.archive-time-line')
-    let $year = $timeLine.find('.year')
-    let $month = $timeLine.find('.month')
+    let $timeLine, $year,  $month
+    $timeLine = $('.archive-time-line')
+    $year = $timeLine.find('.year')
+    $month = $timeLine.find('.month')
     $year.each((i, el) => {
         let $yt = $(el).html()
         $month.each((i, el) => {
             let $mt = $(el).html()
             $timeLine.find('[class^="line-'+$yt+$mt+'"]').each(() => {
-                var postNum = $timeLine.find('[class^="line-'+$yt+$mt+'"]').length
+                let postNum = $timeLine.find('[class^="line-'+$yt+$mt+'"]').length
                 $('.date-'+$yt+$mt+' .num').html(postNum)
             })
         })
@@ -48,6 +50,63 @@
                 $(el).slideToggle(1000)
             })
         })
+    })
+}()
+
+// psot-toc
+!function() {
+    const SPAC = 80
+    let $toc, $foot, maxScrollTop, H, $tocLink, $headerLink, $headerLinkTop, $tocTitle, $tocEl
+
+    $toc = $('.post-toc')
+    $foot = $('.post-foot')
+    $toc.length
+        ? maxScrollTop = $foot.offset().top - $toc.height()
+        : false
+    $(window).on('scroll', () => {
+        let scrollTop = $(window).scrollTop()
+        scrollTop > maxScrollTop
+            ? $toc.fadeOut()
+            : $toc.fadeIn()
+    })
+
+    H = 100
+    $tocLink = $toc.find('.toc-link')
+    $headerLink = $('.post-content .headerlink')
+    $headerLinkTop = $.map($headerLink, (link) => {
+        return $(link).offset().top
+    })
+    // console.log($tocLink)
+    // console.log($headerLinkTop)
+    $(window).on('scroll', () => {
+        let scrollTop = $(window).scrollTop()
+        for(let i=0, len=$tocLink.length; i<len; i++) {
+            let isLastOne = i+1 === len
+            let currentTop = $headerLinkTop[i] - H
+            let nextTop = isLastOne ? Infinity : $headerLinkTop[i+1] - H
+            currentTop < scrollTop && scrollTop <= nextTop
+                ? $($tocLink[i]).addClass('active')
+                : $($tocLink[i]).removeClass('active')
+        }
+    })
+
+    $tocTitle = $toc.find('#toc-title')
+    $tocEl = $toc.find('ol.toc')
+    $tocTitle.on('click', () => {
+        $tocTitle.toggleClass('off')
+        $tocEl.slideToggle(800)
+
+        let $i, iDown, iUp
+        $i = $tocTitle.find('i')
+        iDown = 'fa-chevron-circle-down'
+        iUp = 'fa-chevron-circle-up'
+        if($tocTitle.hasClass('off')) {
+            $i.removeClass(iDown)
+            $i.addClass(iUp)
+        } else {
+            $i.removeClass(iUp)
+            $i.addClass(iDown)
+        }
     })
 }()
 
@@ -63,18 +122,3 @@ $(document).ready(function(){
         $("html, body").animate({scrollTop: 0}, 800)
     })
 })
-
-// $(document).ready(function(){
-// 	$('article').textillate({  
-// 		initialDelay: 100,
-// 		loop: false,
-// 		in: {
-// 			effect: 'fadeInUp',
-// 			delayScale: .4,
-// 			delay: 6, 
-// 			sync: false,
-// 			shuffle: true
-// 		},
-// 		type: 'word'
-// 	});
-// });

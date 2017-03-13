@@ -1,19 +1,19 @@
-extends ./_partial/_layout
-
-//- mixin categoryItem
-//-     - page.posts.each(function(category) {
-//-             li.category-item
-//-                 a(href=url_for(category.path))
-//-                     != category.title
-//-     - })
-
-block content
-    //- - console.log(page)
-    h1!= page.category
-    ul.category
-        //- +categoryItem
-        - page.posts.each(function(category) {
-            li.category-item
-                a(href=url_for(category.path))
-                    != category.title
-        - })
+if site.categories.length != 0
+    - site.categories.each(function(category) {
+        h2.title!= category.name
+            span.num (#{category.length})
+        if category.length >= 1
+            //- - console.log(category.posts)
+            ul.category
+                - category.posts.each(function(post) {
+                    //- - console.log(post.title)
+                    - var year = date(post.date, "YYYY")
+                    - var month = date(post.date, 'MM')
+                    - var day = date(post.date, 'DD')
+                    li
+                        i.date!= year+'-'+month+'-'+day
+                        a(href=url_for(post.path))
+                            != post.title
+                - })
+        hr
+    - })

@@ -2,6 +2,7 @@
 @import './variable/_conf';
 @import './variable/_family';
 @import './variable/_code.conf';
+@import './variable/_post.conf';
 
 // part 
 @import './part/_reset';
@@ -19,6 +20,8 @@
 @import './post/_tags';
 @import './post/_archive';
 @import './post/_category';
+@import './post/_post.detail';
+@import './post/_toc';
 
 // 引用bs-grid编译好的栅格，如有需要可自己重新进行编译
 // https://github.com/lencx/bs-grid.git

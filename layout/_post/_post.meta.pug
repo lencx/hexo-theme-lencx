@@ -1,13 +1,13 @@
-mixin postMeta(date, tags)
+mixin postMeta(date, tags, categories)
     .post-meta
         if theme.postMeta.author
             span.author
-                i.fa.fa-pencil
+                i.fa.fa-user-circle-o
                 a(href=url_for(config.about_author_url))!= config.author
         if theme.postMeta.date
-            span.date.fa.fa-calendar #{full_date(date, 'YYYY-MM-DD')}
-        if theme.postMeta.category
-            span category
+            span.date
+                i.fa.fa-calendar
+                #{full_date(date, 'YYYY-MM-DD')}
         if theme.postMeta.tags
             if tags
                 - tags.each(function(tag) {

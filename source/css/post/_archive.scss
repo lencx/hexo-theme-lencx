@@ -136,7 +136,7 @@
         &:before,
         &:after {
             position: absolute;
-            @include content(inline-block);
+            @include content;
             @include square(16px);
             background: rgba(100, 10, 200, .5);
         }
