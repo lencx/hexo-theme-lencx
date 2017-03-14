@@ -8,12 +8,12 @@ mixin postMeta(date, tags, categories)
         if theme.postMeta.date
             span.date
                 i.fa.fa-calendar
-                #{full_date(date, 'YYYY-MM-DD')}
+                != full_date(date, 'YYYY-MM-DD')
 
         if theme.postMeta.category && categories.length && is_tag() !== true
             span.category
+                i.fa.fa-th-large
                 a(href=url_for(categories.data[0].path))!= categories.data[0].name
-
 
         if theme.postMeta.tags && tags
             - tags.each(function(tag) {

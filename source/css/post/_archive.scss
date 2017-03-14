@@ -86,7 +86,7 @@
                 left: -2px;
                 top: 10px;
                 @include square(30px);
-                @include text-center(27px);
+                @include text-center(24px);
                 background: rgb(30, 168, 150);
                 margin: 0 0 0 -15px;
                 border: solid 3px rgb(100, 220, 170);
@@ -156,7 +156,7 @@
     @include repond('xs', 'max') {
         .time-line {
             [class^='line-'] {
-                 @include single-text(320px);
+                 @include single-text(85%);
             }
         }
     }
@@ -171,7 +171,7 @@
         }
         .line-start {
             left: 50px;
-            margin-left: -5px;
+            margin-left: 9px;
         }
     }
 }

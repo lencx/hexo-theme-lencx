@@ -1,6 +1,6 @@
 .post-content {
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     .post-title {
         text-align: center;
     }
@@ -9,29 +9,16 @@
     }
 }
 .post-pagination .pagination {
-    border-top: solid 2px #aaa;
+    box-shadow: inset 0 0 25px rgba(100, 100, 0, .3),
+        0 0 15px rgba(240, 200, 100, .5);
+    border-radius: 15px;
     padding: 10px;
-    width: 80%;
-    margin: 10px auto 0;
+    width: 96%;
+    margin: 10px auto 15px;
 }
 
-.post-foot {
-    height: 600px;
-}
-
-@include repond('xs', 'max') {
+@include repond('md', 'max') {
     .post-content {
-        width: 90%;
+        width: 98%;
     }
 }
-// @include repond('md', 'min') {
-//     .post-content {
-//         width: 75%;
-//     }
-//     .post-pagination .pagination {
-//         border-top: solid 2px #aaa;
-//         padding: 10px;
-//         width: 75%;
-//         margin: auto 0;
-//     }
-// }

@@ -1,7 +1,8 @@
 // import '../css/main.scss'
 'use strict'
-// header
+// header 
 !function() {
+    // menu
     let $header, $menuEl, $search, $menu, $winTop_1
     $header = $('header')
     $menuEl = $header.find('.menu-ico')
@@ -19,6 +20,7 @@
             ? $(window).on('wheel', preventDefault)
             : $(window).off('wheel', preventDefault)
     })
+    // scroll => header [show|hide]
     $(window).on('scroll', () => {
         let $winTop_2 = $(window).scrollTop()
         if ($winTop_2 > $winTop_1 && $winTop_2 > 500) {
@@ -53,8 +55,9 @@
     })
 }()
 
-// psot-toc
+// post-toc
 !function() {
+    // scroll => toc[show|hide]
     const SPAC = 80
     let $toc, $foot, maxScrollTop, H, $tocLink, $headerLink, $headerLinkTop, $tocTitle, $tocEl
 
@@ -70,12 +73,14 @@
             : $toc.fadeIn()
     })
 
+    // scroll => toc status
     H = 100
     $tocLink = $toc.find('.toc-link')
     $headerLink = $('.post-content .headerlink')
     $headerLinkTop = $.map($headerLink, (link) => {
         return $(link).offset().top
     })
+
     // console.log($tocLink)
     // console.log($headerLinkTop)
     $(window).on('scroll', () => {
@@ -90,6 +95,7 @@
         }
     })
 
+    // toc list[on|off]
     $tocTitle = $toc.find('#toc-title')
     $tocEl = $toc.find('ol.toc')
     $tocTitle.on('click', () => {
@@ -115,10 +121,25 @@ $(document).ready(function(){
     $backToTop.hide()
     $(window).on('scroll', () => {
         $(this).scrollTop() > 500
-            ? $backToTop.fadeIn(1200)
-            : $backToTop.fadeOut(1200)
+            ? $backToTop.fadeIn(900)
+            : $backToTop.fadeOut(800)
     });
     $backToTop.on('click', (e) => {
         $("html, body").animate({scrollTop: 0}, 800)
     })
 })
+
+!function() {
+    let $figure = $('figure')
+    let $theme = '<span class="theme">theme[white]<span>'
+    $figure.append($theme)
+    let themeList = $figure.find('.theme')
+    themeList.each(i => {
+        $(themeList[i]).on('click', () => {
+            $(themeList[i]).parent().toggleClass('black')
+            $(themeList[i]).parent().hasClass('black')
+                ? $(themeList[i]).html('theme[black]')
+                : $(themeList[i]).html('theme[white]')
+        })
+    })
+}()
