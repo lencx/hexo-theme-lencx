@@ -17,7 +17,7 @@ block content
         //- - console.log(site.posts.length)
         //- - console.log(page.tag)
         section.time-line
-            if page.posts.length > 0
+            if page.posts.length
                 - var lastY, lastM;
                 - page.posts.each(function(archive) {
                     - var thisYear = archive.date.year()

@@ -1,13 +1,12 @@
-//- postMeta
 include ./_post.meta.pug
 
-if page.posts.length > 0
+if page.posts.length
     - page.posts.each(function (post) {
     article.post-preview
         h2.post-title
             a(href=url_for(post.path))!= post.title
 
-        +postMeta(post.date, post.tags)
+        +postMeta(post.date, post.tags, post.categories)
         if post.excerpt
             .post-excerpt!= post.excerpt
             //- 判断.md是否有<!--more-->

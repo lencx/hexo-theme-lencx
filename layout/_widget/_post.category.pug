@@ -1,6 +1,6 @@
 .category
     h2 Category
-    if site.categories.length != 0
+    if site.categories.length
         ul.category-sidebar
             - site.categories.each(function(category) {
                 li

@@ -17,7 +17,7 @@ postMeta:
   date: true
   tags: true
   # TODO
-  # category: true
+  category: true
 
 post:
   toc_title: CONTENT

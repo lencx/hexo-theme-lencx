@@ -1,18 +1,26 @@
 mixin postMeta(date, tags, categories)
     .post-meta
-        if theme.postMeta.author
+        if theme.postMeta.author && is_tag() !== true
             span.author
                 i.fa.fa-user-circle-o
                 a(href=url_for(config.about_author_url))!= config.author
+
         if theme.postMeta.date
             span.date
                 i.fa.fa-calendar
                 #{full_date(date, 'YYYY-MM-DD')}
-        if theme.postMeta.tags
-            if tags
-                - tags.each(function(tag) {
-                    if is_tag()
-                        span.tag!= tag.name
-                    else
-                        a.tag(href=url_for(tag.path))= tag.name
-                - })
+
+        if theme.postMeta.category && categories.length && is_tag() !== true
+            span.category
+                a(href=url_for(categories.data[0].path))!= categories.data[0].name
+
+
+        if theme.postMeta.tags && tags
+            - tags.each(function(tag) {
+                if is_tag()
+                    span.tag!= tag.name
+                else
+                    a.tag(href=url_for(tag.path))= tag.name
+            - })
+        //- - console.log(categories)
+        //- - console.log(tags)

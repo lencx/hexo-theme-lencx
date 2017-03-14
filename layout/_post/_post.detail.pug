@@ -1,15 +1,12 @@
 extends ../_partial/_layout
-
-//- postMeta
 include ./_post.meta.pug
-
 
 block content
     //- blockquote [author[, source]] [link] [source_link_title]
     article.post-content
         h2.post-title= page.title
 
-        +postMeta(page.date, page.tags)
+        +postMeta(page.date, page.tags, page.categories)
 
         .post-conent!= page.content
 

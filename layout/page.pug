@@ -1,9 +1,8 @@
 extends ./_partial/_layout
 
 block content
-    if page.title === 'categories'
-        .post-category
-            include ./category.pug
+    if page.title === 'categories'  
+        include ./_post/_category.pug
     
     if page.title === 'tags'
         .tagCloud

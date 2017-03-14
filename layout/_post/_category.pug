@@ -1,0 +1,27 @@
+mixin category(category)
+    h2.title!= category.name
+        span.num (#{category.length})
+    if category.length
+        ul.category
+            - category.posts.each(function(post) {
+                //- - console.log(post.title)
+                - var year = date(post.date, "YYYY")
+                - var month = date(post.date, 'MM')
+                - var day = date(post.date, 'DD')
+                li
+                    i.date!= year+'-'+month+'-'+day
+                    a(href=url_for(post.path))
+                        != post.title
+            - })
+
+//- - console.log(is_category())
+.post-category
+    if site.categories.length
+        - site.categories.each(function(category) {
+            if is_category()
+                if category.name === page.category
+                    +category(category)                
+            else
+                +category(category)
+                hr
+        - })
