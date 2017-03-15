@@ -1,10 +1,11 @@
 .category
-    h2 Category
+    h2
+        i.fa.fa-th-large
+        | Category
     if site.categories.length
         ul.category-sidebar
             - site.categories.each(function(category) {
                 li
-                    a(href=url_for(category.path))
-                        span.name!= category.name
-                            span.num (#{category.length})
+                    a(href=url_for(category.path))!= category.name
+                    span.num (#{category.length})
             - })

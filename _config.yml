@@ -42,7 +42,7 @@ startYear: 2016
 stylesheets:
 - /css/main.css
 - /font-awesome-4.7.0/css/font-awesome.min.css
-# - /fancybox-3.0/dist/jquery.fancybox.min.css
+- /fancybox-3.0/dist/jquery.fancybox.min.css
 # - 'dist/main.76c96d7053d8.css'
 
 # scripts loaded in the end of the body
@@ -51,7 +51,7 @@ scripts:
 
 scripts_foot:
 - /js/main.js
-# - /fancybox-3.0/dist/jquery.fancybox.min.js
+- /fancybox-3.0/dist/jquery.fancybox.min.js
 
 disqus:
   disqus_shortname: lencx

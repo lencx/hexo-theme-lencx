@@ -33,7 +33,7 @@
 }()
 
 // time-line
-!function() {
+$(function() {
     let $timeLine, $year,  $month
     $timeLine = $('.archive-time-line')
     $year = $timeLine.find('.year')
@@ -53,10 +53,10 @@
             })
         })
     })
-}()
+})
 
 // post-toc
-!function() {
+$(function() {
     // scroll => toc[show|hide]
     const SPAC = 80
     let $toc, $foot, maxScrollTop, H, $tocLink, $headerLink, $headerLinkTop, $tocTitle, $tocEl
@@ -115,9 +115,9 @@
             $i.addClass(iDown)
         }
     })
-}()
+})
 
-$(document).ready(function(){
+$(function(){
     let $backToTop = $("#back-to-top")
     $backToTop.hide()
     $(window).on('scroll', () => {
@@ -130,7 +130,8 @@ $(document).ready(function(){
     })
 })
 
-!function() {
+// code theme
+$(function() {
     let $figure = $('figure')
     let $theme = '<span class="theme">theme[white]<span>'
     $figure.append($theme)
@@ -143,13 +144,34 @@ $(document).ready(function(){
                 : $(themeList[i]).html('theme[white]')
         })
     })
-}()
+})
 
-// TODO: images
-// $(document).ready(function(){
-//     let $postImg = $('article img')
-//     console.log($postImg)
-//     $postImg.each(i => {
-//         $($postImg[i]).attr('data-fancybox', '')
-//     })
-// })
+// fancybox
+$(function(){
+    let $postImg = $('article').find('img')
+    $postImg.each(i => {
+        let _this, src, title
+        _this = $($postImg[i])
+        src = $(_this).attr('src')
+        title = $(_this).parents('article').find('.post-title').text()
+        _this.wrap('<a data-fancybox="'+ title +'" href="'+ src +'" data-width="2048" data-height="1365"></a>')
+    })
+    $('[data-fancybox]').fancybox({
+        image : {
+            protect: true
+        }
+    })
+})
+
+// tagCloud font color
+$(function(){
+    let $tag = $('.tagCloud').find('a')
+    $tag.each((i) => {
+        let random, deg, alpha, color
+        random = Math.random().toFixed(2)
+        deg = Math.ceil(Math.random()*360)
+        alpha = random < .4 ? .8 : random
+        color = 'hsla('+deg+', 70%, 60%,'+alpha+')'
+        $($tag[i]).css('color', color)
+    })
+})
