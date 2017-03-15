@@ -27,6 +27,11 @@ $code-white: (
         }
         @if $themeKey == 'bg' {
             background: $themeVal;
+            table {
+                tr {
+                    background: $themeVal !important;
+                }
+            }
         }
         @if $themeKey == 'box-shadow' {
             box-shadow: $themeVal;
@@ -50,20 +55,13 @@ $code-white: (
     }
 }
 
-@include repond('md', 'max') {
-    // figure {
-    //     margin: 0 !important;
-    // }
-    .container {
-        margin: 0 auto;
-    }
-}
-
 figure .theme {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 5px 8px 5px 20px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 8px 0 20px;
     border-bottom-left-radius: 20px;
     cursor: pointer;
     background: rgba(255, 25, 25, .5);
@@ -101,10 +99,6 @@ figure.black {
 
 figure {
     @include code-theme($code-white);
-    // @include code-theme($code-black);
-}
-
-figure {
     position: relative;
     // background: hsla(48, 98%, 47%, .3);
     border-radius: 10px;
@@ -113,17 +107,25 @@ figure {
     white-space: pre;
     padding-top: 28px;
     margin: 10px 0;
+    table, th, td {
+        border: none;
+    }
+    > table {
+        margin: 0;
+        th, td, tr {
+            padding: 0;
+            text-align: left;
+            border-collapse: separate;
+        }
+    }
     .gutter {
-        padding: 3px 5px;
+        width: 16px;
         // background: rgba(0, 0, 0, .3);
         border-radius: 5px;
         user-select: none;
         // box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
         .line {
-            // padding-right: 2px;
-            min-width: 16px;
             height: 24px;
-            // @include text-center(24px);
             text-align: right;
             line-height: 24px;
             font-size: $line-font-size;
@@ -133,6 +135,8 @@ figure {
         }
         pre {
             margin: 0;
+            float: right;
+            padding: 0 3px 0 5px;
         }
     }
     .code {
@@ -148,9 +152,6 @@ figure {
             }
         }
     }
-    // table {
-    //     overflow-x: auto;
-    // }
 }
 figure:before {
     position: absolute;

@@ -26,9 +26,11 @@ $md-min: $screen-desktop-min;
 $lg: $screen-lg-desktop;
 $lg-min: $screen-lg-desktop-min;
 
-
-// @param:      max | min       || [min: name]
-// @param2: xs | sm | md | lg   || [max: name]
+/// media
+/// @author lencx
+/// @access public
+/// @param {xs|sm|md|lg}
+/// @param {max|min}
 @mixin repond($param, $param2) {
     @if($param2 == 'max') {
         @if($param == 'xs') {

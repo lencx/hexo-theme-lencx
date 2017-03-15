@@ -1,7 +1,8 @@
 // post font
 $post-font-color: #333;
 $post-font-family: 'Roboto';
-$post-font-size: 14px;
+$post-font-size: 1rem;
+$post-line-height: 1.33rem;
 
 // post border
 $post-border-width: 2px;
@@ -11,11 +12,30 @@ $post-border-radius: 16px;
 // post content
 $post-padding: 16px;
 
+// s: font-size
+// l: line-height
+$title-font: (
+    h1: (s:2rem, l:2.2rem),
+    h2: (s:1.5rem, l:1.75rem),
+    h3: (s:1.33rem, l:1.5rem),
+    h4: (s:1rem, l:1.33rem),
+    h5: (s:.87rem, l:1.17rem),
+    h6: (s:.75rem, l:1rem)
+);
+
+@each $key, $val in $title-font {
+    #{$key} {
+        font-size: map-deep-get($title-font, $key, s);
+        line-height: map-deep-get($title-font, $key, l);
+    }
+}
+
 %post-layout {
     box-sizing: border-box;
     color: $post-font-color;
     font-family: $post-font-family;
     font-size: $post-font-size;
+    line-height: $post-line-height;
     // border: solid $post-border-width $post-border-color;
     border-radius: $post-border-radius;
     padding: $post-padding;
@@ -25,8 +45,93 @@ $post-padding: 16px;
 %title-style {
     @for $i from 1 through 6 {
         h#{$i} {
-            color: hsl(50*$i, 80%, 60%);
-            // text-shadow: 0 0 #{6-$i*2}px currentColor;
+            color: hsl(50*$i, 70%, 50%);
         }
+    }
+}
+
+article {
+    .post-title {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+    }
+    code {
+        background: #fac;
+        padding: 3px 5px;
+        border-radius: 5px;
+    }
+    em {
+        font-family: $font-handlee-family;
+    }
+    strong {
+        color: #423;
+    }
+    blockquote {
+        color: #878;
+        margin: 0;
+        padding: 5px;
+        border-left: solid 3px #a3f;
+        box-shadow: inset -1px 0px 5px rgba(0, 0, 0, .3);
+        p {
+            margin: 0;
+        }
+    }
+    ol, ul {
+        padding-left: 20px;
+    }
+    ul {
+        list-style-type: disc;
+        ul {
+            list-style-type: circle;
+        }
+        ol {
+            list-style-type: lower-alpha;
+        }
+    }
+    ol {
+        list-style-type: decimal-leading-zero;
+        ul {
+            list-style-type: circle;
+        }
+        ol {
+            list-style-type: lower-alpha;
+        }
+    }
+    table, th, td {
+        border: 2px solid #9a9;
+        border-collapse: collapse;
+    }
+    table {
+        width: 100%;
+        margin-top: 8px;
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+        tr:nth-child(2n) {
+            background-color: #f1f1c1 !important;
+        }
+        tr:nth-child(2n+1) {
+            background-color: #f2f2aa;
+        }
+        thead {
+            tr {
+                background-color: #cdc !important;
+            }
+            th {
+                border-bottom: 3px solid #555;
+            }
+        }
+    }
+    a {
+        text-decoration: underline;
+        color: #c82;
+    }
+    img {
+        display: block;
+        // max-width: 360px;
+        max-width: 100%;
+        border-radius: 10px;
+        height: auto;
     }
 }

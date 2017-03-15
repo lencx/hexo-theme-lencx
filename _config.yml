@@ -40,17 +40,21 @@ startYear: 2016
 
 # stylesheets loaded in the <head>
 stylesheets:
-- '/css/main.css'
-- '/font-awesome-4.7.0/css/font-awesome.min.css'
+- /css/main.css
+- /font-awesome-4.7.0/css/font-awesome.min.css
+# - /fancybox-3.0/dist/jquery.fancybox.min.css
 # - 'dist/main.76c96d7053d8.css'
 
 # scripts loaded in the end of the body
-# scripts:
+scripts:
+- /libs/jquery-3.1.1.min.js
 
 scripts_foot:
-- /libs/jquery-3.1.1.min.js
 - /js/main.js
-
+# - /fancybox-3.0/dist/jquery.fancybox.min.js
 
 disqus:
   disqus_shortname: lencx
+
+analytics:
+  google_analytics: UA-92360738-1

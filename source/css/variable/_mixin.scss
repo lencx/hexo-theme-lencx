@@ -7,6 +7,19 @@
     }
 }
 
+/// Map deep get
+/// @author lencx
+/// @access public
+/// @param {map} $map
+/// @param {arglist} $keys - key chain
+/// @return {*} desired value
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
 // triangle
 // :before | :after
 @mixin lr($width) {
@@ -38,16 +51,20 @@
     }
 }
 
-// content or text
-// @param: $block
-// @type: {block | inline-block | inline}
+/// content or text
+/// @author lencx
+/// @access public
+/// @param {$block}
+/// @type {block | inline-block | inline}
 @mixin content($block: inline-block) {
     display: $block;
     content: '';
 }
 
-// single row text ellipsis
-// @param: $width
+/// single row text ellipsis
+/// @author lencx
+/// @access public
+/// @param {width} $width => max-width
 @mixin single-text($width) {
     -o-text-overflow: ellipsis;
 	text-overflow: ellipsis;	  
@@ -56,8 +73,10 @@
     max-width: $width;
 }
 
-// multi row text ellipsis
-// @param: $row
+/// multi row text ellipsis
+/// @author lencx
+/// @access public
+/// @param {row} $row
 @mixin multi-text($row) {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -65,19 +84,28 @@
     overflow: hidden;
 }
 
+/// text center
+/// @author lencx
+/// @access public
+/// @param {line-height} $line-height
 @mixin text-center($line-height: 1em) {
     line-height: $line-height;
     text-align: center;
 }
 
-
+/// square
+/// @author lencx
+/// @access public
+/// @param {width} $width
 @mixin square($width: 20px) {
     width: $width;
     height: $width;
 }
 
-// border-radius
-// @param: $radius
+/// border-radius
+/// @author lencx
+/// @access public
+/// @param {radius} $radius
 @mixin border-top-radius($radius) {
     border-top-left-radius: $radius;
     border-top-right-radius: $radius;

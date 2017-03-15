@@ -1,13 +1,13 @@
-@import './_media';
-
 html, body {
     overflow-x: hidden;
     // height: 100vh;
 }
 
 body {
-    background: #f5f5d5;
+    background: $bg;
     font-family: $font-base-family;
+    font-size: $font-base-size;
+    color: $font-base-color;
     * {
         box-sizing: border-box;
     }
@@ -53,7 +53,7 @@ a {
     height: auto;
     min-height: 70vh;
     padding: 16px;
-    margin: 60px auto 50px !important;
+    margin: 70px auto 50px !important;
     @extend %clear-fix;
 
     @media screen and (max-width: 1200px) {
@@ -66,9 +66,8 @@ a {
     }
     @include repond('xs', 'max') {
         width: 100%;
-        // padding: 2px;
+        padding: 0;
     }
-
     // animation-name: toRed;
     // animation-duration: 5s;
     // animation-fill-mode: forwards;

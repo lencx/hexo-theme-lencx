@@ -17,7 +17,6 @@
         padding: 0;
         margin-top: 0;
         li {
-            // height: 30px;
             padding: 0 0 5px 0;
             .date {
                 margin-right: 10px;
@@ -25,14 +24,11 @@
                 font-size: 14px;
                 color: rgba(0, 0, 0, .4);
                 text-shadow: 0 0 1px rgba(200, 20, 100, .3);
-                // line-height: 30px;
-                // vertical-align: bottom;
             }
             a {
                 display: inline-block;
                 // height: 100%;
                 padding: 0 5px;
-                // line-height: 30px;
                 color: rgba(0, 100, 240, .9);
                 font-weight: bold;
                 text-shadow: 1px 0 1px rgba(50, 160, 180, .6),

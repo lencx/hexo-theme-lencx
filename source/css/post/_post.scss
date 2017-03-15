@@ -6,17 +6,36 @@
         background: rgba(200, 180, 50, .3);
         @extend %post-layout;
         @extend %title-style;
-
-        .post-title, .post-meta {
-            text-align: center;
-        }
     }
     transition: all 300ms ease 0s;
 }
 
 .article-container,
 .post-content {
+    .post-title, .post-meta {
+        text-align: center;
+        a {
+            text-decoration: none;
+        }
+    }
+    .post-title {
+        a {
+            color: rgba(0, 0, 0, 0.7);
+        }
+    }
     .post-meta {
+        .author {
+            font-family: $font-pacifico-family;
+            a {
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        .category {
+            font-family: $font-shrikhand-family;
+            a {
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
         .fa {
             margin: 0 5px 0 8px;
             // color: rgba(50, 100, 50, .3);

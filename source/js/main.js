@@ -64,7 +64,8 @@
     $toc = $('.post-toc')
     $foot = $('.post-foot')
     $toc.length
-        ? maxScrollTop = $foot.offset().top - $toc.height()
+        // ? maxScrollTop = $foot.offset().top - $toc.height()
+        ? maxScrollTop = $foot.offset().top
         : false
     $(window).on('scroll', () => {
         let scrollTop = $(window).scrollTop()
@@ -143,3 +144,12 @@ $(document).ready(function(){
         })
     })
 }()
+
+// TODO: images
+// $(document).ready(function(){
+//     let $postImg = $('article img')
+//     console.log($postImg)
+//     $postImg.each(i => {
+//         $($postImg[i]).attr('data-fancybox', '')
+//     })
+// })

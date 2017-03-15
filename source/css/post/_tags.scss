@@ -2,11 +2,6 @@
     margin: 10px 0;
 }
 
-// .post-meta .date:before {
-//     margin-right: 5px;
-//     color: rgba(0, 0, 0, .5);
-// }
-
 .post-meta .tag {
     border-radius: 5px;
     display: inline-block;
@@ -23,8 +18,6 @@
     &:before,
     &:after {
         position: absolute;
-        // display: inline-block;
-        // content: '';
         @include content;
     }
     &:before {
@@ -33,7 +26,6 @@
         @include square(16px);
         // background: green;
         transform: rotate(45deg);
-        // vertical-align: -3px;
         z-index: -1;
         left: -6px;
         top: 4px;
