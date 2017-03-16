@@ -36,11 +36,9 @@ a {
             transform: scaleX(0);
             transition: all 200ms ease-in-out 0s;
         }
-        @include repond('sm', 'min') {
-            &:hover:before {
-                visibility: visible;
-                transform: scaleX(1);
-            }
+        &:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
         }
     }
 }
@@ -53,7 +51,7 @@ a {
     height: auto;
     min-height: 70vh;
     padding: 16px;
-    margin: 70px auto 50px !important;
+    margin: 80px auto 50px !important;
     @extend %clear-fix;
 
     @media screen and (max-width: 1200px) {
@@ -93,7 +91,7 @@ a {
             text-shadow: 0 0 1px rgb(255, 0, 110),
                 0 -3px 1px rgb(255, 0, 110),
                 0 5px 5px rgba(255, 0, 110, .8);
-                transition: all 200ms;
+            transition: all 200ms;
         }
     }
 }

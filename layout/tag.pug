@@ -7,15 +7,16 @@ block content
     //- .tagCloud
     //-     h2 Tags Cloud
     //-     != tagcloud(site.tags, {min_font: 14,max_font: 32,unit: px, order: -1})
-    h2!= page.tag
-    ul.tags
-        if page.posts.length > 0
-            - page.posts.each(function(tag) {
-                li.tag-item(title= tag.title)   
-                    a(href=url_for(tag.path))
-                        span!= tag.title
-                    +postMeta(tag.date, tag.tags, tag.categories)
-            - })
-    if site.posts.length > config.tag_generator.per_page
-        include ./_partial/_pagination.pug
-        +home()
+    .tags-list
+        h2.tag-title!= page.tag
+        ul.tags
+            if page.posts.length > 0
+                - page.posts.each(function(tag) {
+                    li.tag-item(title= tag.title)   
+                        +postMeta(tag.date, tag.tags, tag.categories)
+                        a.post-title(href=url_for(tag.path))
+                            span!= tag.title
+                - })
+        if site.posts.length > config.tag_generator.per_page
+            include ./_partial/_pagination.pug
+            +home()

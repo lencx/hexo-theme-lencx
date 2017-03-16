@@ -13,50 +13,86 @@ $screen-desktop-min: $screen-desktop - 1;
 $screen-lg-desktop: 1200px;
 $screen-lg-desktop-min: $screen-lg-desktop - 1;
 
-//xs
-$xs: $screen-sm;
-$xs-min: $screen-sm-min;
-//sm
-$sm: $screen-tablet;
-$sm-min: $screen-tablet-min;
-//md
-$md: $screen-desktop;
-$md-min: $screen-desktop-min;
-//lg
-$lg: $screen-lg-desktop;
-$lg-min: $screen-lg-desktop-min;
+$breakpoints: (
+    'xs': (
+        b: $screen-sm,
+        s: $screen-sm-min
+    ),
+    'sm': (
+        b: $screen-tablet,
+        s: $screen-tablet-min
+    ),
+    'md': (
+        b: $screen-desktop,
+        s: $screen-desktop-min
+    ),
+    'lg': (
+        b: $screen-lg-desktop,
+        s: $screen-lg-desktop-min
+    )
+);
+
+/// media
+/// @author lencx
+/// @access public
+/// @param {xs|sm|md|lg} $param
+/// @param {max|min} or {sm|md|lg} $param2
+@mixin repond($param, $param2) {
+    @if($param2 == 'max') {
+        @media screen and (max-width: map-deep-get($breakpoints, $param, s)) { @content; }
+    }
+    @else if($param2 == 'min') {
+        @media screen and (min-width: map-deep-get($breakpoints, $param, b)) { @content; }
+    }
+    @else {
+        @media screen and (min-width: map-deep-get($breakpoints, $param, b)) and (max-width: map-deep-get($breakpoints, $param2, s)) { @content; }
+    }
+}
+
+// //xs
+// $xs: $screen-sm;
+// $xs-min: $screen-sm-min;
+// //sm
+// $sm: $screen-tablet;
+// $sm-min: $screen-tablet-min;
+// //md
+// $md: $screen-desktop;
+// $md-min: $screen-desktop-min;
+// //lg
+// $lg: $screen-lg-desktop;
+// $lg-min: $screen-lg-desktop-min;
 
 /// media
 /// @author lencx
 /// @access public
 /// @param {xs|sm|md|lg}
 /// @param {max|min}
-@mixin repond($param, $param2) {
-    @if($param2 == 'max') {
-        @if($param == 'xs') {
-            @media screen and (max-width: $xs-min) { @content; }
-        } @else if($param == 'sm') {
-            @media screen and (max-width: $sm-min) { @content; }
-        } @else if($param == 'md') {
-            @media screen and (max-width: $md-min) { @content; }
-        } @else if($param == 'lg') {
-            @media screen and (max-width: $lg-min) { @content; }
-        }
-    }
-    @else if($param2 == 'min') {
-        @if($param == 'xs') {
-            @media screen and (min-width: $xs) { @content; }
-        } @else if($param == 'sm') {
-            @media screen and (min-width: $sm) { @content; }
-        } @else if($param == 'md') {
-            @media screen and (min-width: $md) { @content; }
-        } @else if($param == 'lg') {
-            @media screen and (min-width: $lg) { @content; }
-        }
-    }
-    @else {
-        @media screen and (min-width: $param) and (max-width: $param2){
-            @content;
-        }
-    }
-}
+// @mixin repond($param, $param2) {
+//     @if($param2 == 'max') {
+//         @if($param == 'xs') {
+//             @media screen and (max-width: $xs-min) { @content; }
+//         } @else if($param == 'sm') {
+//             @media screen and (max-width: $sm-min) { @content; }
+//         } @else if($param == 'md') {
+//             @media screen and (max-width: $md-min) { @content; }
+//         } @else if($param == 'lg') {
+//             @media screen and (max-width: $lg-min) { @content; }
+//         }
+//     }
+//     @else if($param2 == 'min') {
+//         @if($param == 'xs') {
+//             @media screen and (min-width: $xs) { @content; }
+//         } @else if($param == 'sm') {
+//             @media screen and (min-width: $sm) { @content; }
+//         } @else if($param == 'md') {
+//             @media screen and (min-width: $md) { @content; }
+//         } @else if($param == 'lg') {
+//             @media screen and (min-width: $lg) { @content; }
+//         }
+//     }
+//     @else {
+//         @media screen and (min-width: $param) and (max-width: $param2){
+//             @content;
+//         }
+//     }
+// }

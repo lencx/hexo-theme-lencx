@@ -50,6 +50,24 @@ $title-font: (
     }
 }
 
+%post-date {
+    margin-right: 10px;
+    font-family: $font-handlee-family;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .4);
+    text-shadow: 0 0 1px rgba(112, 32, 102, 0.3);
+}
+
+%post-title-link {
+    display: inline-block;
+    // height: 100%;
+    padding: 3px 5px;
+    color: rgba(0, 100, 240, .9);
+    font-weight: bold;
+    text-shadow: 1px 0 1px rgba(50, 160, 180, .6),
+        1px 1px 1px rgba(150, 100, 240, .3);
+}
+
 article {
     .post-title {
         font-size: 1.5rem;

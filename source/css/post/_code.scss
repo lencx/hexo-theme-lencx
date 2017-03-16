@@ -2,10 +2,10 @@ $code-black: (
     title: rgba(255, 255, 0, .8),
     bg: rgba(0, 0, 0, .9),
     box-shadow: inset 0 0 5px rgba(0, 0, 0, .5),
-    line-bg: rgba(0, 0, 0, .3),
-    line-color: #fff,
-    line-box-shadow: inset 0 0 15px rgba(255, 255, 255, .8),
-    line-text-shadow: inset 0 0 2px rgba(255, 255, 255, .8)
+    line-bg: rgba(30, 30, 30, .3),
+    line-color: rgba(240, 240, 240, .8),
+    line-box-shadow: inset 0 0 5px rgba(235, 235, 235, .8),
+    line-text-shadow: 0 0 1px rgba(255, 255, 20, .3)
 );
 
 $code-white: (
@@ -15,7 +15,7 @@ $code-white: (
     line-bg: rgba(200, 100, 0, .5),
     line-color: #efe,
     line-box-shadow: inset 0 0 5px rgba(0, 0, 0, .5),
-    line-text-shadow: inset 0 0 2px rgba(0, 25, 25, .5)
+    line-text-shadow: 0 0 1px rgba(0, 25, 25, .5)
 );
 
 @mixin code-theme ($theme) {

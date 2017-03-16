@@ -17,10 +17,13 @@ mixin postMeta(date, tags, categories)
 
         if theme.postMeta.tags && tags
             - tags.each(function(tag) {
-                if is_tag()
-                    span.tag!= tag.name
-                else
-                    a.tag(href=url_for(tag.path))= tag.name
+                a.tag(href=url_for(tag.path))
+                    i
+                    != tag.name
+                //- if is_tag()
+                //-     span.tag!= tag.name
+                //- else
+                //-     a.tag(href=url_for(tag.path))= tag.name
             - })
         //- - console.log(categories)
         //- - console.log(tags)

@@ -15,12 +15,17 @@
     box-shadow: 3px 2px 3px rgba(0, 0, 0, .5);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
     transition: all 300ms ease 0s;
-    &:before,
+    &:before {
+        display: none;
+    }
+    // &:before,
+    i,
     &:after {
         position: absolute;
         @include content;
     }
-    &:before {
+    // &:before
+    i {
         visibility: visible;
         border-radius: 5px;
         @include square(16px);
@@ -46,7 +51,7 @@
     .post-meta a.tag:hover {
         text-decoration: none;
         color: rgba(245, 245, 0, .8);
-        text-shadow: inset 0 0 5px rgba(255, 255, 255, .8);
+        text-shadow: inset 0 0 2px rgba(255, 255, 255, .8);
         box-shadow: 2px 2px 3px rgba(0, 0, 0, .2);
         &:after {
             background: #f00;
@@ -55,22 +60,67 @@
     }
 }
 
-@for $i from 1 through 5 {
-    $hsl: hsl($i*60, 80%, 65%);
-    .post-meta .tag:nth-child(5n + #{$i}){
-        transform: rotate(#{random(10)}deg);
-        background: $hsl;
-        &:before {
-            background: $hsl;
-        }
-    }
-}
+// @for $i from 1 through 5 {
+//     $hsl: hsl($i*60, 80%, 65%);
+//     .post-meta .tag:nth-child(5n + #{$i}){
+//         transform: rotate(#{random(10)}deg);
+//         // background: $hsl;
+//         // &:before {
+//         //     background: $hsl;
+//         // }
+//     }
+// }
 
 .tagCloud {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 50px;
     a {
-        padding: 5px;
+        padding: 5px 8px;
+        text-shadow: 0 0 1px rgba(240, 188, 199, .5),
+            1px 0 1px rgba(150, 80, 30, .8),
+            1px 0 1px rgba(20, 10, 30, .6);
+    }
+    @include repond('sm', 'min') {
+        width: 80%;
+        max-width: 560px;
+    }
+}
+
+.tags-list {
+    padding: 16px;
+    .tag-title {
+        font-size: 2.5rem;
+        // margin-bottom: 5px;
+        margin: 0 0 5px;
+        color: #fea;
+        text-shadow: 0 0 1px rgba(0, 0, 0, .5),
+            1px 0 1px rgba(50, 160, 180, .6),
+            1px -1px 1px rgba(150, 100, 240, .7),
+            0 1px 1px rgba(0, 0, 0, .8);
+    }
+    ul.tags {
+        padding-left: 0;
+        .tag-item {
+            box-shadow: inset 0 0 10px rgba(210, 108, 18, .5);
+            margin-bottom: 5px;
+            padding: 5px 12px;
+            border-radius: 10px;
+            .post-meta {
+                display: inline-block;
+                margin-right: 10px;
+                @extend %post-date;
+                .fa {
+                    margin-right: 8px;
+                }
+                .tag {
+                    margin-bottom: 5px;
+                }
+            }
+            .post-title {
+                height: 100%;
+                @extend %post-title-link;
+            }
+        }
     }
 }
