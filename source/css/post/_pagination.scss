@@ -14,7 +14,7 @@
         border-radius: 50%;
         margin: 5px;
 
-        @include repond('sm', 'min') {
+        @include tablet {
             &.link:hover {
                 a {
                     color: #fff;
@@ -62,7 +62,7 @@
         @include repond('sm', 'max') {
             margin: 0;
         }
-        @include repond('sm', 'min') {
+        @include tablet {
             @include single-text(200px);
             &:hover {
                 border-radius: 10px;

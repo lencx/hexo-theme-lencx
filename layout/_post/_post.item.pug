@@ -10,7 +10,10 @@ if page.posts.length
         if post.excerpt
             .post-excerpt!= post.excerpt
             //- 判断.md是否有<!--more-->
-            a.post-read-more(href=url_for(post.path))!= theme.excerpt_link
+            span.post-read-more
+                a(href=url_for(post.path))
+                    != theme.post.excerpt_link
+                    i.fa.fa-angle-double-right
         else
             .post-excerpt!= post.content
     - })

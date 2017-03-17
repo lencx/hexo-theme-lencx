@@ -1,40 +1,44 @@
 # html lang
-language: en
+# language: en
 
 # main menu navigation
 menu:
   Home: /
   Archives: archives
-  Category: categories
+  Categories: categories
   Tags: tags
   About: about
 
 logo: /blog/img/at-ico.svg
 
-# 文章小部件
+# widget (文章小部件)
 postMeta:
-  author: true
-  date: true
-  tags: true
-  # TODO
-  category: true
+  author: true # 作者
+  date: true # 日期
+  tags: true # 标签
+  category: true # 分类
 
 post:
+  # 文章目录标题
   toc_title: CONTENT
+  # 阅读全文
+  excerpt_link: Read More
 
+# sidebar中的标签云
 tagCloud:
   enable: true
+  # 是否开启背景（可用图片或直接设置背景色）
   bgEnable: true
   # bg: '#000'
   # ‘/blog’ 是项目的根路径 默认是‘／’
   bg: url('/blog/img/bg-1.png')
 
-excerpt_link: Read More
 # Miscelaneous
 favicon: /favicon.ico
 
-# copyright
-startYear: 2016
+# Site creation time(copyright)
+since: 2016
+# startYear: 2016
 
 # archive_type: 'monthly'
 
@@ -58,3 +62,11 @@ disqus:
 
 analytics:
   google_analytics: UA-92360738-1
+
+
+social:
+  github: your@github.com
+  email: your@email.com
+  facebook: your@facebook.com
+  stact_overflow: your@stactoverflow.com
+  twitter: your@twitter.com

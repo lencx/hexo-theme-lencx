@@ -1,16 +1,17 @@
 // variable
 @import './variable/_mixin';
+@import './variable/_media';
 @import './variable/_conf';
 @import './variable/_family';
 @import './variable/_code.conf';
 @import './variable/_post.conf';
-@import './variable/_media';
 
 // part 
 @import './part/_reset';
 @import './part/_browser';
 @import './part/_base';
 @import './part/_sidebar';
+@import './part/_layout.media';
 @import './part/_nav';
 @import './part/_animat';
 

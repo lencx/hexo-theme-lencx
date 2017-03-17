@@ -1,0 +1,20 @@
+.container {
+    width: 90%;
+    @include repond('md', 'min') {
+        .article-container {
+            width: $article-container-width;
+        }
+    }
+    @include repond('md', 'max') {
+        .article-container {
+            width: 100%;
+        }
+        .sidebar {
+            display: none;
+        }
+    }
+    @include repond('xs', 'max') {
+        width: 100%;
+        padding: 0;
+    }
+}

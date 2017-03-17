@@ -7,20 +7,19 @@
 }
 
 .sidebar {
-    position: absolute;
-    width: 20%;
-    min-width: 250px;
-    right: 0;
-    top: 30px;
+    width: $sidebar-width;
+    height: 100%;
+    margin-left: $gutter;
+    @extend %clear-fix;
     h2 {
         .fa {
             margin-right: 10px;
             font-size: 1.2rem;
-            color: rgba(250, 230, 200, .7);
-            text-shadow: 0 0 5px rgba(100, 100, 200, .5),
-                2px -1px 8px rgba(230, 210, 100, .3),
-                2px 1px 8px rgba(213, 250, 145, .5),
-                -1px -1px 8px rgba(46, 102, 139, .5);
+            color: rgba(182, 190, 180, 0.3);
+            text-shadow: 0 0 1px rgba(100, 100, 200, .3),
+                2px -1px 2px rgba(230, 210, 100, .3),
+                2px -1px 2px rgba(103, 100, 145, .3),
+                -1px -1px 2px rgba(46, 102, 139, .5);
         }
         color: #35a;
         margin: 0 0 15px;
@@ -47,7 +46,7 @@
                 &:before {
                     display: none;
                 }
-                @include repond('sm', 'min') {
+                @include tablet {
                     text-decoration: underline;
                     &:hover {
                         color: #38a;

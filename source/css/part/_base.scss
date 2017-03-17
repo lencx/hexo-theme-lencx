@@ -23,7 +23,7 @@ a {
     text-decoration: none;
     color: rgba(0, 0, 0, .7);
     position: relative;
-    @include repond('sm', 'min') {
+    @include tablet {
         &:before {
             content: '';
             position: absolute;
@@ -46,26 +46,13 @@ a {
 .container {
     // lost-utility: clearfix;
     position: relative;
-    width: 90%;
     max-width: 1200px;
     height: auto;
     min-height: 70vh;
     padding: 16px;
     margin: 80px auto 50px !important;
     @extend %clear-fix;
-
-    @media screen and (max-width: 1200px) {
-        .article-container {
-            width: 100%;
-        }
-        .sidebar {
-            display: none;
-        }
-    }
-    @include repond('xs', 'max') {
-        width: 100%;
-        padding: 0;
-    }
+    
     // animation-name: toRed;
     // animation-duration: 5s;
     // animation-fill-mode: forwards;
@@ -81,11 +68,11 @@ a {
     @include square(40px);
     @include text-center(40px);
     right: 20px;
-    bottom: 40px;
+    bottom: 30px;
     font-size: 2.5em;
     font-weight: bold;
     // cursor: pointer;
-    @include repond('sm', 'min') {  
+    @include tablet {  
         &:hover {
             color: #efefef;
             text-shadow: 0 0 1px rgb(255, 0, 110),
@@ -97,6 +84,35 @@ a {
 }
 
 footer {
+    .social {
+        margin-bottom: 10px;
+        a {
+            display: inline-block;
+            margin: 0 5px;
+            &:before {
+                display: none;
+            }
+            i.fa {
+                font-size: 1.5rem;
+                padding: 5px;
+            }
+            color: rgba(100, 100, 200, .8);
+            text-shadow: 1px 0 2px rgba(15, 45, 250, .4),
+                -1px -1px 1px rgba(215, 145, 50, .4),
+                1px -2px 2px rgba(25, 45, 50, .3),
+                1px 2px 3px rgba(125, 145, 150, .3),
+                2px -1px 5px rgba(225, 245, 90, .5);
+            @include tablet {
+                &:hover {
+                    color: rgba(240, 80, 30, .8);
+                    text-shadow: 1px 0 1px rgba(115, 45, 250, .3),
+                        -1px -1px 1px rgba(215, 145, 150, .7),
+                        1px -2px 2px rgba(180, 180, 200, .8),
+                        1px 2px 3px rgba(225, 245, 250, .8);
+                }
+            }
+        }
+    }
     // background: rgba(0, 0, 0, .2);
     border-top: solid 2px rgba(0, 0, 0, .1);
     padding: 20px 0;

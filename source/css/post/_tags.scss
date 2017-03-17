@@ -47,7 +47,7 @@
     }
 }
 
-@include repond('sm', 'min') {
+@include tablet {
     .post-meta a.tag:hover {
         text-decoration: none;
         color: rgba(245, 245, 0, .8);
@@ -75,13 +75,14 @@
     width: 80%;
     margin: 0 auto;
     margin-top: 50px;
+    text-align: center;
     a {
         padding: 5px 8px;
         text-shadow: 0 0 1px rgba(240, 188, 199, .5),
             1px 0 1px rgba(150, 80, 30, .8),
             1px 0 1px rgba(20, 10, 30, .6);
     }
-    @include repond('sm', 'min') {
+    @include tablet {
         width: 80%;
         max-width: 560px;
     }

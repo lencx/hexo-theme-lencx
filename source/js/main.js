@@ -92,6 +92,7 @@ $(function() {
         // ? maxScrollTop = $foot.offset().top - $toc.height()
         ? maxScrollTop = $foot.offset().top
         : false
+
     $(window).on('scroll', () => {
         let scrollTop = $(window).scrollTop()
         scrollTop > maxScrollTop
@@ -146,7 +147,7 @@ $(function(){
     let $backToTop = $("#back-to-top")
     $backToTop.hide()
     $(window).on('scroll', () => {
-        $(this).scrollTop() > 500
+        $(this).scrollTop() > 300
             ? $backToTop.fadeIn(900)
             : $backToTop.fadeOut(800)
     });
@@ -224,7 +225,6 @@ $(function() {
         tagList.push(_this.html())
     })
     tagArr = unique(tagList)
-    let tags = document.querySelectorAll('.tag')
     for(let i=0, len=tagArr.length; i<len; i++) {
         let _this = tagArr[i]
         let c = randomColor(80, 60)
@@ -238,8 +238,7 @@ $(function() {
                     'background': c,
                     'transform': 'rotate('+deg+'deg)'
                 })
-                __this.find('i').css('background', c)
-                
+                __this.find('i').css('background', c) 
             }
         })
     }

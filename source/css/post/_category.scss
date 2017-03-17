@@ -38,6 +38,9 @@
     .post-category {
         padding: 0 16px;
         .category {
+            i {
+                vertical-align: -3px;
+            }
             a {
                 @include single-text(300px);
                 vertical-align: -9px;

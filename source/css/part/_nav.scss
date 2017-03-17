@@ -21,7 +21,7 @@ header {
         &:before {
             display: none;
         }
-        @include repond('sm', 'min') {
+        @include tablet {
             &:hover {
                 animation: rotate 4s linear infinite;
                 border: solid 2px rgba(255, 0, 200, .5);
@@ -46,7 +46,7 @@ header {
                 font-size: 1.2rem;
                 margin-right: 5px;
                 // color: rgba(255, 100, 0, .5);
-                color: rgba(42, 170, 250, .8);
+                color: rgba(182, 190, 180, 0.8);
                 text-shadow: 1px 0 1px rgba(0, 0, 0, .3),
                     0 1px 1px rgba(0, 0, 0, .3);
                 vertical-align: -1px;
@@ -138,7 +138,7 @@ header {
         span.ico-b:after {
             top: 24px;
         }
-        @include repond('sm', 'min') {
+        @include tablet {
             &:hover {
                 animation: rotate 3s linear infinite;
             }
@@ -204,7 +204,7 @@ header {
                     display: block;
                     width: 100%;
                 }
-                @include repond('sm', 'min') {
+                @include tablet {
                     &:hover {
                         background: rgba(255, 100, 0, .6);
                         font-weight: bold;

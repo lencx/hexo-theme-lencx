@@ -1,4 +1,5 @@
-aside.sidebar
-    include ../_widget/_post.tag.pug
-    include ../_widget/_post.category.pug
-    //- include ../_widget/_post.archive.pug
+if site.posts.length
+    aside.sidebar
+        include ../_widget/_post.tag.pug
+        include ../_widget/_post.category.pug
+        //- include ../_widget/_post.archive.pug

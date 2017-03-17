@@ -1,10 +1,27 @@
 footer
+    .social
+        if theme.social.github
+            a(href!= theme.social.github, title='github')
+                i.fa.fa-github
+        if theme.social.twitter
+            a(href!= theme.social.twitter, title='twitter')
+                i.fa.fa-twitter
+        if theme.social.facebook
+            a(href!= theme.social.facebook, title='facebook')
+                i.fa.fa-facebook-square
+        if theme.social.stact_overflow
+            a(href!= theme.social.stact_overflow, title='stact overflow')
+                i.fa.fa-stack-overflow
+        if theme.social.email
+            a(href!= theme.social.email title='email')
+                i.fa.fa-envelope
+
     .copyright
         - var hexoUrl = 'https://hexo.io'
         - var lencxUrl = 'https://github.com/lencx/hexo-theme-lencx'
         - var currentDate = new Date()
         - var year = currentDate.getFullYear()
-        - year = year == theme.startYear ? year : theme.startYear + '-' + year
+        - year = year == theme.since ? year : theme.since + '-' + year
         p
             span.copy &copy;
             != year

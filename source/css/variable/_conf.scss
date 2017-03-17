@@ -4,8 +4,29 @@ $font-base-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 $font-base-color: #434;
 $bg: #f5f5d5;
 
+///== layout
+$gutter: 30px;
+$sidebar-width: 250px;
+// 280px = $gutter + $sidebar-width
+$article-container-width: calc(100% - 280px);
+
+///== font family
 $font-handlee-family: 'Handlee';
 $font-open-sans-family: 'Open Sans';
 $font-pacifico-family: 'Pacifico';
 $font-roboto-family: 'Roboto';
 $font-shrikhand-family: 'Shrikhand';
+$font-marck-script: 'Marck Script';
+
+
+@mixin tablet {
+    @include repond('sm', 'min') {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @include repond('md', 'min') {
+        @content;
+    }
+}

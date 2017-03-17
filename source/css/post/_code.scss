@@ -58,11 +58,11 @@ $code-white: (
 figure .theme {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -14px;
     height: 28px;
     line-height: 28px;
-    padding: 0 8px 0 20px;
-    border-bottom-left-radius: 20px;
+    padding: 0 25px 0;
+    @include border-bottom-radius(20px);
     cursor: pointer;
     background: rgba(255, 25, 25, .5);
     box-shadow: 0 2px 5px rgba(255, 25, 25, .5),
@@ -70,7 +70,7 @@ figure .theme {
         -1px 0 5px rgba(255, 25, 25, .5);
     font-family: $font-pacifico-family;
     user-select: none;
-    @include repond('sm', 'min') {
+    @include tablet {
         &:hover {
             color: rgba(0, 120, 30, .8);
             background: rgba(255, 100, 50, .5);
@@ -85,7 +85,7 @@ figure.black {
     @include code-theme($code-black);
     .theme {
         color: #fff;
-        @include repond('sm', 'min') {
+        @include tablet {
             &:hover {
                 color: rgba(250, 180, 130, .8);
                 background: rgba(255, 180, 50, .5);
