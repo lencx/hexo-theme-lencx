@@ -50,6 +50,7 @@
 
     .prev-post,
     .next-post {
+        position: relative;
         margin: 0 50px;
         // border: solid 1px rgba(0, 0, 0, .5);
         box-shadow: 0 0 5px rgba(100, 100, 0, .3),
@@ -70,17 +71,25 @@
                 color: rgba(255, 255, 255, .8);
             }
         }
+        i {
+            position: absolute;
+            top: 2px;
+        }
     }
     .prev-post {
         float: left;
+        padding-left: 40px;
         i {
-            margin-right: 5px;
+            // margin-right: 5px;
+            left: 10px;
         }
     }
     .next-post {
         float: right;
+        padding-right: 40px;
         i {
-            margin-left: 5px;
+            right: 10px;
+            // margin-left: 5px;
         }
     }
     .total {

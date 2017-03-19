@@ -11,7 +11,7 @@ function addLoadEvent(func) {
 }
 
 addLoadEvent(function() {
-    console.log('tagCloud plugin rock and roll!');
+    // console.log('tagCloud plugin rock and roll!');
     try {
         TagCanvas.textFont = "Shrikhand", 'cursive', 'Trebuchet MS, Helvetica';
         TagCanvas.textHeight = 25;
@@ -32,7 +32,7 @@ addLoadEvent(function() {
         TagCanvas.Start('resCanvas');
         TagCanvas.tc['resCanvas'].Wheel(false);
     } catch (e) {
-        console.log(e);
+        // console.log(e);
         document.getElementById('tagCloudCanvas').style.display = 'none';
     }
 });

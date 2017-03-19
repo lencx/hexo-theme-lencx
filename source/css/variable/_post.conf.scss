@@ -103,6 +103,10 @@ article {
     strong {
         color: rgba(220, 20, 30, .8);
     }
+    hr {
+        border: dotted 3px rgba(220, 60, 30, .5);
+        box-shadow: 0 0 10px rgba(200, 130, 30, .7);
+    }
     blockquote {
         // color: #878;
         color: #985;

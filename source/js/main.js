@@ -66,7 +66,7 @@ $(function() {
     $year.each((i, el) => {
         let $yt = $(el).html()
         $month.each((i, el) => {
-            let $mt = $(el).html()
+            let $mt = $(el).attr('date-m')
             $timeLine.find('[class^="line-'+$yt+$mt+'"]').each(() => {
                 let postNum = $timeLine.find('[class^="line-'+$yt+$mt+'"]').length
                 $('.date-'+$yt+$mt+' .num').html(postNum)
@@ -74,7 +74,8 @@ $(function() {
         })
         $(el).on('click', () => {
             $timeLine.find('[class^="line-'+$yt+'"]').each((i, el) => {
-                $(el).slideToggle(1000)
+                // $(el).slideToggle(1000)
+                $(el).toggle(800)
             })
         })
     })
@@ -194,7 +195,7 @@ $(function(){
     let $tag = $('.tagCloud').find('a')
     $tag.each((i) => {
         let fontSize, vertical, rx, ry, x, y, style
-        console.log(randomColor(65, 72))
+        // console.log(randomColor(65, 72))
         // console.log($($tag[i]).css('font-size').split('px')[0])
         fontSize = $($tag[i]).css('font-size').split('px')[0]
         rx = Math.ceil(Math.random()*10)
@@ -241,6 +242,89 @@ $(function() {
                 __this.find('i').css('background', c) 
             }
         })
+    }
+})
+
+setTimeout(() => {
+    $('.post-comment').find('#disqus_thread').html() === ''
+        ? $('.post-comment').find('#disqus-loader-error').fadeIn(2000) : ''
+}, 2500)
+
+// sidebar archives
+$(function() {
+    try {
+        const MonthArr = ['January','February','March','April','May','June','July','August','September','October','November','December']
+        let $archives = $('.archives')
+        let $el = $archives.find('.archives-data')
+        let data = $el.attr('data')
+        let url = $el.attr('data-uri')+'/'
+        // console.log(data.slice(1).split(','))
+        // console.log(url)
+        let arr = data.slice(1).split(',')
+
+        let tmp = ''
+        let count = 0
+        let newArr = []
+        for(let i=0,len=arr.length; i<len; i++) {
+            if(arr[i] != -1) {
+                tmp = arr[i]
+                for(let j=0,len2=arr.length; j<len2; j++) {
+                    if(tmp === arr[j]) {
+                        count++
+                        arr[j] = -1
+                    }
+                }
+                newArr.push(tmp+','+count)
+                count = 0
+            }
+        }
+        
+        // year
+        let yArr = []
+        for(let i=0,len=newArr.length; i<len; i++) {
+            // console.log(newArr[i])
+            // let y = newArr[i].split(',')
+            let y = newArr[i].split(',')[0].slice(0, 4)
+            // console.log(y)
+            yArr.push(y)
+        }
+        let archiveY = ''
+        for(let i=0,len=unique(yArr).length; i<len; i++) {
+            archiveY += '<div class="y'+unique(yArr)[i]+'"><h3 class="archive-year">'+unique(yArr)[i]+'<i class="fa"></i></h3></div>'
+        }
+        $archives.append(archiveY)
+
+        // year => archive list
+        for(let i=0,len=unique(yArr).length; i<len; i++) {
+            let _this = unique(yArr)[i]
+            // console.log(_this)
+            let li = ''
+            for(let i=0,len=newArr.length; i<len; i++) {
+                let __this = newArr[i]
+                if((new RegExp(_this)).exec(__this.split(',')[0])) {
+                    // console.log(__this)
+                    let a = __this.split(',')[0].slice(4, 6)
+                    if (/^0/.test(a)) a = a.slice(1)
+                    // console.log(MonthArr[parseInt(a)-1])
+                    li += '<li><a href="'+url+_this+'#'+__this.split(',')[0]+'">'+MonthArr[parseInt(a)-1]+'</a><span class="num">('+__this.split(',')[1]+')</span></li>'
+                }
+            }
+            // console.log(li)
+            $archives.find('.y'+_this).append('<ul class="y-'+_this+'">'+li+'</ul>')
+        }
+        $archives.find('.archives-data').remove()
+
+        let $year = $archives.find('.archive-year')
+        // console.log($year)
+        $year.each(i => {
+            let _this = $($year[i])
+            _this.on('click', () => {
+                _this.parent().find('ul').toggle(800)
+                _this.toggleClass('on')
+            })
+        })
+    } catch (e) {
+        // console.log(e);
     }
 })
 

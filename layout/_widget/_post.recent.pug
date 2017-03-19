@@ -1,0 +1,10 @@
+.recent-post
+    h2
+        i.fa.fa-paper-plane-o
+        | Recent Posts
+    ul.recent-list
+    if site.posts.length
+        - site.posts.sort('date', -1).limit(5).each(function(post) {
+            li
+                a(href=url_for(post.path))!= post.title
+        - })

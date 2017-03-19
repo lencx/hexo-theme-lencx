@@ -1,7 +1,8 @@
 %sidebar-box {
     margin-top: 30px;
     // border: solid 2px rgba(100, 0, 200, .3);
-    box-shadow: inset 0 0 30px rgba(190, 50, 250, .3);
+    // box-shadow: inset 0 0 30px rgba(190, 50, 250, .3);
+    box-shadow: inset 0 0 30px rgba(210, 150, 50, .3);
     border-radius: 20px;
     padding: 15px;
 }
@@ -12,18 +13,39 @@
     margin-left: $gutter;
     @extend %clear-fix;
     h2 {
+        user-select: none;
+        // .fa {
+        //     margin-right: 10px;
+        //     font-size: 1.2rem;
+        //     color: rgba(182, 190, 180, 0.3);
+        //     text-shadow: 0 0 1px rgba(100, 100, 200, .3),
+        //         1px -1px 1px rgba(230, 210, 100, .3),
+        //         1px -1px 1px rgba(103, 100, 145, .3),
+        //         -1px -1px 1px rgba(46, 102, 139, .5);
+        // }
         .fa {
-            margin-right: 10px;
             font-size: 1.2rem;
-            color: rgba(182, 190, 180, 0.3);
-            text-shadow: 0 0 1px rgba(100, 100, 200, .3),
-                2px -1px 2px rgba(230, 210, 100, .3),
-                2px -1px 2px rgba(103, 100, 145, .3),
-                -1px -1px 2px rgba(46, 102, 139, .5);
+            margin-right: 10px;
         }
-        color: #35a;
+        // color: #35a;
+        color: #38a;
         margin: 0 0 15px;
-        font-family: $font-shrikhand-family;
+        // font-family: $font-shrikhand-family;
+        font-family: $font-marck-script;
+        text-shadow: 0 0 1px rgba(210, 80, 110, .3),
+            1px -1px 1px rgba(30, 100, 130, .3),
+            1px -1px 2px rgba(13, 180, 145, .5),
+            -1px -1px 2px rgba(146, 102, 139, .5);
+    }
+    h3 {
+        user-select: none;
+        margin: 0;
+    }
+    .num {
+        margin-left: 8px;
+        font-size: 14px;
+        font-family: $font-handlee-family;
+        color: rgba(30, 100, 130, .5);
     }
 }
 
@@ -53,12 +75,42 @@
                     }
                 }
             }
-            .num {
-                margin-left: 8px;
-                font-size: 14px;
-                font-family: $font-handlee-family;
-                color: #999;
+        }
+    }
+}
+
+.sidebar .archives {
+    @extend %sidebar-box;
+    div[class^='y'] {
+        margin: 10px 0;
+        font-family: $font-marck-script;
+        cursor: pointer;
+        i:before {
+            content: '\f13a';
+            font-size: 1rem;
+            margin-left: 8px;
+            color: rgba(20, 180, 145, .5);
+        }
+        .on i.fa:before {
+            content: '\f139';
+        }
+    }
+    ul {
+        display: none;
+        margin: 0;
+        padding-left: 20px;
+        li {
+            line-height: 24px;
+            a {
+                padding: 2px;
             }
         }
+    }
+}
+.sidebar .recent-post {
+    @extend %sidebar-box;
+    li {
+        list-style: none;
+        line-height: 28px;
     }
 }

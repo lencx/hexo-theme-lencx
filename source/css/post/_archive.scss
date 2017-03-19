@@ -57,6 +57,7 @@
                 border-radius: 50%;
                 box-sizing: border-box;
                 font-size: .75rem;
+                user-select: none;
             }
         }
         [class^='date-'] {
@@ -80,6 +81,7 @@
                 font-size: 1.1rem;
                 animation: rotate 10s linear infinite;
                 cursor: pointer;
+                user-select: none;
             }
             .month {
                 position: absolute;
@@ -93,7 +95,11 @@
                 border-radius: 50%;
                 box-shadow: 0 0 5px rgba(246, 247, 235, .5);
                 color: #fff;
-                font-size: 1rem;
+                font-size: .75rem;
+                user-select: none;
+                &:before {
+                    display: none;
+                }
             }
             .num {
                 display: inline-block;
@@ -105,6 +111,7 @@
                 border-radius: 50%;
                 margin-left: -98px;
                 vertical-align: 10px;
+                user-select: none;
             }
         }
     }

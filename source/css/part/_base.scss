@@ -84,6 +84,12 @@ a {
 }
 
 footer {
+    // background: rgba(0, 0, 0, .2);
+    border-top: solid 2px rgba(0, 0, 0, .1);
+    padding: 20px 0;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
     .social {
         margin-bottom: 10px;
         a {
@@ -113,13 +119,6 @@ footer {
             }
         }
     }
-    // background: rgba(0, 0, 0, .2);
-    border-top: solid 2px rgba(0, 0, 0, .1);
-    padding: 20px 0;
-    text-align: center;
-    color: #666;
-    font-size: 1rem;
-    font-family: $font-roboto-family;
     p {
         margin: 0;
         .copy {
