@@ -9,5 +9,7 @@ block content
             != tagcloud(site.tags, {min_font: 14, max_font: 48, unit: px, order: -1})
 
     else
-        != page.content
+        section.page(class!= 'page-'+page.title)
+            //- - console.log(page)
+            != page.content
         

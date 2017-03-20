@@ -1,4 +1,5 @@
-// import '../css/main.scss'
+import '../css/main.scss'
+
 'use strict'
 /**
  * Random Color
@@ -181,7 +182,8 @@ $(function(){
         _this = $($postImg[i])
         src = $(_this).attr('src')
         title = $(_this).parents('article').find('.post-title').text()
-        _this.wrap('<a data-fancybox="'+ title +'" href="'+ src +'" data-width="2048" data-height="1365"></a>')
+        _this.wrap('<a data-fancybox="'+ title +'" href="'+ src +'"></a>')
+        // data-width="2048" data-height="1365"
     })
     $('[data-fancybox]').fancybox({
         image : {
@@ -245,10 +247,16 @@ $(function() {
     }
 })
 
-setTimeout(() => {
-    $('.post-comment').find('#disqus_thread').html() === ''
-        ? $('.post-comment').find('#disqus-loader-error').fadeIn(2000) : ''
-}, 2500)
+// disqus loaded error
+!function() {
+    setTimeout(() => {
+        if($('.post-comment #disqus_thread').html() === '') $('.post-comment #disqus-loader-error').fadeIn(2000)
+    }, 3000)
+    setTimeout(() => {
+        if($('.post-comment #disqus_thread').html() !== '') $('.post-comment #disqus-loader-error').remove()
+    }, 10000)
+}()
+
 
 // sidebar archives
 $(function() {

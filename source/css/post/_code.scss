@@ -58,11 +58,13 @@ $code-white: (
 figure .theme {
     position: absolute;
     top: 0;
-    right: -14px;
+    // right: -14px;
+    right: 0;
     height: 28px;
     line-height: 28px;
-    padding: 0 25px 0;
-    @include border-bottom-radius(20px);
+    padding: 0 10px 0 25px;
+    // @include border-bottom-radius(20px);
+    border-bottom-left-radius: 20px;
     cursor: pointer;
     background: rgba(255, 25, 25, .5);
     box-shadow: 0 2px 5px rgba(255, 25, 25, .5),

@@ -1,0 +1,15 @@
+.page-about {
+    h1, h2 {
+        font-family: $font-shrikhand-family;
+    }
+    img[alt='len'] {
+        float: right;
+        margin-right: 50px;
+    }
+    img[alt='mm'],
+    img[alt='gg'] {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+    }
+}

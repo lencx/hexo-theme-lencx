@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const AssetsPlugin = require('assets-webpack-plugin')
-const shell = require('shelljs')
+// const shell = require('shelljs')
 
 const rules = []
 const plugins = []
@@ -16,11 +16,11 @@ function resolve(dirPath) {
     return path.resolve(__dirname, dirPath)
 }
 
-shell.rm('-rf', resolve(buildPath))
-shell.mkdir('-p', resolve(buildPath))
-shell.config.silent = true
-shell.cp('-R', 'dist/*', resolve(buildPath))
-shell.config.silent = false
+// shell.rm('-rf', resolve(buildPath))
+// shell.mkdir('-p', resolve(buildPath))
+// shell.config.silent = true
+// shell.cp('-R', 'dist/*', resolve(buildPath))
+// shell.config.silent = false
 
 plugins.push(
     new AssetsPlugin({

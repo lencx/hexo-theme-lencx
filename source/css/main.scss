@@ -1,4 +1,6 @@
-// variable
+/**
+* variable
+*/
 @import './variable/_mixin';
 @import './variable/_media';
 @import './variable/_conf';
@@ -6,7 +8,9 @@
 @import './variable/_code.conf';
 @import './variable/_post.conf';
 
-// part 
+/**
+* part 
+*/
 @import './part/_reset';
 @import './part/_browser';
 @import './part/_base';
@@ -14,9 +18,11 @@
 @import './part/_layout.media';
 @import './part/_nav';
 @import './part/_animat';
+@import './part/_about';
 
-
-// post
+/**
+* post
+*/
 @import './post/_post';
 @import './post/_pagination';
 @import './post/_code';
@@ -30,4 +36,3 @@
 // 引用bs-grid编译好的栅格，如有需要可自己重新进行编译
 // https://github.com/lencx/bs-grid.git
 // @import './part/_grid';
-

@@ -1,18 +1,19 @@
 .archives
-    h2.archive-title 
-        i.fa.fa-map-signs
-        |Archives
-    - var menu = config.menu || theme.menu
-    - var uri
-    each url, label in menu
-         if /archiv/i.test(label)
-            - uri = url
-    - var data = ''
-    -site.posts.sort('date', -1).each(function(archive) {
-        - var ym = date(archive.date, 'YYYYMM')
-        - data += ','+ym
-    - })
-    span.archives-data(data!= data, data-uri=url_for(uri))
+    if theme.sidebar.archives
+        h2.archive-title
+            i.fa.fa-map-signs
+            | Archives
+        - var menu = config.menu || theme.menu
+        - var uri
+        each url, label in menu
+            if /archiv/i.test(label)
+                - uri = url
+        - var data = ''
+        -site.posts.sort('date', -1).each(function(archive) {
+            - var ym = date(archive.date, 'YYYYMM')
+            - data += ','+ym
+        - })
+        span.archives-data(data!= data, data-uri=url_for(uri))
     //- .archives-list
     //-     - var year, month, n=0
     //-     - var num=0

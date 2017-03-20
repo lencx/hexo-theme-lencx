@@ -1,7 +1,5 @@
 .DS_Store
 /node_modules
 *.map
-/source/dist
-asset.json
 .vscode
 .idea

@@ -24,49 +24,52 @@ post:
   # 阅读全文
   excerpt_link: Read More
 
-# sidebar中的标签云
-tagCloud:
-  enable: true
-  # 是否开启背景（可用图片或直接设置背景色）
-  bgEnable: true
-  # bg: '#000'
-  # ‘/blog’ 是项目的根路径 默认是‘／’
-  bg: url('/blog/img/bg-1.png')
+sidebar:
+  tagCloud:
+    enable: true
+    # 是否开启背景（可用图片或直接设置背景色）
+    bgEnable: true
+    # bg: '#000'
+    # ‘/blog’ 是项目的根路径 默认是‘／’
+    bg: url('/blog/img/bg-1.png')
+  archives: true
+  categories: true
+  recent_posts:
+    enable: true
+    num: 5
+
 
 # Miscelaneous
 favicon: /favicon.ico
 
 # Site creation time(copyright)
-since: 2016
-# startYear: 2016
-
-# archive_type: 'monthly'
+since: 2017
 
 # stylesheets loaded in the <head>
 stylesheets:
-- /css/main.css
+# - /css/main.css
+- /dist/main.f1d2cf8f4db6.css
 - /font-awesome-4.7.0/css/font-awesome.min.css
 - /fancybox-3.0/dist/jquery.fancybox.min.css
-# - 'dist/main.76c96d7053d8.css'
 
 # scripts loaded in the end of the body
 scripts:
 - /libs/jquery-3.1.1.min.js
 
 scripts_foot:
-- /js/main.js
+# - /js/main.js
+- /dist/main.71260bccdad6.js
 - /fancybox-3.0/dist/jquery.fancybox.min.js
 
 disqus:
-  disqus_shortname: lencx
+  disqus_shortname: #your disqus name
 
 analytics:
-  google_analytics: UA-92360738-1
-
+  google_analytics: #id
 
 social:
-  github: your@github.com
-  email: your@email.com
-  facebook: your@facebook.com
-  stact_overflow: your@stactoverflow.com
-  twitter: your@twitter.com
+  github: # your@github
+  email: # your@email.com
+  facebook: # your@facebook.com
+  twitter: # your@twitter.com
+  stact_overflow: 
