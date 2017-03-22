@@ -1,5 +1,6 @@
 header
-    a.logo(href=url_for('/'), style='background: url('+theme.logo+') 100%/cover no-repeat')
+    //- url_for('/')
+    a.logo(href='/', style='background: url('+theme.logo+') 100%/cover no-repeat')
     .search
         input(type='search', placeholder="Search")
     include ./_nav.pug

@@ -1,16 +1,13 @@
 .post-category {
     .title {
         margin-bottom: 5px;
-        color: #fea;
-        text-shadow: 0 0 1px rgba(0, 0, 0, .5),
-            1px 0 1px rgba(50, 160, 180, .6),
-            1px -1px 1px rgba(150, 100, 240, .7),
-            0 1px 1px rgba(0, 0, 0, .8);
+        color: map-deep-get($categoryColor, title, c);
+        text-shadow: map-deep-get($categoryColor, title, ts);
         .num {
             font-size: 1rem;
             margin-left: 10px;
             font-family: $font-shrikhand-family;
-            color: #f9a;
+            color: map-deep-get($categoryColor, num, c);
         }
     }
     .category {
@@ -30,7 +27,7 @@
         display: block;
         margin: .5rem auto;
         border-width: 1px;
-        border-color: rgba(0, 160, 180, .3);
+        border-color: map-deep-get($categoryColor, hr, bc);
     }
 }
 

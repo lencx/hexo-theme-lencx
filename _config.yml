@@ -48,7 +48,7 @@ since: 2017
 # stylesheets loaded in the <head>
 stylesheets:
 # - /css/main.css
-- /dist/main.f1d2cf8f4db6.css
+- /dist/main.2dcf201f5ecb.css
 - /font-awesome-4.7.0/css/font-awesome.min.css
 - /fancybox-3.0/dist/jquery.fancybox.min.css
 
@@ -62,14 +62,14 @@ scripts_foot:
 - /fancybox-3.0/dist/jquery.fancybox.min.js
 
 disqus:
-  disqus_shortname: #your disqus name
+  disqus_shortname: # your shortname
 
 analytics:
-  google_analytics: #id
+  google_analytics: # analytics id
 
 social:
   github: # your@github
-  email: # your@email.com
-  facebook: # your@facebook.com
-  twitter: # your@twitter.com
+  email: # your@email
+  facebook: # your@facebook
+  twitter: # your@twitter
   stact_overflow: 

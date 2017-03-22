@@ -1,0 +1,298 @@
+/// b: background
+/// c: color
+/// ts: text-shadow
+/// bc: border-color
+/// bs: box-shadow
+/// ph: placeholder 
+$baseColor: (
+    body: (
+        b: $body-bg-color
+    ),
+    a: (
+        c: $a-base-color,
+        underline: $a-underline-color
+    ),
+    footer: (
+        c: $footer-base-color,
+        a: (
+            c: $footer-a-color,
+            ts: $footer-a-text-shadow
+        ),
+        hover: (
+            c: $footer-a-hover-color,
+            ts: $footer-a-hover-text-shadow
+        ),
+        author: (
+            c: $footer-author-color
+        ),
+        hexo: (
+            c: $footer-hexo-lencx
+        )
+    )
+);
+
+$backToTopColor: (
+    c: $back-to-top-color,
+    hover: (
+        c: $back-to-top-hover-color,
+        ts: $back-to-top-hover-text-shadow
+    )
+);
+
+$headerColor: (
+    b: $header-bg,
+    logo: (
+        bc: $logo-border-color,
+        hover: (
+            bc: $logo-hover-border-color
+        )
+    ),
+    menu: (
+        a: (
+            c:  $header-menu-a-color,
+            ts: $header-menu-a-text-shadow,
+            hover: (
+                c: $header-menu-a-hover-color,
+                ts: $header-menu-a-hover-text-shadow
+            )
+        ),
+        ico: (
+            c: $header-menu-ico-color,
+            ts: $header-menu-ico-text-shadow
+        ),
+        search: (
+            b: $header-search-bg-color,
+            bc: $header-search-border-color,
+            focus: (
+                b: $header-search-focus-bg-color,
+                c: $header-search-focus-color,
+                bc: $header-search-focus-border-color,
+                bs: $header-search-focus-box-shadow
+            ),
+            ph: (
+                c: $header-search-placeholder-color
+            ),
+            mobile: (
+                b: $header-search-mobile-bg-color
+            )
+        ),
+        menuico: (
+            bc: $header-menu-menuico-border-color,
+            active: (
+                bc: $header-menu-menuico-active-border-color
+            )
+        ),
+        mask: (
+            b: $header-menu-mask-bg-color
+        )
+    )
+);
+
+
+$sidebarColor: (
+    box: (
+        bs: $sidebar-box-box-shadow
+    ),
+    title: (
+        c: $sidebar-title-color,
+        ts: $sidebar-title-text-shadow
+    ),
+    num: (
+        c: $sidebar-num-color
+    ),
+    a: (
+        hover: (
+            c: $sidebar-a-hover-color
+        )
+    ),
+    ico: (
+        c: $sidebar-ico-color
+    )
+);
+
+$archiveColor: (
+    line: (
+        bs: $archive-time-line-color
+    ),
+    a: (
+        b: $archive-a-title-bg-color,
+        bc: $archive-a-box-shadow,
+        hover: (
+            line: $archive-hover-time-line-color,
+            day: (
+                b: $archive-hover-day-bg-color,
+                c: $archive-hover-day-color,
+                bc: $archive-hover-day-border-color,
+                ts: $archive-hover-day-text-shadow,
+            ),
+            title: (
+                c: $archive-hover-title-color,
+                b: $archive-hover-title-bg-color,
+                bs: $archive-hover-title-box-shadow
+            )
+        )
+    ),
+    day: (
+        b: $archive-day-bg-color,
+        bc: $archive-day-border-color
+    ),
+    year: (
+        b: $archive-year-bg-color,
+        c: $archive-year-color,
+        bc: $archive-year-border-color,
+        bs: $archive-year-box-shadow
+    ),
+    month: (
+        b: $archive-month-bg-color,
+        c: $archive-month-color,
+        bc: $archive-month-border-color,
+        bs: $archive-month-box-shadow
+    ),
+    num: (
+        c: $archive-num-color,
+        b: $archive-num-bg-color
+    ),
+    end: (
+        c: $archive-end-color,
+        bc: $archive-end-border-color,
+        bs: $archive-end-box-shadow,
+        ts: $archive-end-text-shadow
+    ),
+    start: (
+        lr: (
+            b: $archive-start-lr-bg-color
+        ),
+        m: (
+            b: $archive-start-bg-color
+        )
+    )
+);
+$categoryColor: (
+    title: (
+        c: $category-title-color,
+        ts: $category-title-text-shadow
+    ),
+    num: (
+        c: $category-num-color
+    ),
+    hr: (
+        bc: $category-hr-color
+    )
+);
+// comment
+$commentColor: (
+    bc: $comment-border-color,
+    bs: $comment-box-shadow
+);
+
+$paginationColor: (
+    a:(
+        c: $pagination-a-color,
+        current: (
+            b: $pagination-a-current-bg-color,
+            c: $pagination-a-current-color
+        ),
+        hover: (
+            b: $pagination-a-hover-bg-color,
+            c: $pagination-a-hover-color
+        ),
+        post: (
+            bs: $pagination-a-post-box-shadow,
+            hover: (
+                c: $pagination-a-post-hover-color,
+                b: $pagination-a-post-hover-bg-color
+            )
+        )
+    ),
+    total: (
+        c: $pagination-total-color,
+        ts: $pagination-total-text-shadow
+    )
+);
+
+$articleColor: (
+    b: $article-bg-color,
+    readmore: (
+        bs: $article-read-more-color-box-shadow,
+        ico: (
+            c: $article-read-more-ico-color,
+            ts: $article-read-more-ico-text-shadow
+        ),
+        hover: (
+            b: $article-read-more-hover-bg-color,
+            c: $article-read-more-hover-color,
+            ico: (
+                c: $article-read-more-hover-ico-color,
+                bc: $article-read-more-hover-ico-border-color,
+                ts: $article-read-more-hover-ico-box-shadow
+            )
+        )
+    ),
+    post: (
+        title: (
+            c: $article-post-title-color
+        ),
+        meta: (
+            author: $article-post-meta-author-color,
+            date: $article-post-meta-date-color,
+            category: $article-post-meta-category-color,
+            ico: $article-post-meta-ico-color
+        )
+    )
+);
+
+$postTocColor: (
+    b: $post-toc-bg-color,
+    bs: $post-toc-box-shadow,
+    title: (
+        ts: $post-toc-title-text-shadow,
+        ico: (
+            c: $post-toc-title-ico-color,
+            ts: $post-toc-title-ico-text-shadow
+        )
+    ),
+    item: (
+        c: $post-toc-item-color,
+        hover: (
+            c: $post-toc-item-hover-color,
+            num: $post-toc-item-hover-num-color,
+            underline: $post-toc-item-hover-underline-color
+        ),
+        active: (
+            b: $post-toc-item-active-bg-color,
+            c: $post-toc-item-active-color,
+            bs: $post-toc-item-box-shadow
+        ),
+        num: (
+            c: $post-toc-item-num-color,
+            ts: $post-toc-item-num-text-shadow
+        )
+    )
+);
+
+// code theme
+// $figure-theme-bg-color: rgba(255, 25, 25, .5);
+// $figure-theme-box-shadow: (
+//     0 2px 5px rgba(255, 25, 25, .5),
+//     1px 0 5px rgba(255, 25, 25, .5),
+//     -1px 0 5px rgba(255, 25, 25, .5)
+// );
+// // code theme hover
+// $figure-theme-hover-bg-color: rgba(255, 100, 50, .5);
+// $figure-theme-hover-color: rgba(0, 120, 30, .8);
+// $figure-theme-hover-box-shadow: (
+//     0 2px 5px rgba(255, 125, 25, .5),
+//     1px 0 5px rgba(255, 125, 25, .5),
+//     -1px 0 5px rgba(255, 125, 25, .5)
+// );
+// $figureColor: (
+//     theme: (
+//         b: $figure-theme-bg-color,
+//         bs: $figure-theme-box-shadow,
+//         hover: (
+//             b:$figure-theme-hover-bg-color,
+//             c: $figure-theme-hover-color,
+//             bs: $figure-theme-hover-box-shadow
+//         )
+//     )
+// );

@@ -4,16 +4,14 @@ html, body {
 }
 
 body {
-    background: $bg;
+    // background: $bg;
+    background: map-deep-get($baseColor, body, b);
     font-family: $font-base-family;
     font-size: $font-base-size;
     color: $font-base-color;
     * {
         box-sizing: border-box;
     }
-    // animation-name: toBlack;
-	// animation-duration: 3s;
-	// animation-fill-mode: forwards;
     transition: all 800ms;
 }
 
@@ -22,7 +20,7 @@ ol, ul {
 }
 a {
     text-decoration: none;
-    color: rgba(0, 0, 0, .7);
+    color: map-deep-get($baseColor, a, c);
     position: relative;
     @include tablet {
         &:before {
@@ -32,7 +30,7 @@ a {
             height: 2px;
             left: 0;
             bottom: 0;
-            background: #f00faa;
+            background: map-deep-get($baseColor, a, underline);
             visibility: hidden;
             transform: scaleX(0);
             transition: all 200ms ease-in-out 0s;
@@ -53,10 +51,6 @@ a {
     padding: 16px;
     margin: 80px auto 30px !important;
     @extend %clear-fix;
-    
-    // animation-name: toRed;
-    // animation-duration: 5s;
-    // animation-fill-mode: forwards;
 }
 
 .article-container,
@@ -72,13 +66,12 @@ a {
     bottom: 30px;
     font-size: 2.5em;
     font-weight: bold;
+    color: map-get($backToTopColor, c);
     // cursor: pointer;
     @include tablet {  
         &:hover {
-            color: #efefef;
-            text-shadow: 0 0 1px rgb(255, 0, 110),
-                0 -3px 1px rgb(255, 0, 110),
-                0 5px 5px rgba(255, 0, 110, .8);
+            color: map-deep-get($backToTopColor, hover, c);
+            text-shadow: map-deep-get($backToTopColor, hover, ts);
             transition: all 200ms;
         }
     }
@@ -89,7 +82,7 @@ footer {
     border-top: solid 2px rgba(0, 0, 0, .1);
     padding: 20px 0;
     text-align: center;
-    color: #666;
+    color: map-deep-get($baseColor, footer, c);
     font-size: 14px;
     .social {
         margin-bottom: 10px;
@@ -103,19 +96,12 @@ footer {
                 font-size: 1.5rem;
                 padding: 5px;
             }
-            color: rgba(100, 100, 200, .8);
-            text-shadow: 1px 0 2px rgba(15, 45, 250, .4),
-                -1px -1px 1px rgba(215, 145, 50, .4),
-                1px -2px 2px rgba(25, 45, 50, .3),
-                1px 2px 3px rgba(125, 145, 150, .3),
-                2px -1px 5px rgba(225, 245, 90, .5);
+            color: map-deep-get($baseColor, footer, a, c);
+            text-shadow: map-deep-get($baseColor, footer, a, ts);
             @include tablet {
                 &:hover {
-                    color: rgba(240, 80, 30, .8);
-                    text-shadow: 1px 0 1px rgba(115, 45, 250, .3),
-                        -1px -1px 1px rgba(215, 145, 150, .7),
-                        1px -2px 2px rgba(180, 180, 200, .8),
-                        1px 2px 3px rgba(225, 245, 250, .8);
+                    color: map-deep-get($baseColor, footer, hover, c);
+                    text-shadow: map-deep-get($baseColor, footer, hover, ts);
                 }
             }
         }
@@ -127,12 +113,12 @@ footer {
         }
         .author {
             font-family: $font-pacifico-family;
-            color: #08e;
+            color: map-deep-get($baseColor, footer, author, c);
         }
         .hexo,
         .lencx {
             font-family: $font-shrikhand-family;
-            color: rgba(0, 100, 200, .8);
+            color: map-deep-get($baseColor, footer, hexo, c);
         }
     }
 }

@@ -64,7 +64,7 @@ figure .theme {
     line-height: 28px;
     padding: 0 10px 0 25px;
     // @include border-bottom-radius(20px);
-    border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 50px;
     cursor: pointer;
     background: rgba(255, 25, 25, .5);
     box-shadow: 0 2px 5px rgba(255, 25, 25, .5),
@@ -103,7 +103,8 @@ figure {
     @include code-theme($code-white);
     position: relative;
     // background: hsla(48, 98%, 47%, .3);
-    border-radius: 10px;
+    // border-radius: 10px;
+    @include radius(10px);
     // box-shadow: 0 0 5px rgba(0, 0, 0, .5);
     overflow: auto;
     white-space: pre;
@@ -125,7 +126,8 @@ figure {
     .gutter {
         width: 16px;
         // background: rgba(0, 0, 0, .3);
-        border-radius: 5px;
+        // border-radius: 5px;
+        @include radius(5px);
         user-select: none;
         // box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
         .line {
@@ -168,7 +170,8 @@ figure:before {
     font-size: 0.75rem;
     color: rgba(0, 48, 73, .8);
     border-bottom-right-radius: 50px;
-    border-top-left-radius: 15px;
+    // border-top-left-radius: 15px;
+    @include radius(15px);
     text-indent: 15px;
     line-height: 28px;
     background: rgba(255, 25, 25, .5);

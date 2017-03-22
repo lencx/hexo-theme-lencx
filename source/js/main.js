@@ -1,5 +1,4 @@
-import '../css/main.scss'
-
+// import '../css/main.scss'
 'use strict'
 /**
  * Random Color

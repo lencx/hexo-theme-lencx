@@ -60,7 +60,7 @@ module.exports = {
         path: resolve(buildPath),
         filename: 'main.[chunkhash:12].js'
     },
-    devtool: 'source-map',
+    // devtool: 'source-map',
     plugins: plugins,
     module: {
         rules

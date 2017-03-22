@@ -21,12 +21,13 @@ mixin home()
 mixin post()
     - var prev = page.prev ? page.prev.path : false
     - var next = page.next ? page.next.path : false
-    .pagination
-        if prev
-            a.prev-post(href=url_for(prev), title!= page.prev.title)
-                i.fa.fa-chevron-circle-left
-                != page.prev.title
-        if next
-            a.next-post(href=url_for(next), title!= page.next.title)
-                != page.next.title
-                i.fa.fa-chevron-circle-right
+    if site.posts.length > 1
+        .pagination
+            if prev
+                a.prev-post(href=url_for(prev), title!= page.prev.title)
+                    i.fa.fa-chevron-circle-left
+                    != page.prev.title
+            if next
+                a.next-post(href=url_for(next), title!= page.next.title)
+                    != page.next.title
+                    i.fa.fa-chevron-circle-right

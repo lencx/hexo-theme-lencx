@@ -105,23 +105,37 @@
 /// border-radius
 /// @author lencx
 /// @access public
+/// @param {Boolean} enable radius
 /// @param {radius} $radius
-@mixin border-top-radius($radius) {
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
+@mixin radius($radius, $radius-enable: false) {
+    @if $radius-enable {
+        border-radius: $radius;
+    }
+}
+@mixin border-top-radius($radius, $radius-enable: false) {
+    @if $radius-enable {
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+    }
 }
 
-@mixin border-bottom-radius($radius) {
-    border-bottom-left-radius: $radius;
-    border-bottom-right-radius: $radius;
+@mixin border-bottom-radius($radius, $radius-enable: false) {
+    @if $radius-enable {
+        border-bottom-left-radius: $radius;
+        border-bottom-right-radius: $radius;
+    }
 }
 
-@mixin border-left-radius($radius) {
-    border-top-left-radius: $radius;
-    border-bottom-left-radius: $radius;
+@mixin border-left-radius($radius, $radius-enable: false) {
+    @if $radius-enable {
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+    }
 }
 
-@mixin border-right-radius($radius) {
-    border-top-right-radius: $radius;
-    border-bottom-right-radius: $radius;
+@mixin border-right-radius($radius, $radius-enable: false) {
+    @if $radius-enable {
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+    }
 }

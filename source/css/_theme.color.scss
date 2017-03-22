@@ -1,0 +1,262 @@
+// $english-green: rgb(26, 83, 92);
+// $ucla-gold: rgb(255, 174, 3);
+// $dogwood-rose: rgb(217, 3, 104);
+// $purple : rgb(130, 2, 99);
+// $pastel-yellow: rgb(255, 246, 137);
+
+// global
+$body-bg-color: #f5f5d5;
+$a-underline-color: #f00faa;
+$a-base-color: rgba(0, 0, 0, .7);
+$footer-base-color: #666;
+// footer social
+$footer-a-color: rgba(100, 100, 200, .8);
+$footer-a-text-shadow: (
+    1px 0 2px rgba(15, 45, 250, .4),
+    -1px -1px 1px rgba(215, 145, 50, .4),
+    1px -2px 2px rgba(25, 45, 50, .3),
+    1px 2px 3px rgba(125, 145, 150, .3),
+    2px -1px 5px rgba(225, 245, 90, .5)
+);
+$footer-a-hover-color: rgba(240, 80, 30, .8);
+$footer-a-hover-text-shadow: (
+    1px 0 1px rgba(115, 45, 250, .3),
+    -1px -1px 1px rgba(215, 145, 150, .7),
+    1px -2px 2px rgba(180, 180, 200, .8),
+    1px 2px 3px rgba(225, 245, 250, .8)
+);
+// footer copyright
+$footer-author-color: #08e;
+$footer-hexo-lencx: rgba(0, 100, 200, .8);
+
+$back-to-top-color: #434;
+$back-to-top-hover-color: #efefef;
+$back-to-top-hover-text-shadow: (
+    0 0 1px rgb(255, 0, 110),
+    0 -3px 1px rgb(255, 0, 110),
+    0 5px 5px rgba(255, 0, 110, .8)
+);
+// header bg
+$header-bg: rgba(245, 245, 245, .6);
+// header logo
+$logo-border-color: rgba(255, 200, 155, .8);
+$logo-hover-border-color: rgba(255, 0, 200, .5);
+// nav menu item
+$header-menu-a-color: #faa;
+$header-menu-a-text-shadow: (
+    0 0 1px rgba(0, 0, 0, .3),
+    1px 0 1px rgba(0, 0, 0, .5),
+    0 1px 1px rgba(0, 0, 0, .3)
+);
+// nav a hover
+$header-menu-a-hover-color: rgba(0, 0, 0, .8);
+$header-menu-a-hover-text-shadow: (
+    0 0 1px rgba(255, 255, 255, .7),
+    1px 0 1px rgba(255, 100, 0, .5),
+    0 1px 1px rgba(240, 150, 50, .8)
+);
+// nav meun ico
+$header-menu-ico-color: rgba(182, 190, 180, 0.8);
+$header-menu-ico-text-shadow: (
+    1px 0 1px rgba(0, 0, 0, .3),
+    0 1px 1px rgba(0, 0, 0, .3)
+);
+// nav search
+$header-search-bg-color: rgba(245, 245, 245, .3);
+$header-search-mobile-bg-color: rgba(0, 0, 0, .7);
+$header-search-border-color: rgba(251, 86, 7, .5);
+$header-search-focus-bg-color: #fff;
+$header-search-focus-color: rgba(200, 80, 120, .8);
+$header-search-focus-border-color: rgba(255, 50, 100, .5);
+$header-search-focus-box-shadow: rgba(255, 100, 200, .5);
+$header-search-placeholder-color: rgba(255, 100, 100, .8);
+// nav menuico
+$header-menu-menuico-border-color: #aaa;
+$header-menu-menuico-active-border-color: rgba(255, 0, 0, .8);
+// nav mask
+$header-menu-mask-bg-color: rgba(0, 0, 0, .7);
+
+// sidebar box
+$sidebar-box-box-shadow: (
+    inset 0 0 30px rgba(210, 150, 50, .3)
+);
+// sidebar title
+$sidebar-title-color: #38a;
+$sidebar-title-text-shadow: (
+    0 0 1px rgba(210, 80, 110, .3),
+    1px -1px 1px rgba(30, 100, 130, .3),
+    1px -1px 2px rgba(13, 180, 145, .5),
+    -1px -1px 2px rgba(146, 102, 139, .5)
+);
+// sidebar posts num
+$sidebar-num-color: rgba(30, 100, 130, .5);
+// sidebar a hover
+$sidebar-a-hover-color: #38a;
+// sidebar ico
+$sidebar-ico-color: rgba(20, 180, 145, .5);
+
+// archive time line
+$archive-time-line-color: rgba(0, 0, 0, .3);
+$archive-hover-time-line-color: rgba(227, 75, 116, .8);
+// archive a hover
+$archive-hover-day-color: rgb(252, 247, 199);
+$archive-hover-day-bg-color: rgb(112, 198, 208);
+$archive-hover-day-border-color: rgb(227, 75, 116);
+$archive-hover-day-text-shadow: (
+    0 0 2px rgb(49, 8, 31)
+);
+$archive-hover-title-color: #22d;
+$archive-hover-title-bg-color: #faf;
+$archive-hover-title-box-shadow: (
+    0 0 2px rgba(0, 75, 116, .8)
+);
+// archive a
+$archive-a-title-bg-color: rgba(232, 197, 71, .5);
+$archive-a-box-shadow: (
+    3px 3px 15px rgba(227, 75, 116, .8)
+);
+
+// archive day
+$archive-day-bg-color: #fff;
+$archive-day-border-color: rgba(0, 0, 0, .5);
+// archive year
+$archive-year-bg-color: rgb(231, 29, 54);
+$archive-year-color: rgb(255, 253, 152);
+$archive-year-border-color: rgb(155, 54, 68);
+$archive-year-box-shadow: (
+    inset 0 0 10px rgba(255, 255, 255, .4)
+);
+// archive month
+$archive-month-bg-color: rgb(30, 168, 150);
+$archive-month-color: #fff;
+$archive-month-border-color: rgb(100, 220, 170);
+$archive-month-box-shadow: (
+    0 0 5px rgba(246, 247, 235, .5)
+);
+// archive num
+$archive-num-color: #fff;
+$archive-num-bg-color: rgba(255, 0, 0, .5);
+// archive title box(end)
+$archive-end-color: #ffa;
+$archive-end-border-color: rgba(200, 10, 0, .2);
+$archive-end-box-shadow: (
+    inset 0 0 20px rgba(155, 75, 116, .8)
+);
+$archive-end-text-shadow: (
+    0 0 1px rgba(0, 0, 0, .5),
+    1px 0 1px rgba(0, 0, 0, .8)
+);
+// archive start
+$archive-start-bg-color: rgba(0, 0, 0, .3);
+$archive-start-lr-bg-color: rgba(100, 10, 200, .5);
+// categories page
+$category-title-color: #fea;
+$category-title-text-shadow: (
+    0 0 1px rgba(0, 0, 0, .5),
+    1px 0 1px rgba(50, 160, 180, .6),
+    1px -1px 1px rgba(150, 100, 240, .7),
+    0 1px 1px rgba(0, 0, 0, .8)
+);
+$category-num-color: #f9a;
+$category-hr-color: rgba(0, 160, 180, .3);
+// comment
+$comment-border-color: rgba(255, 100, 20, .3);
+$comment-box-shadow: (
+    inset 0 0 15px rgba(100, 50, 50, .3),
+    inset -5px 0 15px rgba(255, 255, 20, .2),
+    inset 0 -5px 15px rgba(255, 240, 100, .2)
+);
+
+// pagination
+// pagination current
+$pagination-a-color: rgb(255, 0, 110);
+$pagination-a-current-bg-color: #a0a0a0;
+$pagination-a-current-color: #fff;
+// pagination total
+$pagination-total-color: #fd1;
+$pagination-total-text-shadow: (
+    0 0 1px #000,
+    1px 0 1px rgba(0, 0, 0, .5),
+    0px 1px 1px rgba(0, 0, 0, .3)
+);
+// pagination hover
+$pagination-a-hover-color: #fff;
+$pagination-a-hover-bg-color: #fa0;
+// post detail (pre & next)
+$pagination-a-post-box-shadow: (
+    0 0 5px rgba(100, 100, 0, .3),
+    inset 0 0 5px rgba(240, 200, 100, .5)
+);
+$pagination-a-post-hover-bg-color: #004a8f;
+$pagination-a-post-hover-color: rgba(255, 255, 255, .8);
+$pagination-a-post-box-shadow: (
+    inset 0 0 25px rgba(100, 100, 0, .3),
+    0 0 15px rgba(240, 200, 100, .5)
+);
+
+// article list (home)
+$article-bg-color: rgba(200, 180, 50, .3);
+// post read more box
+$article-read-more-color-box-shadow: (
+    inset 0 0 30px rgba(150, 180, 150, .8)
+);
+// post read more ico
+$article-read-more-ico-color: rgba(250, 210, 210, .7);
+$article-read-more-ico-text-shadow: (
+    0 0 1px rgba(50, 25, 0, 0.7),
+    0 -1px 1px rgba(255, 255, 0, 0.7),
+    1px 1px 1px rgba(0, 0, 0, 0.7)
+);
+// post read more hover
+$article-read-more-hover-color: rgba(0, 0, 0, 0.8);
+$article-read-more-hover-bg-color: rgba(140, 200, 210, .5);
+$article-read-more-hover-ico-color: rgba(255, 248, 240, .7);
+$article-read-more-hover-ico-box-shadow: (
+    rgba(50, 125, 170, 0.5),
+    0 -1px 1px rgba(235, 155, 0, 0.7),
+    1px 2px 1px rgba(50, 85, 10, 0.3)
+);
+$article-read-more-hover-ico-border-color: rgba(200, 100, 100, .9);
+// post title
+$article-post-title-color: rgba(140, 160, 120, .9);
+// psot meta
+$article-post-meta-author-color: rgba(0,0,0,.7);
+$article-post-meta-date-color: rgba(0,0,0,.3);
+$article-post-meta-category-color: rgba(0,0,0,.7);
+$article-post-meta-ico-color: rgba(200,100,200,.8);
+// post toc color
+$post-toc-bg-color: rgba(245, 135, 10, 0.3);
+$post-toc-box-shadow: (
+    inset 0 0 15px rgba(255, 100, 80, .6)
+);
+$post-toc-title-text-shadow: (
+    0 0 1px #fea,
+    1px 0 1px rgba(200, 100, 0, .8),
+    0 1px 1px rgba(250, 40, 100, .8)
+);
+// post toc title ico
+$post-toc-title-ico-color: rgba(255, 255, 100, .8);
+$post-toc-title-ico-text-shadow: (
+    0 0 1px #000,
+    1px 0 1px rgba(255, 255, 255, .5),
+    0 1px 1px rgba(100, 0, 0, .3)
+);
+// post toc item color
+$post-toc-item-color: #4a7;
+$post-toc-item-active-bg-color: rgba(255, 255, 100, .5);
+$post-toc-item-active-color: rgba(225, 80, 100, .9);
+$post-toc-item-box-shadow: (
+    inset 0 0 8px rgba(25, 155, 15, 0.8)
+);
+// post toc hover
+$post-toc-item-hover-color: rgba(220, 100, 100, .9);
+$post-toc-item-hover-num-color: rgba(140, 30, 20, .9);
+$post-toc-item-hover-underline-color: #fff;
+// psot toc number
+$post-toc-item-num-color: rgba(20, 20, 50, .8);
+$post-toc-item-num-text-shadow: (
+    0 0 1px #faa,
+    1px 0 1px rgba(20, 20, 20, .5),
+    0 1px 1px rgba(100, 0, 0, .5),
+    1px 1px 1px rgba(200, 100, 0, .5)
+);

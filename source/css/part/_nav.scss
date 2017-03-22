@@ -8,14 +8,16 @@ header {
     height: 62px;
     position: fixed;
     z-index: 999;
-    background: rgba(245, 245, 245, .6);
+    // background: rgba(245, 245, 245, .6);
+    background: map-get($headerColor, b);
     border-bottom: solid 2px #aaa;
     .logo {
         display: inline-block;
         @include square(50px);
         margin: 6px 0 6px 15px;
         // border: solid 2px rgba(200, 200, 200, .5);
-        border: solid 2px rgba(255, 200, 155, .8);
+        // border: solid 2px rgba(255, 200, 155, .8);
+        border: solid 2px map-deep-get($headerColor, logo, bc);
         border-radius: 50%;
         transition: all 500ms ease 0s;
         &:before {
@@ -24,7 +26,7 @@ header {
         @include tablet {
             &:hover {
                 animation: rotate 4s linear infinite;
-                border: solid 2px rgba(255, 0, 200, .5);
+                border-color: map-deep-get($headerColor, logo, hover, bc);
             }
         }
     }
@@ -39,27 +41,26 @@ header {
             float: left;
             padding: 0 20px;
             font-weight: bold;
-            text-shadow: 0 0 1px rgba(0, 0, 0, .3),
-                1px 0 1px rgba(0, 0, 0, .5),
-                0 1px 1px rgba(0, 0, 0, .3);
+            // text-shadow: 0 0 1px rgba(0, 0, 0, .3),
+            //     1px 0 1px rgba(0, 0, 0, .5),
+            //     0 1px 1px rgba(0, 0, 0, .3);
+            text-shadow: map-deep-get($headerColor, menu, a, ts);
             i {
                 font-size: 1.2rem;
                 margin-right: 5px;
                 // color: rgba(255, 100, 0, .5);
-                color: rgba(182, 190, 180, 0.8);
-                text-shadow: 1px 0 1px rgba(0, 0, 0, .3),
-                    0 1px 1px rgba(0, 0, 0, .3);
+                // color: rgba(182, 190, 180, 0.8);
+                color: map-deep-get($headerColor, menu, ico, c);
+                text-shadow: map-deep-get($headerColor, menu, ico, ts);
                 vertical-align: -1px;
             }
             a {
-                color: #faa;
+                color: map-deep-get($headerColor, menu, a, c);
                 padding: 5px;
                 @include repond('sm', 'min') {
                     &:hover {
-                        color: rgba(0, 0, 0, .8);
-                        text-shadow: 0 0 1px rgba(255, 255, 255, .7),
-                            1px 0 1px rgba(255, 100, 0, .5),
-                            0 1px 1px rgba(240, 150, 50, .8);
+                        color: map-deep-get($headerColor, menu, a, hover, c);
+                        text-shadow: map-deep-get($headerColor, menu, a, hover, ts);
                     }
                 }
             }
@@ -73,23 +74,23 @@ header {
             padding: 5px 20px 5px 10px;
             // margin: 15px;
             float: right;
-            border: solid 2px rgba(251, 86, 7, .5);
+            border: solid 2px map-deep-get($headerColor, menu, search, bc);
             border-radius: 15px;
-            background: rgba(245, 245, 245, .3) url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjE4cHgiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDE4IDE4IiB3aWR0aD0iMThweCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgp4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgZmlsbD0icmdiYSgyNSwgMjUsIDI1LCAuNSkiIGlkPSJDb3JlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzM5LjAwMDAwMCwgLTM4MS4wMDAwMDApIj48ZyBpZD0ic2VhcmNoIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMzkuMDAwMDAwLCAzODEuMDAwMDAwKSI+PHBhdGggZD0iTTEyLjUsMTEgTDExLjcsMTEgTDExLjQsMTAuNyBDMTIuNCw5LjYgMTMsOC4xIDEzLDYuNSBDMTMsMi45IDEwLjEsMCA2LjUsMCBDMi45LDAgMCwyLjkgMCw2LjUgQzAsMTAuMSAyLjksMTMgNi41LDEzIEM4LjEsMTMgOS42LDEyLjQgMTAuNywxMS40IEwxMSwxMS43IEwxMSwxMi41IEwxNiwxNy41IEwxNy41LDE2IEwxMi41LDExIEwxMi41LDExIFogTTYuNSwxMSBDNCwxMSAyLDkgMiw2LjUgQzIsNCA0LDIgNi41LDIgQzksMiAxMSw0IDExLDYuNSBDMTEsOSA5LDExIDYuNSwxMSBMNi41LDExIFoiIGlkPSJTaGFwZSIvPjwvZz48L2c+PC9nPjwvc3ZnPg==) 50% no-repeat;
+            background: map-deep-get($headerColor, menu, search, b) url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjE4cHgiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDE4IDE4IiB3aWR0aD0iMThweCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgp4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgZmlsbD0icmdiYSgyNSwgMjUsIDI1LCAuNSkiIGlkPSJDb3JlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzM5LjAwMDAwMCwgLTM4MS4wMDAwMDApIj48ZyBpZD0ic2VhcmNoIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMzkuMDAwMDAwLCAzODEuMDAwMDAwKSI+PHBhdGggZD0iTTEyLjUsMTEgTDExLjcsMTEgTDExLjQsMTAuNyBDMTIuNCw5LjYgMTMsOC4xIDEzLDYuNSBDMTMsMi45IDEwLjEsMCA2LjUsMCBDMi45LDAgMCwyLjkgMCw2LjUgQzAsMTAuMSAyLjksMTMgNi41LDEzIEM4LjEsMTMgOS42LDEyLjQgMTAuNywxMS40IEwxMSwxMS43IEwxMSwxMi41IEwxNiwxNy41IEwxNy41LDE2IEwxMi41LDExIEwxMi41LDExIFogTTYuNSwxMSBDNCwxMSAyLDkgMiw2LjUgQzIsNCA0LDIgNi41LDIgQzksMiAxMSw0IDExLDYuNSBDMTEsOSA5LDExIDYuNSwxMSBMNi41LDExIFoiIGlkPSJTaGFwZSIvPjwvZz48L2c+PC9nPjwvc3ZnPg==) 50% no-repeat;
             outline: none;
             transition: width 800ms, box-shadow 300ms;
             &:focus {
                 width: 200px;
-                background: #fff;
-                border-color: rgba(255, 50, 100, .5);
-                box-shadow: 0 0 5px rgba(255, 100, 200, .5);
-                color: rgba(200, 80, 120, .8);
+                background: map-deep-get($headerColor, menu, search, focus, b);
+                border-color: map-deep-get($headerColor, menu, search, focus, bc);
+                box-shadow: 0 0 5px map-deep-get($headerColor, menu, search, focus, bs);
+                color: map-deep-get($headerColor, menu, search, focus, c);
             }
             &:-moz-placeholder {
-                color: rgba(255, 100, 100, .8);
+                color: map-deep-get($headerColor, menu, search, ph, c);
             }
             &::-webkit-input-placeholder {
-                color: rgba(255, 100, 100, .8);
+                color: map-deep-get($headerColor, menu, search, ph, c);
             }
         }
     }
@@ -109,21 +110,21 @@ header {
             @include content;
             width: 18px;
             height: 8px;
-            border: solid 2px #aaa;
+            border: solid 2px map-deep-get($headerColor, menu, menuico, bc);
             transition: all 500ms ease 0s;
         }
         span.ico-t:before,
         span.ico-m:before,
         span.ico-b:before {
             left: 0;
-            @include border-left-radius(5px);
+            @include border-left-radius(5px, true);
             border-right: none;
         }
         span.ico-t:after,
         span.ico-m:after,
         span.ico-b:after {
             right: 0;
-            @include border-right-radius(5px);
+            @include border-right-radius(5px, true);
             border-left: none;
         }
         span.ico-t:before,
@@ -146,7 +147,7 @@ header {
         &.active {
             span:before,
             span:after {
-                border-color: rgba(255, 0, 0, .8);
+                border-color: map-deep-get($headerColor, menu, menuico, active, bc);
                 transition: all 500ms ease;
             }
             span.ico-t:before {
@@ -185,7 +186,7 @@ header {
             width: 100%;
             top: 104px;
             // background: rgba(245, 200, 200, .5);
-            background: rgba(0, 0, 0, .7);
+            background: map-deep-get($headerColor, menu, mask, b);
             display: none;
             margin: 0;
             &.active {
@@ -204,16 +205,6 @@ header {
                     display: block;
                     width: 100%;
                 }
-                @include tablet {
-                    &:hover {
-                        background: rgba(255, 100, 0, .6);
-                        font-weight: bold;
-                        a {
-                            color: #fee;
-                            text-shadow: 0 0 1px #000;
-                        }
-                    }
-                }
             }
         }
         .search {
@@ -221,7 +212,7 @@ header {
             position: absolute;
             top: 62px;
             padding: 5px 20px;
-            background: rgba(0, 0, 0, .7);
+            background: map-deep-get($headerColor, menu, search, mobile, b);
             &.active {
                 display: block;
             }
