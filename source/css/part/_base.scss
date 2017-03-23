@@ -4,8 +4,6 @@ html, body {
 }
 
 body {
-    // background: $bg;
-    background: map-deep-get($baseColor, body, b);
     font-family: $font-base-family;
     font-size: $font-base-size;
     color: $font-base-color;
@@ -13,6 +11,12 @@ body {
         box-sizing: border-box;
     }
     transition: all 800ms;
+    #bg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -2;
+    }
 }
 
 ol, ul {
@@ -20,7 +24,6 @@ ol, ul {
 }
 a {
     text-decoration: none;
-    color: map-deep-get($baseColor, a, c);
     position: relative;
     @include tablet {
         &:before {
@@ -30,7 +33,6 @@ a {
             height: 2px;
             left: 0;
             bottom: 0;
-            background: map-deep-get($baseColor, a, underline);
             visibility: hidden;
             transform: scaleX(0);
             transition: all 200ms ease-in-out 0s;
@@ -63,26 +65,23 @@ a {
     @include square(40px);
     @include text-center(40px);
     right: 20px;
-    bottom: 30px;
+    bottom: 50px;
     font-size: 2.5em;
     font-weight: bold;
-    color: map-get($backToTopColor, c);
-    // cursor: pointer;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .9);
     @include tablet {  
         &:hover {
-            color: map-deep-get($backToTopColor, hover, c);
-            text-shadow: map-deep-get($backToTopColor, hover, ts);
             transition: all 200ms;
         }
     }
 }
 
 footer {
-    // background: rgba(0, 0, 0, .2);
     border-top: solid 2px rgba(0, 0, 0, .1);
     padding: 20px 0;
     text-align: center;
-    color: map-deep-get($baseColor, footer, c);
     font-size: 14px;
     .social {
         margin-bottom: 10px;
@@ -96,14 +95,6 @@ footer {
                 font-size: 1.5rem;
                 padding: 5px;
             }
-            color: map-deep-get($baseColor, footer, a, c);
-            text-shadow: map-deep-get($baseColor, footer, a, ts);
-            @include tablet {
-                &:hover {
-                    color: map-deep-get($baseColor, footer, hover, c);
-                    text-shadow: map-deep-get($baseColor, footer, hover, ts);
-                }
-            }
         }
     }
     p {
@@ -113,12 +104,10 @@ footer {
         }
         .author {
             font-family: $font-pacifico-family;
-            color: map-deep-get($baseColor, footer, author, c);
         }
         .hexo,
         .lencx {
             font-family: $font-shrikhand-family;
-            color: map-deep-get($baseColor, footer, hexo, c);
         }
     }
 }

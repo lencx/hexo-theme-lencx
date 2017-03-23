@@ -1,13 +1,10 @@
 .post-category {
     .title {
         margin-bottom: 5px;
-        color: map-deep-get($categoryColor, title, c);
-        text-shadow: map-deep-get($categoryColor, title, ts);
         .num {
             font-size: 1rem;
             margin-left: 10px;
             font-family: $font-shrikhand-family;
-            color: map-deep-get($categoryColor, num, c);
         }
     }
     .category {
@@ -27,7 +24,6 @@
         display: block;
         margin: .5rem auto;
         border-width: 1px;
-        border-color: map-deep-get($categoryColor, hr, bc);
     }
 }
 

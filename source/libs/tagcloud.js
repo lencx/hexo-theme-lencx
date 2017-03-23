@@ -33,6 +33,6 @@ addLoadEvent(function() {
         TagCanvas.tc['resCanvas'].Wheel(false);
     } catch (e) {
         // console.log(e);
-        document.getElementById('tagCloudCanvas').style.display = 'none';
+        // document.getElementById('tagCloudCanvas').style.display = 'none';
     }
 });

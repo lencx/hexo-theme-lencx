@@ -5,8 +5,11 @@
 // $pastel-yellow: rgb(255, 246, 137);
 
 // global
-$body-bg-color: #f5f5d5;
-$a-underline-color: #f00faa;
+// $body-bg-color: #f5f5d5;
+// $body-bg-color: rgba(240, 240, 200, .3);
+$body-bg-color: hsla(60, 57%, 86%, .5);
+// $a-underline-color: #f00faa;
+$a-underline-color: rgba(240, 20, 50, .7);
 $a-base-color: rgba(0, 0, 0, .7);
 $footer-base-color: #666;
 // footer social
@@ -29,7 +32,8 @@ $footer-a-hover-text-shadow: (
 $footer-author-color: #08e;
 $footer-hexo-lencx: rgba(0, 100, 200, .8);
 
-$back-to-top-color: #434;
+// $back-to-top-color: #434;
+$back-to-top-color: #fff;
 $back-to-top-hover-color: #efefef;
 $back-to-top-hover-text-shadow: (
     0 0 1px rgb(255, 0, 110),
@@ -39,8 +43,9 @@ $back-to-top-hover-text-shadow: (
 // header bg
 $header-bg: rgba(245, 245, 245, .6);
 // header logo
-$logo-border-color: rgba(255, 200, 155, .8);
-$logo-hover-border-color: rgba(255, 0, 200, .5);
+// $logo-border-color: rgba(255, 200, 155, .8);
+$logo-border-color: rgba(148, 168, 137, .3);
+$logo-hover-border-color: rgba(255, 0, 200, .3);
 // nav menu item
 $header-menu-a-color: #faa;
 $header-menu-a-text-shadow: (
@@ -62,7 +67,7 @@ $header-menu-ico-text-shadow: (
     0 1px 1px rgba(0, 0, 0, .3)
 );
 // nav search
-$header-search-bg-color: rgba(245, 245, 245, .3);
+// $header-search-bg-color: rgba(245, 245, 245, .3);
 $header-search-mobile-bg-color: rgba(0, 0, 0, .7);
 $header-search-border-color: rgba(251, 86, 7, .5);
 $header-search-focus-bg-color: #fff;
@@ -71,8 +76,9 @@ $header-search-focus-border-color: rgba(255, 50, 100, .5);
 $header-search-focus-box-shadow: rgba(255, 100, 200, .5);
 $header-search-placeholder-color: rgba(255, 100, 100, .8);
 // nav menuico
-$header-menu-menuico-border-color: #aaa;
-$header-menu-menuico-active-border-color: rgba(255, 0, 0, .8);
+$header-menu-menuico-border-color: rgba(0, 0, 0, .3);
+// $header-menu-menuico-active-border-color: rgba(255, 0, 0, .8);
+$header-menu-menuico-active-border-color: rgba(255,30,30,.7);
 // nav mask
 $header-menu-mask-bg-color: rgba(0, 0, 0, .7);
 
@@ -81,12 +87,19 @@ $sidebar-box-box-shadow: (
     inset 0 0 30px rgba(210, 150, 50, .3)
 );
 // sidebar title
-$sidebar-title-color: #38a;
+// $sidebar-title-color: #38a;
+$sidebar-title-color: rgba(240,240,240,.8);
+// $sidebar-title-text-shadow: (
+//     0 0 1px rgba(210,80,110,.3),
+//     1px -1px 1px rgba(30,100,130,.3),
+//     1px -1px 2px rgba(13,180,145,.5),
+//     -1px -1px 2px rgba(146,102,139,.5)
+// );
 $sidebar-title-text-shadow: (
-    0 0 1px rgba(210, 80, 110, .3),
-    1px -1px 1px rgba(30, 100, 130, .3),
-    1px -1px 2px rgba(13, 180, 145, .5),
-    -1px -1px 2px rgba(146, 102, 139, .5)
+    0 0 1px rgba(10, 80, 10, .5),
+    1px -1px 1px rgba(30, 100, 130, .5),
+    1px -1px 2px rgba(130, 80, 45, .5),
+    -1px 1px 2px rgba(146, 102, 139, .5)
 );
 // sidebar posts num
 $sidebar-num-color: rgba(30, 100, 130, .5);
@@ -96,7 +109,7 @@ $sidebar-a-hover-color: #38a;
 $sidebar-ico-color: rgba(20, 180, 145, .5);
 
 // archive time line
-$archive-time-line-color: rgba(0, 0, 0, .3);
+$archive-time-line-color: rgba(0, 0, 0, .2);
 $archive-hover-time-line-color: rgba(227, 75, 116, .8);
 // archive a hover
 $archive-hover-day-color: rgb(252, 247, 199);
@@ -120,9 +133,11 @@ $archive-a-box-shadow: (
 $archive-day-bg-color: #fff;
 $archive-day-border-color: rgba(0, 0, 0, .5);
 // archive year
-$archive-year-bg-color: rgb(231, 29, 54);
-$archive-year-color: rgb(255, 253, 152);
-$archive-year-border-color: rgb(155, 54, 68);
+// $archive-year-bg-color: rgb(231, 29, 54);
+$archive-year-bg-color: rgba(255, 73, 79, .5);
+// $archive-year-color: rgb(255, 253, 152);
+$archive-year-color: rgb(0, 129, 175);
+$archive-year-border-color: rgba(155, 54, 68, .5);
 $archive-year-box-shadow: (
     inset 0 0 10px rgba(255, 255, 255, .4)
 );
@@ -135,7 +150,7 @@ $archive-month-box-shadow: (
 );
 // archive num
 $archive-num-color: #fff;
-$archive-num-bg-color: rgba(255, 0, 0, .5);
+$archive-num-bg-color: rgba(255, 0, 0, .3);
 // archive title box(end)
 $archive-end-color: #ffa;
 $archive-end-border-color: rgba(200, 10, 0, .2);
@@ -169,9 +184,9 @@ $comment-box-shadow: (
 
 // pagination
 // pagination current
-$pagination-a-color: rgb(255, 0, 110);
-$pagination-a-current-bg-color: #a0a0a0;
-$pagination-a-current-color: #fff;
+$pagination-a-color: rgba(255, 0, 110, .8);
+$pagination-a-current-bg-color: rgba(40, 130, 230, .7);
+$pagination-a-current-color: rgba(240, 240, 240, .8);
 // pagination total
 $pagination-total-color: #fd1;
 $pagination-total-text-shadow: (
@@ -181,7 +196,8 @@ $pagination-total-text-shadow: (
 );
 // pagination hover
 $pagination-a-hover-color: #fff;
-$pagination-a-hover-bg-color: #fa0;
+// $pagination-a-hover-bg-color: #fa0;
+$pagination-a-hover-bg-color: rgba(250, 200, 0, .7);
 // post detail (pre & next)
 $pagination-a-post-box-shadow: (
     0 0 5px rgba(100, 100, 0, .3),
@@ -195,7 +211,8 @@ $pagination-a-post-box-shadow: (
 );
 
 // article list (home)
-$article-bg-color: rgba(200, 180, 50, .3);
+// $article-bg-color: rgba(200, 180, 50, .3);
+$article-bg-color: rgba(200, 180, 50, .2);
 // post read more box
 $article-read-more-color-box-shadow: (
     inset 0 0 30px rgba(150, 180, 150, .8)
@@ -218,12 +235,13 @@ $article-read-more-hover-ico-box-shadow: (
 );
 $article-read-more-hover-ico-border-color: rgba(200, 100, 100, .9);
 // post title
-$article-post-title-color: rgba(140, 160, 120, .9);
+// $article-post-title-color: rgba(140, 160, 120, .9);
+$article-post-title-color: rgba(240, 240, 240, .8);
 // psot meta
-$article-post-meta-author-color: rgba(0,0,0,.7);
-$article-post-meta-date-color: rgba(0,0,0,.3);
-$article-post-meta-category-color: rgba(0,0,0,.7);
-$article-post-meta-ico-color: rgba(200,100,200,.8);
+$article-post-meta-author-color: rgba(0, 0, 0,.7);
+$article-post-meta-date-color: rgba(0, 0, 0, .3);
+$article-post-meta-category-color: rgba(0, 0, 0, .7);
+$article-post-meta-ico-color: rgba(200, 100, 200, .8);
 // post toc color
 $post-toc-bg-color: rgba(245, 135, 10, 0.3);
 $post-toc-box-shadow: (
@@ -251,7 +269,7 @@ $post-toc-item-box-shadow: (
 // post toc hover
 $post-toc-item-hover-color: rgba(220, 100, 100, .9);
 $post-toc-item-hover-num-color: rgba(140, 30, 20, .9);
-$post-toc-item-hover-underline-color: #fff;
+$post-toc-item-hover-underline-color: rgba(230, 240, 210, .8);
 // psot toc number
 $post-toc-item-num-color: rgba(20, 20, 50, .8);
 $post-toc-item-num-text-shadow: (

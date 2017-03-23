@@ -1,4 +1,3 @@
-// import '../css/main.scss'
 'use strict'
 /**
  * Random Color
@@ -64,6 +63,7 @@ $(function() {
     $year = $timeLine.find('.year')
     $month = $timeLine.find('.month')
     $year.each((i, el) => {
+        $($year[i]).parent().css('border', 'none')
         let $yt = $(el).html()
         $month.each((i, el) => {
             let $mt = $(el).attr('date-m')
@@ -160,10 +160,12 @@ $(function(){
 // code theme
 $(function() {
     let $figure = $('figure')
-    let $theme = '<span class="theme">theme[white]<span>'
+    let $theme = '<span class="code-theme">theme[white]<span>'
     $figure.append($theme)
-    let themeList = $figure.find('.theme')
+    let themeList = $figure.find('.code-theme')
+    $figure.addClass('black')
     themeList.each(i => {
+        $(themeList[i]).html('theme[black]')
         $(themeList[i]).on('click', () => {
             $(themeList[i]).parent().toggleClass('black')
             $(themeList[i]).parent().hasClass('black')
@@ -260,6 +262,7 @@ $(function() {
 // sidebar archives
 $(function() {
     try {
+        $('.sidebar').css('display') === 'none' ? $('.sidebar').remove() : ''
         const MonthArr = ['January','February','March','April','May','June','July','August','September','October','November','December']
         let $archives = $('.archives')
         let $el = $archives.find('.archives-data')

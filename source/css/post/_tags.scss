@@ -29,20 +29,17 @@
         visibility: visible;
         border-radius: 5px;
         @include square(16px);
-        // background: green;
         transform: rotate(45deg);
         z-index: -1;
         left: -6px;
         top: 4px;
     }
     &:after {
-        // box-sizing: border-box;
         @include square(6px);
         background: #fff;
         left: -2px;
         top: 9px;
         border-radius: 50%;
-        // border: solid 1px #eee;
         box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .5);
     }
 }
@@ -92,7 +89,6 @@
     padding: 16px;
     .tag-title {
         font-size: 2.5rem;
-        // margin-bottom: 5px;
         margin: 0 0 5px;
         color: #fea;
         text-shadow: 0 0 1px rgba(0, 0, 0, .5),

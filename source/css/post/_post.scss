@@ -1,9 +1,8 @@
-@mixin readMore($width, $height, $scale, $color: map-deep-get($articleColor, readmore, hover, ico, bc)) {
+@mixin readMore($width, $height, $scale) {
     content: '';
     position: absolute;
     width: $width;
     height: $height;
-    background-color: $color;
     transform: $scale;
     transition: transform 0.3s;
 }
@@ -12,7 +11,6 @@
     width: 75%;
     article {
         margin: 10px 0;
-        background: map-get($articleColor, b);
         @extend %post-layout;
         @extend %title-style;
     }
@@ -45,8 +43,6 @@
                 height: 100%;
                 padding: 0 12px;
                 @include text-center(30px);
-                box-shadow: map-deep-get($articleColor, readmore, bs);
-                // border-radius: 8px;
                 @include radius(8px);
                 &:before {
                     @include readMore(100%, 3px, scaleX(0));
@@ -66,8 +62,6 @@
                     font-size: 1.5rem;
                     vertical-align: -2px;
                     font-weight: bold;
-                    color: map-deep-get($articleColor, readmore, c);
-                    text-shadow: map-deep-get($articleColor, readmore, ico, ts);
                 }
             }
 
@@ -81,12 +75,6 @@
                     &:before,
                     &:after {
                         transform: scaleX(1);
-                    }
-                    color: map-deep-get($articleColor, readmore, hover, c);
-                    background: map-deep-get($articleColor, readmore, hover, b);
-                    i.fa {
-                        color: map-deep-get($articleColor, readmore, hover, ico, c);
-                        text-shadow: map-deep-get($articleColor, readmore, hover, ico, ts);
                     }
                 }
             }
@@ -105,31 +93,18 @@
     .post-title {
         font-size: 1.8rem;
         font-family: $font-shrikhand-family;
-        color : map-deep-get($articleColor, post, title, c);
-        a {
-            color : map-deep-get($articleColor, post, title, c);
-        }
     }
     .post-meta {
         .author {
             font-family: $font-pacifico-family;
-            a {
-                color: map-deep-get($articleColor, post, meta, author);
-            }
         }
         .category {
             font-family: $font-shrikhand-family;
-            a {
-                color: map-deep-get($articleColor, post, meta, category);
-            }
         }
         .fa {
             margin: 0 5px 0 8px;
-            // color: rgba(50, 100, 50, .3);
-            color: map-deep-get($articleColor, post, meta, ico);
         }
         .date {
-            color: map-deep-get($articleColor, post, meta, date);
             font-family: $font-handlee-family;
         }
     }

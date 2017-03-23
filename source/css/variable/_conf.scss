@@ -17,16 +17,3 @@ $font-pacifico-family: 'Pacifico';
 $font-roboto-family: 'Roboto';
 $font-shrikhand-family: 'Shrikhand';
 $font-marck-script: 'Marck Script';
-
-
-@mixin tablet {
-    @include repond('sm', 'min') {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @include repond('md', 'min') {
-        @content;
-    }
-}

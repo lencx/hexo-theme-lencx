@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const AssetsPlugin = require('assets-webpack-plugin')
-// const shell = require('shelljs')
+const shell = require('shelljs')
 
 const rules = []
 const plugins = []
@@ -55,10 +55,13 @@ plugins.push(
 )
 
 module.exports = {
-    entry: resolve('source/js/main.js'),
+    entry: {
+        main: resolve('source/js/main.js'),
+        theme: resolve('source/js/style.js')
+    },
     output: {
         path: resolve(buildPath),
-        filename: 'main.[chunkhash:12].js'
+        filename: '[name].[chunkhash:12].js'
     },
     // devtool: 'source-map',
     plugins: plugins,

@@ -1,0 +1,371 @@
+%theme-layout {
+    background: map-deep-get($baseColor, body, b);
+    a {
+        color: map-deep-get($baseColor, a, c);
+        @include tablet {
+            &:before {
+                background: map-deep-get($baseColor, a, underline);
+            }
+        }
+    }
+    #back-to-top {
+        color: map-get($backToTopColor, c);
+        @include tablet {  
+            &:hover {
+                color: map-deep-get($backToTopColor, hover, c);
+                text-shadow: map-deep-get($backToTopColor, hover, ts);
+            }
+        }
+    }
+    footer {
+        color: map-deep-get($baseColor, footer, c);
+        .social {
+            a {
+                color: map-deep-get($baseColor, footer, a, c);
+                text-shadow: map-deep-get($baseColor, footer, a, ts);
+                @include tablet {
+                    &:hover {
+                        color: map-deep-get($baseColor, footer, hover, c);
+                        text-shadow: map-deep-get($baseColor, footer, hover, ts);
+                    }
+                }
+            }
+        }
+        p {
+            .author {
+                color: map-deep-get($baseColor, footer, author, c);
+            }
+            .hexo,
+            .lencx {
+                color: map-deep-get($baseColor, footer, hexo, c);
+            }
+        }
+    }
+
+    header {
+        background: map-get($headerColor, b);
+        .logo {
+            border: solid 2px map-deep-get($headerColor, logo, bc);
+            @include tablet {
+                &:hover {
+                    border-color: map-deep-get($headerColor, logo, hover, bc);
+                }
+            }
+        }
+        ul.menus {
+            li {
+                text-shadow: map-deep-get($headerColor, menu, a, ts);
+                i {
+                    color: map-deep-get($headerColor, menu, ico, c);
+                    text-shadow: map-deep-get($headerColor, menu, ico, ts);
+                }
+                a {
+                    color: map-deep-get($headerColor, menu, a, c);
+                    @include repond('sm', 'min') {
+                        &:hover {
+                            color: map-deep-get($headerColor, menu, a, hover, c);
+                            text-shadow: map-deep-get($headerColor, menu, a, hover, ts);
+                        }
+                    }
+                }
+            }
+        }
+        .search {
+            input[type='search'] {
+                border: solid 2px map-deep-get($headerColor, menu, search, bc);
+                &:focus {
+                    background: map-deep-get($headerColor, menu, search, focus, b);
+                    border-color: map-deep-get($headerColor, menu, search, focus, bc);
+                    box-shadow: 0 0 5px map-deep-get($headerColor, menu, search, focus, bs);
+                    color: map-deep-get($headerColor, menu, search, focus, c);
+                }
+                &:-moz-placeholder {
+                    color: map-deep-get($headerColor, menu, search, ph, c);
+                }
+                &::-webkit-input-placeholder {
+                    color: map-deep-get($headerColor, menu, search, ph, c);
+                }
+            }
+        }
+        .menu-ico {
+            span:before,
+            span:after {
+                border: solid 2px map-deep-get($headerColor, menu, menuico, bc);
+            }
+            &.active {
+                span:before,
+                span:after {
+                    border-color: map-deep-get($headerColor, menu, menuico, active, bc);
+                }
+            }
+        }
+        @include repond('sm', 'max') {
+            ul.menus {
+                background: map-deep-get($headerColor, menu, mask, b);
+            }
+            .search {
+                background: map-deep-get($headerColor, menu, search, mobile, b);
+            }
+        }
+    }
+    .sidebar {
+        h2 {
+            color: map-deep-get($sidebarColor, title, c);
+            text-shadow: map-deep-get($sidebarColor, title, ts);
+        }
+        .num {
+            color: map-deep-get($sidebarColor, num, c);
+        }
+        .category,
+        .archives,
+        .recent-post {
+            box-shadow: map-deep-get($sidebarColor, box, bs);
+        }
+        .category,
+        .recent-post {
+            @include tablet {
+                li {
+                    a {
+                        &:hover {
+                            color: map-deep-get($sidebarColor, a, hover, c);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sidebar .archives {
+        div[class^='y'] {
+            i:before {
+                color: map-deep-get($sidebarColor, ico, c);
+            }
+        }
+    }
+    .archive-time-line {
+        .time-line {
+            [class^='line-'] {
+                border-left: solid 3px map-deep-get($archiveColor, line, bs);
+                @include tablet {
+                    &:hover {
+                        border-color: map-deep-get($archiveColor, a, hover, line);
+                        .day {
+                            border-color: map-deep-get($archiveColor, a, hover, day, bc);
+                            background: map-deep-get($archiveColor, a, hover, day, b);
+                            color: map-deep-get($archiveColor, a, hover, day, c);
+                            text-shadow: map-deep-get($archiveColor, a, hover, day, ts);
+                        }
+                        a {
+                            color: map-deep-get($archiveColor, a, hover, title, c);
+                            background: map-deep-get($archiveColor, a, hover, title, b);
+                            box-shadow: map-deep-get($archiveColor, a, hover, title, bs);
+                            &:after {
+                                border-right-color: map-deep-get($archiveColor, a, hover, title, b);
+                            }
+                        }
+                    }
+                }
+                a {
+                    background: map-deep-get($archiveColor, a, b);
+                    box-shadow: map-deep-get($archiveColor, a, bc);
+                    &:after {
+                        @include triangle(8px, map-deep-get($archiveColor, a, b), left);
+                    }
+                }
+                .day {
+                    background: map-deep-get($archiveColor, day, b);
+                    border: solid 2px map-deep-get($archiveColor, day, bc);
+                }
+            }
+            [class^='date-'] {
+                border-left: solid 3px map-deep-get($archiveColor, line, bs);
+                .year {
+                    border: solid 3px map-deep-get($archiveColor, year, bc);
+                    background: map-deep-get($archiveColor, year, b);
+                    color: map-deep-get($archiveColor, year, c);
+                    box-shadow: map-deep-get($archiveColor, year, bs);
+                }
+                .month {
+                    background: map-deep-get($archiveColor, month, b);
+                    border: solid 3px map-deep-get($archiveColor, month, bc);
+                    box-shadow: 0 0 5px map-deep-get($archiveColor, month, bs);
+                    color: map-deep-get($archiveColor, month, c);
+                }
+                .num {
+                    color: map-deep-get($archiveColor, num, c);
+                    background: map-deep-get($archiveColor, num, b);
+                }
+            }
+        }
+        .line-end {
+            border: solid 2px map-deep-get($archiveColor, end, bc);
+            box-shadow: map-deep-get($archiveColor, end, bs);
+            color: map-deep-get($archiveColor, end, c);
+            text-shadow: map-deep-get($archiveColor, end, ts);
+        }
+        .line-start {
+            background: map-deep-get($archiveColor, start, m, b);
+            &:before,
+            &:after {
+                background: map-deep-get($archiveColor, start, lr, b);
+            }
+        }
+    }
+    .post-category {
+        .title {
+            color: map-deep-get($categoryColor, title, c);
+            text-shadow: map-deep-get($categoryColor, title, ts);
+            .num {
+                color: map-deep-get($categoryColor, num, c);
+            }
+        }
+        hr {
+            border-color: map-deep-get($categoryColor, hr, bc);
+        }
+    }
+    .post-foot {
+        .post-comment {
+            border: solid 1px map-get($commentColor, bc);
+            box-shadow: map-get($commentColor, bs);
+        }
+    }
+    .pagination {
+        li {
+            @include tablet {
+                &.link:hover {
+                    a {
+                        color: map-deep-get($paginationColor, a, hover, c);
+                        background: map-deep-get($paginationColor, a, hover, b);
+                    }
+                }
+            }
+            a {
+                color: map-deep-get($paginationColor, a, c);
+            }
+            &.current {
+                background: map-deep-get($paginationColor, a, current, b);
+                a {
+                    color: map-deep-get($paginationColor, a, current, c);
+                }
+            }
+        }
+        .prev-post,
+        .next-post {
+            box-shadow: map-deep-get($paginationColor, a, post, bs);
+            @include tablet {
+                &:hover {
+                    background: map-deep-get($paginationColor, a, post, hover, b);
+                    color: map-deep-get($paginationColor, a, post, hover, c);
+                }
+            }
+        }
+        .total {
+            color: map-deep-get($paginationColor, total, c);
+            text-shadow: map-deep-get($paginationColor, total, ts);
+        }
+    }
+    .post-pagination .pagination {
+        box-shadow: map-deep-get($paginationColor, a, post, bs);
+    }
+    .article-container {
+        article {
+            background: map-get($articleColor, b);
+        }
+        .post-preview {
+            .post-read-more {
+                &:before,
+                &:after {
+                    background-color: map-deep-get($articleColor, readmore, hover, ico, bc);
+                }
+                a {
+                    &:before,
+                    &:after {
+                        background-color: map-deep-get($articleColor, readmore, hover, ico, bc);
+                    }
+                    box-shadow: map-deep-get($articleColor, readmore, bs);
+                    i.fa {
+                        color: map-deep-get($articleColor, readmore, c);
+                        text-shadow: map-deep-get($articleColor, readmore, ico, ts);
+                    }
+                }
+
+                &:hover {
+                    a {
+                        color: map-deep-get($articleColor, readmore, hover, c);
+                        background: map-deep-get($articleColor, readmore, hover, b);
+                        i.fa {
+                            color: map-deep-get($articleColor, readmore, hover, ico, c);
+                            text-shadow: map-deep-get($articleColor, readmore, hover, ico, ts);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .article-container,
+    .post-content {
+        .post-title {
+            color : map-deep-get($articleColor, post, title, c);
+            a {
+                color : map-deep-get($articleColor, post, title, c);
+            }
+        }
+        .post-meta {
+            .author {
+                a {
+                    color: map-deep-get($articleColor, post, meta, author);
+                }
+            }
+            .category {
+                a {
+                    color: map-deep-get($articleColor, post, meta, category);
+                }
+            }
+            .fa {
+                color: map-deep-get($articleColor, post, meta, ico);
+            }
+            .date {
+                color: map-deep-get($articleColor, post, meta, date);
+            }
+        }
+    }
+    .post-toc {
+        background: map-get($postTocColor, b);
+        box-shadow: map-get($postTocColor, bs);
+        #toc-title {
+            text-shadow: map-deep-get($postTocColor, title, ts);
+            i {
+                color: map-deep-get($postTocColor, title, ico, c);
+                text-shadow: map-deep-get($postTocColor, title, ico, ts);
+            }
+        }
+        ol {
+            li {
+                a {
+                    color: map-deep-get($postTocColor, item, c);
+                    &.active {
+                        background: map-deep-get($postTocColor, item, active, b);
+                        box-shadow: map-deep-get($postTocColor, item, active, bs);
+                        color: map-deep-get($postTocColor, item, active, c);
+                    }
+                    &:hover {
+                        color: map-deep-get($postTocColor, item, hover, c);
+                        .toc-number {
+                            color: map-deep-get($postTocColor, item, hover, num);
+                        }
+                    }
+                    &:before {
+                        background: map-deep-get($postTocColor, item, hover, underline);
+                    }
+                    .toc-number {
+                        color: map-deep-get($postTocColor, item, num, c);
+                        text-shadow: map-deep-get($postTocColor, item,  num, ts);
+                    }
+                }
+            }
+        }
+    }
+}
+
+body {
+    @extend %theme-layout;
+}

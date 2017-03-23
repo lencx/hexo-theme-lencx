@@ -1,3 +1,15 @@
+// $map: (
+//     $baseColor,
+//     $backToTopColor,
+//     $headerColor,
+//     $sidebarColor,
+//     $archiveColor,
+//     $categoryColor,
+//     $commentColor,
+//     $paginationColor,
+//     $articleColor,
+//     $postTocColor
+// );
 /// b: background
 /// c: color
 /// ts: text-shadow
@@ -61,7 +73,7 @@ $headerColor: (
             ts: $header-menu-ico-text-shadow
         ),
         search: (
-            b: $header-search-bg-color,
+            // b: $header-search-bg-color,
             bc: $header-search-border-color,
             focus: (
                 b: $header-search-focus-bg-color,

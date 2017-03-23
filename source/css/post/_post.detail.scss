@@ -10,8 +10,6 @@
     @extend %title-style;
 }
 .post-pagination .pagination {
-    box-shadow: map-deep-get($paginationColor, a, post, bs);
-    // border-radius: 15px;
     @include radius(15px);
     padding: 10px;
     width: 96%;

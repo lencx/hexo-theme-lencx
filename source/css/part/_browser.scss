@@ -37,4 +37,10 @@ code::-moz-selection {
     ::-webkit-scrollbar {
         width: 0;
     }
+    ::-webkit-scrollbar-thumb {
+        display: none;
+    }
+    ::-webkit-scrollbar-track {
+        border-radius: 0;
+    }
 }
