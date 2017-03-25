@@ -1,13 +1,14 @@
-%theme-layout {
-    background: map-deep-get($baseColor, body, b);
-    a {
-        color: map-deep-get($baseColor, a, c);
-        @include tablet {
-            &:before {
-                background: map-deep-get($baseColor, a, underline);
-            }
+a {
+    color: map-deep-get($baseColor, a, c);
+    @include tablet {
+        &:before {
+            background: map-deep-get($baseColor, a, underline);
         }
     }
+}
+
+%theme-layout {
+    background: map-deep-get($baseColor, body, b);
     #back-to-top {
         color: map-get($backToTopColor, c);
         @include tablet {  

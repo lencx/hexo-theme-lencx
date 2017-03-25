@@ -54,7 +54,7 @@
         @include tablet {
             @include single-text(200px);
             &:hover {
-                @include radius(10px);
+                @include radius(10px, true);
             }
         }
         i {

@@ -9,8 +9,7 @@ menu:
   Tags: tags
   About: about
 
-logo: /blog/img/at-ico.svg
-# logo: /blog/img/logo.png
+logo: /blog/img/at-ico.png
 
 # widget (文章小部件)
 postMeta:
@@ -29,7 +28,7 @@ sidebar:
   tagCloud:
     enable: true
     # 是否开启背景（可用图片或直接设置背景色）
-    bgEnable: false
+    bgEnable: true
     # bg: '#000'
     # ‘/blog’ 是项目的根路径 默认是‘／’
     bg: url('/blog/img/bg-1.png')
@@ -49,7 +48,7 @@ since: 2017
 # stylesheets loaded in the <head>
 stylesheets:
 # - /css/main.css
-- /dist/theme.d0f6e99665d8.css
+- /dist/theme.1e328056a6d9.css
 - /font-awesome-4.7.0/css/font-awesome.min.css
 - /fancybox-3.0/dist/jquery.fancybox.min.css
 
@@ -61,7 +60,6 @@ scripts_foot:
 # - /js/main.js
 - /dist/main.589b81d2e06f.js
 - /fancybox-3.0/dist/jquery.fancybox.min.js
-- /libs/tagcloudbg.min.js
 
 disqus:
   disqus_shortname: # your shortname

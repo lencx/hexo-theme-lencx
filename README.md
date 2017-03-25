@@ -19,6 +19,7 @@
 - Fancybox-3.0
 - font-awesome-4.7.0
 - Responsive
+- canvas background
 
 ## [View Demo](https://lencx.github.io/blog/)
 

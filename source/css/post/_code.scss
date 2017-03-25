@@ -9,7 +9,7 @@ $code-black: (
 );
 
 $code-white: (
-    title: rgba(100, 100, 100, .1),
+    title: rgba(10, 10, 100, .8),
     bg: rgba(255, 255, 240, .2),
     box-shadow: inset 0 0 5px rgba(200, 100, 0, .5),
     line-bg: rgba(200, 100, 0, .5),
@@ -73,7 +73,7 @@ figure .code-theme {
     user-select: none;
     @include tablet {
         &:hover {
-            color: rgba(0, 120, 30, .8);
+            color: rgba(20, 50, 220, .8);
             background: rgba(255, 100, 50, .5);
             box-shadow: 0 2px 5px rgba(255, 125, 25, .5),
                 1px 0 5px rgba(255, 125, 25, .5),
@@ -89,7 +89,8 @@ figure.black {
         color: #fff;
         @include tablet {
             &:hover {
-                color: rgba(250, 180, 130, .8);
+                // color: rgba(250, 180, 130, .8);
+                color: rgba(20, 50, 220, .8);
                 background: rgba(255, 180, 50, .5);
                 box-shadow: 0 2px 5px rgba(255, 125, 25, .5),
                     1px 0 5px rgba(255, 125, 25, .5),
