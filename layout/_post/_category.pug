@@ -5,11 +5,14 @@ mixin category(category)
         ul.category
             - category.posts.each(function(post) {
                 //- - console.log(post.title)
-                - var year = date(post.date, "YYYY")
-                - var month = date(post.date, 'MM')
-                - var day = date(post.date, 'DD')
+                - var createDate = date(post.date, "YYYY-MM-DD")
+                - var updatedDate = date(post.updated, "YYYY/MM/DD")
                 li
-                    i.date!= year+'-'+month+'-'+day
+                    span.date
+                        i.fa.fa-calendar!= createDate
+                    if date(post.date, "YYYYMMDD") !== date(post.updated, "YYYYMMDD")
+                        span.updated
+                            i.fa.fa-refresh!= updatedDate
                     a(href=url_for(post.path))
                         != post.title
             - })

@@ -13,7 +13,7 @@ block content
             if page.posts.length > 0
                 - page.posts.each(function(tag) {
                     li.tag-item(title= tag.title)   
-                        +postMeta(tag.date, tag.tags, tag.categories)
+                        +postMeta(tag.date, tag.updated, tag.tags, tag.categories)
                         a.post-title(href=url_for(tag.path))
                             span!= tag.title
                 - })

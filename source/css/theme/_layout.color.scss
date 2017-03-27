@@ -327,6 +327,14 @@ a {
             .date {
                 color: map-deep-get($articleColor, post, meta, date);
             }
+            .updated {
+                color: map-deep-get($articleColor, post, meta, updated);
+            }
+        }
+    }
+    .tags-list, .post-category {
+        .updated {
+            color: map-deep-get($articleColor, post, meta, updated);
         }
     }
     .post-toc {

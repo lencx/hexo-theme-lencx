@@ -29,6 +29,9 @@ footer
             a(href!= 'Mailto:'+theme.social.email title='email')
                 i.fa.fa-envelope
                 +text('Gmail', ['#4285f4','#ea4335', '#fbbc05', '#757575', '#34a853'])
+        a(href!=url_for('/atom.xml')  title='RSS')
+            i.fa.fa-rss-square
+            +text('RSS', ['#ce6833', '#d6853e', '#d6a03e'])
 
     .copyright
         - var hexoUrl = 'https://hexo.io'

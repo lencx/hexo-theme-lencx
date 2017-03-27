@@ -1,16 +1,23 @@
 # Features
-- Navigation
+
+- Navigation [page]
   - home
   - archives
   - categories
   - tags
-  - ... 
+  - ...
 - Sidebar
   - tagCloud
   - archives
   - categories
   - recent posts
 - Post
+  - post meta
+    - author
+    - create date
+    - updated date
+    - category
+    - tags
   - read more
   - post toc
   - code theme[white|black]
@@ -20,6 +27,7 @@
 - font-awesome-4.7.0
 - Responsive
 - canvas background
+- RSS
 
 ## [View Demo](https://lencx.github.io/blog/)
 

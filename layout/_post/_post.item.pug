@@ -6,7 +6,7 @@ if page.posts.length
         h2.post-title
             a(href=url_for(post.path))!= post.title
 
-        +postMeta(post.date, post.tags, post.categories)
+        +postMeta(post.date, post.updated, post.tags, post.categories)
         if post.excerpt
             .post-excerpt!= post.excerpt
             //- 判断.md是否有<!--more-->

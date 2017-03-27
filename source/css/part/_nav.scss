@@ -47,6 +47,9 @@ header {
     }
     .search {
         display: none;
+        // float: right;
+        margin: 15px;
+
         input[type='search'] {
             top: 15px;
             width: 30px;
@@ -171,10 +174,12 @@ header {
             }
         }
         .search {
+            display: none;
             width: 100%;
             position: absolute;
             top: 62px;
             padding: 5px 20px;
+            margin: 0;
             &.active {
                 display: block;
             }

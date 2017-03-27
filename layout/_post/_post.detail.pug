@@ -6,10 +6,10 @@ block content
     article.post-content
         h2.post-title= page.title
 
-        +postMeta(page.date, page.tags, page.categories)
+        +postMeta(page.date, page.updated, page.tags, page.categories)
 
         .post-conent!= page.content
-
+        //- - console.log(page.updated)
         //- TODO
         //- share
         //- .share

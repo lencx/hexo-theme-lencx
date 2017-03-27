@@ -1,4 +1,4 @@
-mixin postMeta(date, tags, categories)
+mixin postMeta(date, updated, tags, categories)
     .post-meta
         if theme.postMeta.author && is_tag() !== true
             span.author
@@ -9,6 +9,11 @@ mixin postMeta(date, tags, categories)
             span.date
                 i.fa.fa-calendar
                 != full_date(date, 'YYYY-MM-DD')
+
+        if theme.postMeta.updated && full_date(date, 'YYYYMMDD') !== full_date(updated, 'YYYYMMDD')
+            span.updated
+                i.fa.fa-refresh
+                != full_date(updated, 'YYYY/MM/DD')
 
         if theme.postMeta.category && categories.length && is_tag() !== true
             span.category
