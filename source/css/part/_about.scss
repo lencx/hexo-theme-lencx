@@ -3,6 +3,9 @@
     h1, h2 {
         font-family: $font-shrikhand-family;
     }
+    img {
+        border: none;
+    }
     img[alt='len'] {
         float: right;
         margin-right: 50px;

@@ -1,12 +1,43 @@
 head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
-    meta(http-equiv="X-UA-Compatible", content="IE=Edge, chrome=1")
+    meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+    //- google site verification
+    if theme.google_site_verification
+        meta(name='google-site-verification', content!= theme.google_site_verification)
+    //- description
+    - var _description = theme.description || config.description
+    if page.description
+        meta(name='description', content!= page.description)
+    else
+        meta(name='description', content!= _description)
+    //- keywords
+    if page.keywords
+        meta(name='keywords', content!= page.keywords)
+    else if page.tags && page.tags.length
+        //- - console.log(page.tags.data[0].name)
+        - var tags = ''
+        - for(var i=0,len=page.tags.length; i<len; i++) {
+            - tags +=  ', ' + page.tags.data[i].name
+        - }
+        meta(name='keywords', content!= tags.slice(2))
+    //- style
     if theme.stylesheets != null
         each linkcss in theme.stylesheets
             link(href=url_for(linkcss), rel="stylesheet")
 
+    //- scripts
     if theme.scripts != null
         each script in theme.scripts
             script(src=url_for(script))
-    title LENCX
+
+    //- title
+    - var _title = theme.title || config.title
+    if is_home()
+        title!= _title
+    else if is_archive()
+        title!= _title + ' | archives'
+    else if page.title
+        title!= _title + ' | ' + page.title
+    else
+        title!= _title + ' | ' + page.base
