@@ -1,0 +1,9 @@
+#search
+    input(type='search', placeholder='Search ...')
+    ul.result
+    template#searchTpl
+        li.item
+            a(href='{path}')
+                h3.search-title(title='{title}') {title}
+                .tags {tags}
+                time.time {data}

@@ -50,7 +50,7 @@ since: 2017
 stylesheets:
 # - /css/main.css
 # - /css/theme/theme.css
-- /dist/theme.902332bb0ddc.css
+- /dist/theme.3366bc59c5b5.css
 - /font-awesome-4.7.0/css/font-awesome.min.css
 - /fancybox-3.0/dist/jquery.fancybox.min.css
 
@@ -60,9 +60,10 @@ scripts:
 
 scripts_foot:
 # - /js/main.js
-- /dist/main.589b81d2e06f.js
+- /dist/main.6c64056cca7d.js
 - /fancybox-3.0/dist/jquery.fancybox.min.js
 - /libs/tagcloudbg.min.js
+- /libs/search.min.js
 
 disqus:
   disqus_shortname: # your shortname

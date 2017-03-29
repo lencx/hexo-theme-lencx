@@ -14,9 +14,11 @@ mixin home()
                         //- i.fa.fa-chevron-right
                         i.fa.fa-angle-double-right
             span.total
-                | 共
+                //- | 共
+                //- != page.total
+                //- | 页
                 != page.total
-                | 页
+                |  Pages In Total
 
 mixin post()
     - var prev = page.prev ? page.prev.path : false

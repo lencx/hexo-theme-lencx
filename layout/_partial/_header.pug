@@ -1,9 +1,8 @@
 header
     //- url_for('/')
     a.logo(href='/', style='background: url('+theme.logo+') 100%/cover no-repeat')
-    .search
-        input(type='search', placeholder="Search")
+    //- .search
+    //-     input(type='search', placeholder="Search")
     include ./_nav.pug
     include ../_widget/_menu.pug
-    //- include ../_widget/_search.pug
-    
+    include ../_widget/_search.pug

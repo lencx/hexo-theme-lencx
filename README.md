@@ -1,4 +1,5 @@
 # Features
+> [View Demo](https://lencx.github.io/blog/)
 
 - Navigation [page]
   - home
@@ -29,7 +30,20 @@
 - canvas background
 - RSS
 
-## [View Demo](https://lencx.github.io/blog/)
+## Update
+
+- `RSS`
+```bash
+# rss => atom.xml
+npm i hexo-generator-feed --save
+```
+- `Search`
+> local search
+```bash
+# generator content.json or search.json
+npm i hexo-generator-json-content --save
+```
+
 
 ## Config
 
@@ -39,7 +53,7 @@
 Implement a highly customizable blog theme.
 
 ## TODO:
-- search
+- ~~search~~
 - share
 - duoshuo
 - languages

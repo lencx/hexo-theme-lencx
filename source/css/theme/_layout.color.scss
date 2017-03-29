@@ -71,7 +71,7 @@ a {
                 }
             }
         }
-        .search {
+        #search {
             input[type='search'] {
                 border: solid 2px map-deep-get($headerColor, menu, search, bc);
                 &:focus {
@@ -104,7 +104,7 @@ a {
             ul.menus {
                 background: map-deep-get($headerColor, menu, mask, b);
             }
-            .search {
+            #search {
                 background: map-deep-get($headerColor, menu, search, mobile, b);
             }
         }

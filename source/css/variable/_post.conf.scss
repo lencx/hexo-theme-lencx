@@ -56,11 +56,22 @@ $title-font: (
             color: #083d77;
         }
         h1, h2 {
-            border-left: solid 10px hsla(40,50%,34%,.8);
-            padding-left: 12px;
+            // border-left: solid 10px hsla(40,50%,34%,.8);
+            // padding-left: 12px;
             text-shadow: 0 0 1px rgba(0, 0, 0, .4),
                 1px -1px 1px rgba(0, 50, 50, .3),
                 -1px 1px 2px rgba(180, 120, 30, .8);
+            &:before {
+                content: '\f06c';
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                color: rgba(235, 235, 235, 0.8);
+                transform: rotate(-30deg);
+                margin-right: 10px;
+            }
         }
         h3,h4,h5,h6 {
             color: #004e64;
