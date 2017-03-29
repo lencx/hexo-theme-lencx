@@ -50,6 +50,75 @@ since: 2017
 stylesheets:
 # - /css/main.css
 # - /css/theme/theme.css
+- /dist/theme.902332bb0ddc.css
+- /font-awesome-4.7.0/css/font-awesome.min.css
+- /fancybox-3.0/dist/jquery.fancybox.min.css
+
+# scripts loaded in the end of the body
+scripts:
+- /libs/jquery-3.1.1.min.js
+
+scripts_foot:
+# - /libs/watermark.min.js
+# - /js/main.js
+# - /js/search.js
+- /dist/main.589b81d2e06f.js
+- /fancybox-3.0/dist/jquery.fancybox.min.js
+- /libs/tagcloudbg.min.js
+# - /libs/wm.js
+
+# html lang
+# language: en
+
+# main menu navigation
+menu:
+  Home: /
+  Archives: archives
+  Categories: categories
+  Tags: tags
+  About: about
+
+logo: /blog/img/at-ico.svg
+
+# widget (文章小部件)
+postMeta:
+  author: true # 作者
+  date: true # 创建日期
+  updated: true # 更新日期
+  tags: true # 标签
+  category: true # 分类
+
+post:
+  # 文章目录标题
+  toc_title: CONTENT
+  # 阅读全文
+  excerpt_link: Read More
+
+sidebar:
+  tagCloud:
+    enable: true
+    # 是否开启背景（可用图片或直接设置背景色）
+    bgEnable: false
+    # bg: '#000'
+    # ‘/blog’ 是项目的根路径 默认是‘／’
+    bg: url('/blog/img/bg-1.png')
+  archives: true
+  categories: true
+  recent_posts:
+    enable: true
+    num: 5
+
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# Site creation time(copyright)
+since: 2017
+
+# stylesheets loaded in the <head>
+stylesheets:
+# - /css/main.css
+# - /css/theme/theme.css
 - /dist/theme.3366bc59c5b5.css
 - /font-awesome-4.7.0/css/font-awesome.min.css
 - /fancybox-3.0/dist/jquery.fancybox.min.css
@@ -81,3 +150,4 @@ social:
   facebook: # your@facebook
   twitter: # your@twitter
   stact_overflow: 
+
