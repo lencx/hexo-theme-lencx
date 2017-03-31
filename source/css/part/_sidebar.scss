@@ -114,6 +114,7 @@
 .sidebar .recent-post {
     @extend %sidebar-box;
     li {
+        @include single-text(250px);
         list-style: none;
         line-height: 28px;
         a {

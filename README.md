@@ -1,5 +1,6 @@
 # Features
 > [View Demo](https://lencx.github.io/blog/)
+> [Releases Detail](https://github.com/lencx/hexo-theme-lencx/releases)
 
 - Navigation [page]
   - home
@@ -48,6 +49,15 @@ npm i hexo-generator-json-content --save
 ## Config
 
 > `/source/css/_theme.color.scss` file covers almost all of the color and shadow effects in the theme, `/source/css/variable／_mixin.scss` @mixin radius parameter $radius-enable is set to true enable all rounded corners in the theme, false is off.
+
+## Bulid
+> Compression (js & css)
+
+```bash
+# style.js(theme.scss, main.scss) & main.js
+# generator asset.json
+yarn build
+```
 
 ## Goal
 Implement a highly customizable blog theme.
