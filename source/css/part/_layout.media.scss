@@ -1,5 +1,4 @@
 .container {
-    width: 90%;
     @include repond('md', 'min') {
         .article-container {
             width: $article-container-width;

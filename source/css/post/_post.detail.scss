@@ -1,6 +1,8 @@
 .post-content {
     margin: 0 auto;
-    width: 100%;
+    // width: 100%;
+    width: 90%;
+    max-width: 1200px;
     .post-title {
         text-align: center;
     }
@@ -10,14 +12,16 @@
     @extend %title-style;
 }
 .post-pagination .pagination {
+    width: 90%;
+    max-width: 1200px;
     @include radius(15px);
-    padding: 10px;
+    padding: 5px 10px;
     // width: 96%;
     margin: 10px auto 15px;
 }
 
 @include repond('md', 'max') {
-    .post-content {
+    .post-content, .post-pagination .pagination {
         width: 98%;
     }
 }

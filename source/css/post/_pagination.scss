@@ -43,7 +43,7 @@
     .next-post {
         position: relative;
         margin: 0 50px;
-        padding: 5px 10px;
+        padding: 8px 10px;
         border-radius: 0;
         @include radius(5px);
         transition: all 500ms ease 0s;
@@ -52,18 +52,19 @@
             margin: 0;
         }
         @include tablet {
-            @include single-text(200px);
+            @include single-text(300px);
             &:hover {
                 @include radius(10px, true);
             }
         }
         i {
             position: absolute;
-            top: 2px;
+            top: 4px;
         }
     }
     .prev-post {
         float: left;
+        margin-right: 0;
         padding-left: 40px;
         i {
             left: 10px;
@@ -71,6 +72,7 @@
     }
     .next-post {
         float: right;
+        margin-left: 0;
         padding-right: 40px;
         i {
             right: 10px;

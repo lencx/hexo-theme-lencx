@@ -1,4 +1,7 @@
 .post-foot {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     .post-comment {
         padding: 10px 20px;
         @include radius(15px);
@@ -27,6 +30,12 @@
                 }
             }
         }
+    }
+}
+
+@include repond('md', 'max') {
+    .post-foot {
+        width: 98%;
     }
 }
 

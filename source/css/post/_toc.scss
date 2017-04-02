@@ -3,8 +3,8 @@
     overflow-y: auto;
     position: fixed;
     z-index: 3;
-    top: 80px;
-    right: 50px;
+    top: 120px;
+    right: 0;
     @include radius(10px);
     max-height: calc(100% - 120px);
     &::-webkit-scrollbar {

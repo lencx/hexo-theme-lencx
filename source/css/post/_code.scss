@@ -103,7 +103,7 @@ figure.black {
 figure {
     @include code-theme($code-white);
     position: relative;
-    @include radius(10px);
+    @include radius(8px);
     overflow: auto;
     white-space: pre;
     padding-top: 28px;

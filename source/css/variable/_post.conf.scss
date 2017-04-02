@@ -74,7 +74,21 @@ $title-font: (
             }
         }
         h3,h4,h5,h6 {
-            color: #004e64;
+            font-size: 1.2rem;
+            color: #044;
+            margin: 12px 0;
+            &:before {
+                font-family: $font-shrikhand-family;
+                display: inline-block;
+                content: '§';
+                font-weight: bold;
+                color: rgba(240, 240, 200, 0.8);
+                margin-right: 10px;
+                text-shadow: 0 0 1px rgba(0, 0, 0, .4),
+                    1px -1px 1px rgba(0, 50, 50, .3),
+                    -1px 1px 2px rgba(180, 120, 30, .8);
+                
+            }
         }
     }
     // @for $i from 1 through 6 {
@@ -151,7 +165,9 @@ article, .page {
             margin: 0;
         }
         blockquote {
+            margin: 0;
             border-color: rgba(30, 100, 200, .5);
+            // box-shadow: none;
         }
     }
     ol, ul {
@@ -169,7 +185,8 @@ article, .page {
         list-style-type: disc;
     }
     ol {
-        list-style-type: decimal-leading-zero;
+        list-style-type: decimal;
+        // list-style-type: decimal-leading-zero;
     }
     @include repond('sm', 'max') {
         ul, ol {

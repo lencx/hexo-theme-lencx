@@ -1,5 +1,5 @@
 # Features
-> [View Demo](https://lencx.github.io/blog/)
+> [View Demo](https://lencx.github.io/blog/) | 
 > [Releases Detail](https://github.com/lencx/hexo-theme-lencx/releases)
 
 - Navigation [page]
