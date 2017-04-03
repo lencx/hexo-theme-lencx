@@ -15,18 +15,24 @@ $post-padding: 16px;
 // s: font-size
 // l: line-height
 $title-font: (
-    h1: (s:2rem, l:2.2rem),
-    h2: (s:1.5rem, l:1.75rem),
-    h3: (s:1.33rem, l:1.5rem),
-    h4: (s:1rem, l:1.33rem),
-    h5: (s:.87rem, l:1.17rem),
-    h6: (s:.75rem, l:1rem)
+    h1: (s:2rem, l:2.2rem, t: '\f06c'),
+    h2: (s:1.5rem, l:1.75rem, t: '\f06c'),
+    h3: (s:1.33rem, l:1.5rem, t: '§'),
+    h4: (s:1rem, l:1.33rem, t: '➤'),
+    h5: (s:.87rem, l:1.17rem, t: '❦'),
+    h6: (s:.75rem, l:1rem, t: '❡')
 );
 
 @each $key, $val in $title-font {
     #{$key} {
         font-size: map-deep-get($title-font, $key, s);
         line-height: map-deep-get($title-font, $key, l);
+    }
+    .post-preview .post-excerpt,
+    .post-content div.post-content {
+        #{$key}:before  {
+            content: map-deep-get($title-font, $key, t);
+        }
     }
 }
 
@@ -48,7 +54,7 @@ $title-font: (
             -1px 1px 2px rgba(180, 120, 30, .8);
     }
     .post-excerpt,
-    .post-conent {
+    .post-content {
         h1 {
             color: #24292e;
         }
@@ -62,7 +68,7 @@ $title-font: (
                 1px -1px 1px rgba(0, 50, 50, .3),
                 -1px 1px 2px rgba(180, 120, 30, .8);
             &:before {
-                content: '\f06c';
+                // content: '\f06c';
                 display: inline-block;
                 font: normal normal normal 14px/1 FontAwesome;
                 font-size: inherit;
@@ -79,8 +85,9 @@ $title-font: (
             margin: 12px 0;
             &:before {
                 font-family: $font-shrikhand-family;
+                // font-family: $font-roboto-family;
+                // font-family: $font-pacifico-family;
                 display: inline-block;
-                content: '§';
                 font-weight: bold;
                 color: rgba(240, 240, 200, 0.8);
                 margin-right: 10px;

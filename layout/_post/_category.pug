@@ -3,7 +3,8 @@ mixin category(category)
         span.num (#{category.length})
     if category.length
         ul.category
-            - category.posts.each(function(post) {
+            - var _category = category.posts.sort('date', -1)
+            - _category.each(function(post) {
                 //- - console.log(post.title)
                 - var createDate = date(post.date, "YYYY-MM-DD")
                 - var updatedDate = date(post.updated, "YYYY/MM/DD")
