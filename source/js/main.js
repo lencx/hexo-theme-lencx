@@ -338,6 +338,15 @@ $(function() {
     }
 })
 
+// search
+$(function() {
+    let $input = $('#search input')
+    $('body').on('click', () => {
+        $input.val('')
+        $('#search .result').find('li').remove()
+    })
+})
+
 // sidebar scroll
 // $(function() {
 //     let $sidebar = $('aside.sidebar')

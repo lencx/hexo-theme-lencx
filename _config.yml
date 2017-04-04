@@ -60,7 +60,7 @@ scripts:
 
 scripts_foot:
 # - /js/main.js
-- /dist/main.6c64056cca7d.js
+- /dist/main.bfe501492235.js
 - /fancybox-3.0/dist/jquery.fancybox.min.js
 - /libs/tagcloudbg.min.js
 - /libs/search.min.js
